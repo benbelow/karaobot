@@ -7,6 +7,8 @@ from pyrhyme import rhyming_list
 
 from parody.generation.ParodyGenerator import generate_parody
 
+from genius_client.genius import fetch_lyrics
+
 words = []
 
 # Overall design plan:
@@ -36,6 +38,8 @@ with open("input.txt", 'r') as input_file:
     lines = input_file.readlines()
     for line in lines:
         original_lyrics += line
+
+original_lyrics = fetch_lyrics("Backstreet Boys", "I Want It That Way")
 
 parody = generate_parody(original_lyrics)
 

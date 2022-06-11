@@ -18,6 +18,8 @@ def generate_parody(lyrics):
 
 
 def generate_parody_line(line):
+    if len(line) == 0:
+        return ''
     if line in line_cache:
         return line_cache[line]
 
