@@ -30,45 +30,12 @@ words = []
 # work out how to integrate with a karaoke program (e.g. Karafun)
 # have fun karaoke night 😎
 
+original_lyrics = ""
 
-# TODO: Handle punctuation properly so as not to confuse rhyme logic
-original_lyrics = """"
-We're talking away
-I don't know what
-I'm to say I'll say it anyway
-Today's another day to find you
-Shying away
-I'll be coming for your love, okay?
-Take on me (take on me)
-Take me on (take on me)
-I'll be gone
-In a day or two
-So needless to say
-I'm odds and ends
-But I'll be stumbling away
-Slowly learning that life is okay
-Say after me
-It's no better to be safe than sorry
-Take on me (take on me)
-Take me on (take on me)
-I'll be gone
-In a day or two
-Oh, the things that you say, yeah
-Is it life or
-Just to play my worries away?
-You're all the things I've got to remember
-You're shying away
-I'll be coming for you anyway
-Take on me (take on me)
-Take me on (take on me)
-I'll be gone
-In a day
-I'll be gone (take on me, take on me)
-In a day (take me on, take on me)
-(Take on me, take on me)
-(Take me on, take on me)
-(Take on me)
-"""
+with open("input.txt", 'r') as input_file:
+    lines = input_file.readlines()
+    for line in lines:
+        original_lyrics += line
 
 parody = generate_parody(original_lyrics)
 
