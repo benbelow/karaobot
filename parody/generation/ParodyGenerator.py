@@ -16,22 +16,22 @@ def generate_parody(lyrics):
 def generate_parody_line(line):
     prosodic_text = prosodic.Text(line)
     # TODO: Keep track of the original words, don't just extract stresses out of context - it would be nice to weight towards one to one mapping, though we shouldn't *ONLY* do one to one.
-    target_stresses = prosodic_text.children[0].children[0].str_stress()
+    prosodic_stanza = prosodic_text.children[0]
+    prosodic_line = prosodic_stanza.children[0]
+    prosodic_words = prosodic_line.children
 
-    last_word = prosodic_text.children[0].children[0].children[-1].token
+    target_stresses = prosodic_line.str_stress()
+    last_word = prosodic_words[-1]
 
     line = ""
+    for prosodic_word in prosodic_words[0:len(prosodic_words) - 1]:
+        target_stress = prosodic_word.stress
 
-    while len(target_stresses) != 0:
-        syllables = min(random.choice([1]), len(target_stresses))
-        target_stress = target_stresses[0:syllables]
-        remaining_stress = target_stresses[syllables:]
-        target_stresses = target_stresses[syllables:]
-
-        should_rhyme = len(remaining_stress) == 0
-        rhyme_with = last_word if should_rhyme else None
-
-        parody_word = corpus.get_word(WordGenOptions(target_stress=target_stress, rhyme_with=rhyme_with))
+        parody_word = corpus.get_word(WordGenOptions(original=prosodic_word.token, target_stress=target_stress))
         line = line + " " + parody_word.rawWord
+
+    final_word = corpus.get_word(
+        WordGenOptions(original=last_word.token, target_stress=last_word.stress, rhyme_with=last_word.token))
+    line = line + " " + final_word.rawWord
 
     return line

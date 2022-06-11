@@ -5,13 +5,15 @@ from pyrhyme import rhyming_list
 
 
 class WordGenOptions:
-    def __init__(self, target_stress=None, rhyme_with=None):
+    def __init__(self, original, target_stress=None, rhyme_with=None):
+        self.original = original
         self.target_stress = target_stress
         self.rhyme_with = rhyme_with
 
 
 class Corpus:
     words_by_stress = {}
+    stop_words = []
 
     def __init__(self):
         with open("data/english-word-list-total.csv", 'r') as csvfile:
@@ -30,9 +32,20 @@ class Corpus:
                     self.words_by_stress[stress] = []
                 self.words_by_stress[stress].append(word)
 
+        with open("data/stop_words.txt", 'r') as stop_words_file:
+            lines = stop_words_file.readlines()
+
+            for line in lines:
+                self.stop_words.append(line.strip())
+
     def get_word(self, generation_options):
         rhyme_with = generation_options.rhyme_with
         target_stress = generation_options.target_stress
+
+        if len(target_stress) == 0:
+            return AnalysedWord("")
+        if generation_options.original in self.stop_words:
+            return AnalysedWord(generation_options.original)
         if rhyme_with is not None:
             return self.get_rhyming_word(rhyme_with, target_stress)
         if target_stress is not None:
