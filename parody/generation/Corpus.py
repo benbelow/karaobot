@@ -32,6 +32,16 @@ class Corpus:
                     self.words_by_stress[stress] = []
                 self.words_by_stress[stress].append(word)
 
+        with open("data/english_words_58_000.txt", 'r') as stop_words_file:
+            lines = stop_words_file.readlines()
+
+            for line in lines:
+                word = AnalysedWord(line.strip())
+                stress = word.stress()
+                if stress not in self.words_by_stress:
+                    self.words_by_stress[stress] = []
+                self.words_by_stress[stress].append(word)
+
         with open("data/stop_words.txt", 'r') as stop_words_file:
             lines = stop_words_file.readlines()
 
