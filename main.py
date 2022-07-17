@@ -39,7 +39,8 @@ with open("input.txt", 'r') as input_file:
     for line in lines:
         original_lyrics += line
 
-original_lyrics = fetch_lyrics("Backstreet Boys", "I Want It That Way")
+# TODO: Remove metadata e.g. singer name from genius version of lyrics
+original_lyrics = fetch_lyrics("Cage The Elephant", "Ain't No Rest For The Wicked")
 
 parody = generate_parody(original_lyrics)
 
