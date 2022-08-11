@@ -21,6 +21,3 @@ class AnalysedWord:
         self.rawWord = raw_word
         self.stress = stress
         self.partOfSpeech = part_of_speech
-
-    def stress(self):
-        return self.stress

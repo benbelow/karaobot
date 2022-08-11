@@ -1,8 +1,12 @@
 import random
 import csv
 import nltk as nltk
-from parody.analysis.AnalysedWord import AnalysedWord
+
+from data.repositories.wordRepository import WordRepository
+from parody.analysis.AnalysedWord import AnalysedWord, analyse_word
 from pyrhyme import rhyming_list
+
+repo = WordRepository()
 
 
 class WordGenOptions:
@@ -18,45 +22,19 @@ class Corpus:
     stop_words = []
 
     def __init__(self):
-        with open("data/source_data/english-word-list-total.csv", 'r') as csvfile:
-            # creating a csv reader object
-            csvreader = csv.reader(csvfile, delimiter=';')
+        words = repo.fetch_all_words()
 
-            # extracting field names through first row
-            fields = next(csvreader)
+        for db_word in words:
+            word = AnalysedWord(raw_word=db_word.word, stress=db_word.stress, part_of_speech=db_word.part_of_speech)
+            stress = word.stress
+            pos = word.partOfSpeech
 
-            # extracting each data row one by one
-            for row in csvreader:
-                raw_word = row[1]
-                word = AnalysedWord(raw_word)
-                stress = word.stress()
-                pos = word.partOfSpeech
+            if stress not in self.words_by_stress_then_speech_part:
+                self.words_by_stress_then_speech_part[stress] = {}
+            if pos not in self.words_by_stress_then_speech_part[stress]:
+                self.words_by_stress_then_speech_part[stress][pos] = []
 
-                if stress not in self.words_by_stress_then_speech_part:
-                    self.words_by_stress_then_speech_part[stress] = {}
-                if pos not in self.words_by_stress_then_speech_part[stress]:
-                    self.words_by_stress_then_speech_part[stress][pos] = []
-
-                self.words_by_stress_then_speech_part[stress][pos].append(word)
-
-        with open("data/source_data/english_words_58_000.txt", 'r') as stop_words_file:
-            lines = stop_words_file.readlines()
-
-            i = 0
-            for line in lines:
-                i += 1
-                if i % 1000 == 0:
-                    print("imported: " + line)
-                word = AnalysedWord(line.strip())
-                stress = word.stress()
-                pos = word.partOfSpeech
-
-                if stress not in self.words_by_stress_then_speech_part:
-                    self.words_by_stress_then_speech_part[stress] = {}
-                if pos not in self.words_by_stress_then_speech_part[stress]:
-                    self.words_by_stress_then_speech_part[stress][pos] = []
-
-                self.words_by_stress_then_speech_part[stress][pos].append(word)
+            self.words_by_stress_then_speech_part[stress][pos].append(word)
 
         with open("data/source_data/stop_words.txt", 'r') as stop_words_file:
             lines = stop_words_file.readlines()
@@ -70,9 +48,9 @@ class Corpus:
         target_pos = generation_options.target_pos
 
         if len(target_stress) == 0:
-            return AnalysedWord("")
+            return analyse_word("")
         if generation_options.original in self.stop_words:
-            return AnalysedWord(generation_options.original)
+            return analyse_word(generation_options.original)
         if rhyme_with is not None:
             return self.get_rhyming_word(rhyme_with, target_stress, target_pos)
         if target_stress is not None:
@@ -87,9 +65,9 @@ class Corpus:
         # perfect rhymes only for now - TODO: Fallback to half rhymes.
         # TODO: Weight towards more common words for rhymes
         rhyming_words = [perfect_rhyme for perfect_rhyme in raw_rhymes if perfect_rhyme.score == 300]
-        stressed_rhyming_words = [AnalysedWord(rhyme.word) for rhyme in rhyming_words]
+        stressed_rhyming_words = [analyse_word(rhyme.word) for rhyme in rhyming_words]
 
-        valid_rhyming_words = [word for word in stressed_rhyming_words if word.stress() == target_stress] \
+        valid_rhyming_words = [word for word in stressed_rhyming_words if word.stress == target_stress] \
             if target_stress is not None \
             else stressed_rhyming_words
 

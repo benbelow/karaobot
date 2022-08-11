@@ -52,6 +52,7 @@ def generate_parody_line(line):
     if last_word.token in word_cache:
         final_word = word_cache[last_word.token]
     else:
+        # TODO: Look up words in database to avoid re-processing words we know
         options = WordGenOptions(
             original=last_word.token,
             target_stress=last_word.stress,

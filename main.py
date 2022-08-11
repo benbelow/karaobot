@@ -40,7 +40,7 @@ with open("input.txt", 'r') as input_file:
         original_lyrics += line
 
 # TODO: Remove metadata e.g. singer name from genius version of lyrics
-original_lyrics = fetch_lyrics("Bat out of hell", "meat loaf")
+original_lyrics = fetch_lyrics("Hey Jude", "the beatles")
 
 parody = generate_parody(original_lyrics)
 

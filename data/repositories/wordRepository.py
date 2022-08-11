@@ -16,3 +16,7 @@ class WordRepository:
             session.query(Word).delete()
             session.bulk_save_objects(words)
             session.commit()
+
+    def fetch_all_words(self):
+        with Session(self.engine) as session:
+            return session.query(Word)
