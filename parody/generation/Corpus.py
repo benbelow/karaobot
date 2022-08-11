@@ -18,7 +18,7 @@ class Corpus:
     stop_words = []
 
     def __init__(self):
-        with open("data/english-word-list-total.csv", 'r') as csvfile:
+        with open("data/source_data/english-word-list-total.csv", 'r') as csvfile:
             # creating a csv reader object
             csvreader = csv.reader(csvfile, delimiter=';')
 
@@ -39,7 +39,7 @@ class Corpus:
 
                 self.words_by_stress_then_speech_part[stress][pos].append(word)
 
-        with open("data/english_words_58_000.txt", 'r') as stop_words_file:
+        with open("data/source_data/english_words_58_000.txt", 'r') as stop_words_file:
             lines = stop_words_file.readlines()
 
             i = 0
@@ -58,7 +58,7 @@ class Corpus:
 
                 self.words_by_stress_then_speech_part[stress][pos].append(word)
 
-        with open("data/stop_words.txt", 'r') as stop_words_file:
+        with open("data/source_data/stop_words.txt", 'r') as stop_words_file:
             lines = stop_words_file.readlines()
 
             for line in lines:

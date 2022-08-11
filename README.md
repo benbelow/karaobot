@@ -8,6 +8,13 @@
 
 ### Setup
 
+#### Database
+
+* Install dependencies
+  * `pip install -r requirements.txt`
+* Set environment variable `DB_URI` pointing to local postgres instance
+
+
 * Install dependencies
   * `pip install -r requirements.txt`
 * [Coming soon] Download nltk corpus
