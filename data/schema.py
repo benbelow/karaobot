@@ -16,8 +16,7 @@ if not database_exists(engine.url):
 metadata = MetaData(engine)
 # Declare a table
 table = Table('Words', metadata,
-              Column('id', Integer, primary_key=True),
-              Column('word', String),
+              Column('word', String, primary_key=True),
               Column('stress', String),
               Column('part_of_speech', String),
               )
