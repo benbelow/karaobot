@@ -32,3 +32,18 @@ To generate a parody:
 * Modify `input.txt` with your desired input
 
 * Output lyrics will be written to `output.txt`
+
+__________________
+
+## Karafun integration (WIP)
+
+To enjoy singing some auto-generated parodies live in front of your bewildered friends, simply:
+
+* Install [mitmproxy](https://mitmproxy.org/)
+* Run mitmproxy and navigate to [mitm.it/](mitm.it/)
+* Install your certificate of choice (we are using Firefox)
+* Set up your proxy
+  * For Firefox, this is Settings > Proxy > Manual > localhost:8080 for http and https
+* The mitmproxy addon is in the `mitmproxy-addons` directory. To use it, run `mitmproxy -s mitmproxy-addons/karafun.py`
+  * Or if you prefer in web mode: `mitmweb -s mitmproxy-addons/karafun.py`
+* Finally, open https://www.karafun.com/web/
