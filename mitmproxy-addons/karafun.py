@@ -24,10 +24,27 @@ class Karafun:
                 for line in lines:
                     words = [x for x in line if x.tag == "word"]
                     for word in words:
+
                         syllables = [x for x in word if x.tag == "syllabe"]
-                        for syllable in syllables:
-                            text = [x for x in syllable if x.tag == "text"][0]
-                            text.text = text.text.replace("a", "i").replace("e", "i").replace("o", "i").replace("u", "i")
+                        start = syllables[0].find("start").text
+                        end = syllables[-1].find("end").text
+                        full_word = "".join([s.find("text").text for s in syllables])
+
+                        for si in range(len(syllables)):
+                            word.remove(syllables[si])
+
+                        newSyllable = ET.Element("syllabe")
+                        newStart = ET.Element("start")
+                        newStart.text = start
+                        newEnd = ET.Element("end")
+                        newEnd.text = end
+                        newText = ET.Element("text")
+                        newText.text = full_word
+                        newSyllable.append(newStart)
+                        newSyllable.append(newEnd)
+                        newSyllable.append(newText)
+
+                        word.append(newSyllable)
 
             print("DONE")
 
