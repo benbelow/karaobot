@@ -1,4 +1,5 @@
 from parody.generation.ParodyGenerator import generate_parody
+import os
 
 from genius_client.genius import fetch_lyrics
 

@@ -16,6 +16,14 @@ def generate_parody(lyrics):
         yield parody_line
 
 
+def generate_parody_with_line_ids(lyrics):
+    parody = {}
+
+    for line_id in lyrics:
+        parody_line = generate_parody_line(lyrics[line_id])
+        parody[line_id] = parody_line.strip()
+    return parody
+
 def generate_parody_line(line):
     if len(line) == 0:
         return ''
