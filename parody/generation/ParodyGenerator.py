@@ -1,4 +1,3 @@
-import random
 import nltk as nltk
 import prosodic as prosodic
 

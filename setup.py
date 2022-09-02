@@ -1,6 +1,6 @@
 from data.models.word import Word
 from data.repositories.wordRepository import WordRepository
-from parody.analysis.AnalysedWord import AnalysedWord, analyse_word
+from parody.analysis.AnalysedWord import analyse_word
 
 with open("data/source_data/english_words_58_000.txt", 'r') as stop_words_file:
     lines = stop_words_file.readlines()

@@ -1,10 +1,3 @@
-import random
-
-import prosodic as p
-import csv
-
-from pyrhyme import rhyming_list
-
 from parody.generation.ParodyGenerator import generate_parody
 
 from genius_client.genius import fetch_lyrics
@@ -40,7 +33,7 @@ with open("input.txt", 'r') as input_file:
         original_lyrics += line
 
 # TODO: Remove metadata e.g. singer name from genius version of lyrics
-original_lyrics = fetch_lyrics("Hey Jude", "the beatles")
+# original_lyrics = fetch_lyrics("Hey Jude", "the beatles")
 
 parody = generate_parody(original_lyrics)
 

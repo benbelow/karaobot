@@ -7,11 +7,18 @@ root = ET.fromstring(raw_xml)
 karaoke = [x for x in root if x.tag == "karaoke"][0]
 pages = [x for x in karaoke if x.tag == "page"]
 
+original_lyrics = ""
+original_lyrics_by_line_id = {}
+
 for page in pages:
     lines = [x for x in page if x.tag == "line"]
     for line in lines:
+        line_id = int(line.get("id"))
+        if line_id not in original_lyrics_by_line_id:
+            original_lyrics_by_line_id[line_id] = ""
         words = [x for x in line if x.tag == "word"]
         for word in words:
+
             syllables = [x for x in word if x.tag == "syllabe"]
             start = syllables[0].find("start").text
             end = syllables[-1].find("end").text
@@ -33,8 +40,13 @@ for page in pages:
 
             word.append(newSyllable)
 
-            # for syllable in syllables:
-            #     text = [x for x in syllable if x.tag == "text"][0]
-            #     text.text = text.text.replace("a", "i").replace("e", "i").replace("o", "i").replace("u", "i")
+            original_lyrics += full_word
+            original_lyrics += " "
+            original_lyrics_by_line_id[line_id] += full_word
+            original_lyrics_by_line_id[line_id] += " "
+        original_lyrics += "\n"
 
+for k in original_lyrics_by_line_id:
+    print(k)
+    print(original_lyrics_by_line_id[k])
 print(ET.tostring(root))

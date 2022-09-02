@@ -33,7 +33,7 @@ class Karafun:
 
             final = ET.tostring(root, "unicode")
 
-            f = open("output.txt", "a")
+            f = open("mitmproxy-addons/output.txt", "a")
             f.write(final)
             f.close()
 

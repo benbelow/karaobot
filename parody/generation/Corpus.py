@@ -1,6 +1,4 @@
 import random
-import csv
-import nltk as nltk
 
 from data.repositories.wordRepository import WordRepository
 from parody.analysis.AnalysedWord import AnalysedWord, analyse_word
