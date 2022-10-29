@@ -55,12 +55,13 @@ def generate_parody_from_metadata_http():
 
 @app.route('/words/<word>', methods=['GET'])
 def get_word(word):
-    db_word = repo.get_word(word)
+    db_word = repo.get_word(word, load_rhymes=True)
     if not db_word:
         abort(404)
 
     if not db_word.rhymes:
-        db_word = import_rhymes(db_word)
+        import_rhymes(db_word)
+        db_word = repo.get_word(word, load_rhymes=True)
 
     return json.dumps({
         'word': db_word.word,

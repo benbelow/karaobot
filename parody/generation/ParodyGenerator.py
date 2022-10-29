@@ -4,6 +4,7 @@ import prosodic as prosodic
 from data.repositories.wordRepository import WordRepository
 from genius_client.genius import fetch_lyrics
 from parody.analysis.AnalysedWord import analyse_word, AnalysedWord
+from parody.analysis.RhymeFinder import import_rhymes
 from parody.analysis.WordImporter import import_words
 from parody.generation.Corpus import Corpus, WordGenOptions
 from stopwatch import Stopwatch
@@ -122,6 +123,17 @@ def lookup_last_words(lines):
         new_orm_last_words = repo.get_words(new_words)
         orm_last_words = orm_last_words + new_orm_last_words
 
+    have_rhymes = [n for n in orm_last_words if n.get_rhymes()]
+    needing_rhymes = [n for n in orm_last_words if not n.get_rhymes()]
+    print("HOW MANY NEED RHYMES?")
+    print(len(needing_rhymes))
+
+    for lw in needing_rhymes:
+        import_rhymes(lw)
+
+    newly_added_rhymes = repo.get_words([w.word for w in needing_rhymes], load_rhymes=True)
+    orm_last_words = have_rhymes + newly_added_rhymes
+
     last_word_dict = {lw.word: lw for lw in orm_last_words}
     return last_word_dict
 
@@ -216,13 +228,13 @@ def remove_special_characters(line):
     line = line.replace(":", "")
     line = line.replace(";", "")
     line = line.replace("?", "")
-    line = line.replace("?", "")
     line = line.replace("(", "")
     line = line.replace(")", "")
     line = line.replace("[", "")
     line = line.replace("]", "")
     line = line.replace("{", "")
     line = line.replace("}", "")
+    line = line.replace("!", "")
     return line
 
 
