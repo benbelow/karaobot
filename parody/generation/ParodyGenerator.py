@@ -2,9 +2,16 @@ import nltk as nltk
 import prosodic as prosodic
 
 from data.repositories.wordRepository import WordRepository
-from parody.analysis.AnalysedWord import analyse_word
+from parody.analysis.AnalysedWord import analyse_word, AnalysedWord
 from parody.analysis.WordImporter import import_words
 from parody.generation.Corpus import Corpus, WordGenOptions
+
+blocked_words = []
+
+with open("data/source_data/blocklist.txt", 'r') as block_file:
+    lines = block_file.readlines()
+    for line in lines:
+        blocked_words.append(line.strip())
 
 
 class Cache:
@@ -17,11 +24,13 @@ class Cache:
         self.word_cache = {}
         self.line_cache = {}
 
+
 corpus = Corpus()
 
 cache = Cache()
 
 repo = WordRepository()
+
 
 def generate_parody(lyrics):
     lines = str.splitlines(lyrics)
@@ -87,7 +96,7 @@ def generate_parody_line(line):
             parody_word = corpus.get_word(gen_options)
             cache.word_cache[word.word] = parody_word
 
-        line = line + " " + parody_word.rawWord
+        line = line + " " + enforce_blocklist(parody_word.rawWord, word.word)
 
     # Parody last word
     # TODO: Lookahead to ensure all last words rhyme up front, rather than using different substitutions for mid/emd line versions of same word
@@ -102,10 +111,14 @@ def generate_parody_line(line):
         final_word = corpus.get_word(options)
         cache.rhyming_word_cache[last_word.word] = final_word
 
-    line = line + " " + final_word.rawWord
+    line = line + " " + enforce_blocklist(final_word.rawWord, last_word.word)
 
     cache.line_cache[line] = line
     return line
+
+
+def enforce_blocklist(parody_word, original):
+    return original if parody_word in blocked_words else parody_word
 
 
 def get_pos(word):
