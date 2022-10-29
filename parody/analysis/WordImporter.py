@@ -4,6 +4,9 @@ from parody.analysis.AnalysedWord import analyse_word
 
 
 def import_words(raw_words):
+    raw_words = [w for w in raw_words]
+    if not raw_words:
+        return
     dtos = []
     i = 0
     for raw_word in raw_words:

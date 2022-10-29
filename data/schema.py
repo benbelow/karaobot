@@ -24,7 +24,7 @@ words = Table('Words', metadata,
 rhymes = Table('WordRhymes', metadata,
                Column('id', Integer, primary_key=True),
                Column('word1', String, ForeignKey("Words.word")),
-               Column('word2', String, ForeignKey("Words.word")),
+               Column('word2', String),
                Column('score', Integer)
                )
 

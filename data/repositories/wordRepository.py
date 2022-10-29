@@ -34,14 +34,4 @@ class WordRepository:
         with Session(self.engine) as session:
             query = session.query(Word).options(joinedload(Word.rhymes))
             db_words = query.filter(Word.word.in_(words))
-            return db_words
-
-    def update_word(self, orm_word):
-        with Session(self.engine) as session:
-            db_word_tracked = session.query(Word).options(joinedload(Word.rhymes)).get(orm_word.word)
-
-            db_word_tracked.rhymes = orm_word.rhymes
-            db_word_tracked.stress = orm_word.stress
-            db_word_tracked.part_of_speech = orm_word.part_of_speech
-
-            session.commit()
+            return [w for w in db_words]

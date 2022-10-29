@@ -4,6 +4,8 @@ from data.repositories.wordRepository import WordRepository
 from parody.analysis.AnalysedWord import AnalysedWord, analyse_word
 from pyrhyme import rhyming_list
 
+from parody.analysis.RhymeFinder import import_rhymes
+
 repo = WordRepository()
 
 
@@ -11,6 +13,8 @@ class WordGenOptions:
     def __init__(self, original, target_stress=None, rhyme_with=None, target_pos=None):
         self.original = original
         self.target_stress = target_stress
+
+        # ORM WORD (not raw word) for use of join table
         self.rhyme_with = rhyme_with
         self.target_pos = target_pos
 
@@ -47,6 +51,7 @@ class Corpus:
 
         if len(target_stress) == 0:
             return analyse_word("")
+        # TODO: Do we really need to analyse all stop words?
         if generation_options.original in self.stop_words:
             return analyse_word(generation_options.original)
         if rhyme_with is not None:
@@ -55,19 +60,32 @@ class Corpus:
             return self.get_stressed_word(target_stress, target_pos)
 
     def get_rhyming_word(self, rhyme_with, target_stress, target_pos):
-        # TODO: This is calling an API under the hood, so it's quite the bottleneck. Try:
-        #  (i) evaluate all the rhymes we want up-front
-        #  (ii) Fetch them in parallel
-        #  (iii) Check that the API's ok with the rate
-        raw_rhymes = rhyming_list(rhyme_with, lang="en")
-        # perfect rhymes only for now - TODO: Fallback to half rhymes.
-        # TODO: Weight towards more common words for rhymes
-        rhyming_words = [perfect_rhyme for perfect_rhyme in raw_rhymes if perfect_rhyme.score == 300]
-        stressed_rhyming_words = [analyse_word(rhyme.word) for rhyme in rhyming_words]
+        if not rhyme_with.rhymes:
+            rhyme_with = import_rhymes(rhyme_with)
 
-        valid_rhyming_words = [word for word in stressed_rhyming_words if word.stress == target_stress] \
+        perfect_rhymes = [r for r in rhyme_with.rhymes2() if r.score >= 300]
+        imperfect_rhymes = [r for r in rhyme_with.rhymes2() if r.score < 300]
+
+
+        # TODO: Weight towards more common words for rhymes
+        rhyme_source = perfect_rhymes if perfect_rhymes else imperfect_rhymes
+        orm_rhymes = repo.get_words([r.word2 for r in rhyme_source])
+        # TODO: Sort out mixture of AnalysedWord and DTO
+
+        # TODO: Implement fallback for stress? Eg. PP might be a good replacement for UP if it rhymes, but is currently rejected
+        valid_rhyming_words = [r.analysedWord() for r in orm_rhymes if r.stress == target_stress] \
             if target_stress is not None \
-            else stressed_rhyming_words
+            else orm_rhymes
+
+        # Needed for case where there *are* perfect rhymes, but none of them scan - so we want to check imperfect
+        # rhymes that scan before giving up on rhyming
+        if not valid_rhyming_words and perfect_rhymes:
+            # TODO: Deduplicate this code
+            rhyme_source = imperfect_rhymes
+            orm_rhymes = repo.get_words([r.word2 for r in rhyme_source])
+            valid_rhyming_words = [r.analysedWord() for r in orm_rhymes if r.stress == target_stress] \
+                if target_stress is not None \
+                else orm_rhymes
 
         return random.choice(valid_rhyming_words) \
             if len(valid_rhyming_words) != 0 \

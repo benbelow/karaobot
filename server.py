@@ -47,5 +47,5 @@ def get_word(word):
         'word': db_word.word,
         'stress': db_word.stress,
         'part_of_speech': db_word.part_of_speech,
-        'rhymes': [r.word for r in db_word.rhymes]
+        'rhymes': [r.word2 for r in db_word.rhymes]
     })

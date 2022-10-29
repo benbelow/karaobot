@@ -1,20 +1,34 @@
 import nltk as nltk
 import prosodic as prosodic
 
+from data.repositories.wordRepository import WordRepository
 from parody.analysis.AnalysedWord import analyse_word
+from parody.analysis.WordImporter import import_words
 from parody.generation.Corpus import Corpus, WordGenOptions
+
+
+class Cache:
+    rhyming_word_cache = {}
+    word_cache = {}
+    line_cache = {}
+
+    def clear(self):
+        self.rhyming_word_cache = {}
+        self.word_cache = {}
+        self.line_cache = {}
 
 corpus = Corpus()
 
-word_cache = {}
-line_cache = {}
+cache = Cache()
 
+repo = WordRepository()
 
 def generate_parody(lyrics):
     lines = str.splitlines(lyrics)
     for line in lines:
         parody_line = generate_parody_line(line)
         yield parody_line
+    cache.clear()
 
 
 def generate_parody_with_line_ids(lyrics):
@@ -23,6 +37,7 @@ def generate_parody_with_line_ids(lyrics):
     for line_id in lyrics:
         parody_line = generate_parody_line(lyrics[line_id])
         parody[line_id] = parody_line.strip()
+    cache.clear()
     return parody
 
 
@@ -30,8 +45,8 @@ def generate_parody_line(line):
     line = line.lower()
     if len(line) == 0:
         return ''
-    if line in line_cache:
-        return line_cache[line]
+    if line in cache.line_cache:
+        return cache.line_cache[line]
 
     # TODO: It would be nice to keep punctuation in, but for now it is treated as a whole word and so leaves off the end - fix later
     line = line.replace(",", "")
@@ -39,50 +54,57 @@ def generate_parody_line(line):
     line = line.replace(":", "")
     line = line.replace(";", "")
 
-    prosodic_text = prosodic.Text(line)
-    prosodic_stanza = prosodic_text.children[0]
-    prosodic_line = prosodic_stanza.children[0]
-    prosodic_words = prosodic_line.children
+    line_words = line.split()
+    words_in_line = repo.get_words(line_words)
 
-    target_stresses = prosodic_line.str_stress()
-    last_word = prosodic_words[-1]
+    new_words = list(set(line_words) - set([w.word for w in words_in_line]))
+    import_words(w for w in new_words)
+
+    # Fetch again to get info for any newly imported words
+    words_in_line = repo.get_words(line_words)
+    words_by_token = {w.word: w for w in words_in_line}
+
+    orm_line_words = [words_by_token[lw] for lw in line_words]
+    last_word = orm_line_words[-1]
 
     line = ""
 
     # TODO: Sort out apostrophes! It currently adds far too many syllables!
 
-    for prosodic_word in prosodic_words[0:len(prosodic_words) - 1]:
+    # Parody all but last word
+    for word in orm_line_words[0:len(orm_line_words) - 1]:
         # TODO: Make this more resilient to all punctuations
-        if prosodic_word.token == ",":
-            parody_word = analyse_word(prosodic_word.token)
-        elif prosodic_word.token in word_cache:
-            parody_word = word_cache[prosodic_word.token]
+        if word.word == ",":
+            parody_word = analyse_word(word.word)
+        elif word.word in cache.word_cache:
+            parody_word = cache.word_cache[word.word]
         else:
-            target_stress = prosodic_word.stress
-            target_pos = get_pos(prosodic_word.token)
-            gen_options = WordGenOptions(original=prosodic_word.token,
+            target_stress = word.stress
+            target_pos = get_pos(word.word)
+            gen_options = WordGenOptions(original=word.word,
                                          target_stress=target_stress,
                                          target_pos=target_pos)
             parody_word = corpus.get_word(gen_options)
-            word_cache[prosodic_word.token] = parody_word
+            cache.word_cache[word.word] = parody_word
 
         line = line + " " + parody_word.rawWord
 
-    if last_word.token in word_cache:
-        final_word = word_cache[last_word.token]
+    # Parody last word
+    # TODO: Lookahead to ensure all last words rhyme up front, rather than using different substitutions for mid/emd line versions of same word
+    if last_word.word in cache.rhyming_word_cache:
+        final_word = cache.rhyming_word_cache[last_word.word]
     else:
-        # TODO: Look up words in database to avoid re-processing words we know
         options = WordGenOptions(
-            original=last_word.token,
+            original=last_word.word,
             target_stress=last_word.stress,
-            target_pos=get_pos(last_word.token),
-            rhyme_with=last_word.token)
+            target_pos=get_pos(last_word.word),
+            rhyme_with=last_word)
         final_word = corpus.get_word(options)
-        word_cache[last_word.token] = final_word
+        cache.rhyming_word_cache[last_word.word] = final_word
 
     line = line + " " + final_word.rawWord
 
-    line_cache[line] = line
+    cache.line_cache[line] = line
     return line
 
 
