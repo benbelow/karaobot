@@ -1,6 +1,7 @@
 import nltk as nltk
 import prosodic as prosodic
 
+from parody.analysis.AnalysedWord import analyse_word
 from parody.generation.Corpus import Corpus, WordGenOptions
 
 corpus = Corpus()
@@ -25,10 +26,17 @@ def generate_parody_with_line_ids(lyrics):
     return parody
 
 def generate_parody_line(line):
+    line = line.lower()
     if len(line) == 0:
         return ''
     if line in line_cache:
         return line_cache[line]
+
+    # TODO: It would be nice to keep punctuation in, but for now it is treated as a whole word and so leaves off the end - fix later
+    line = line.replace(",", "")
+    line = line.replace(".", "")
+    line = line.replace(":", "")
+    line = line.replace(";", "")
 
     prosodic_text = prosodic.Text(line)
     prosodic_stanza = prosodic_text.children[0]
@@ -43,7 +51,10 @@ def generate_parody_line(line):
     # TODO: Sort out apostrophes! It currently adds far too many syllables!
 
     for prosodic_word in prosodic_words[0:len(prosodic_words) - 1]:
-        if prosodic_word.token in word_cache:
+        # TODO: Make this more resilient to all punctuations
+        if prosodic_word.token == ",":
+            parody_word = analyse_word(prosodic_word.token)
+        elif prosodic_word.token in word_cache:
             parody_word = word_cache[prosodic_word.token]
         else:
             target_stress = prosodic_word.stress
