@@ -25,13 +25,17 @@ class WordRepository:
         with Session(self.engine) as session:
             return session.query(Word)
 
-    def get_word(self, word):
+    def query_words(self, session, load_rhymes):
+        return session.query(Word).options(joinedload(Word.rhymes)) \
+            if load_rhymes \
+            else session.query(Word)
+
+    def get_word(self, word, load_rhymes=False):
         with Session(self.engine) as session:
-            db_word = session.query(Word).options(joinedload(Word.rhymes)).get(word)
+            db_word = self.query_words(session, load_rhymes).get(word)
             return db_word
 
-    def get_words(self, words):
+    def get_words(self, words, load_rhymes=False):
         with Session(self.engine) as session:
-            query = session.query(Word).options(joinedload(Word.rhymes))
-            db_words = query.filter(Word.word.in_(words))
+            db_words = self.query_words(session, load_rhymes).filter(Word.word.in_(words))
             return [w for w in db_words]

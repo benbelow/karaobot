@@ -60,11 +60,12 @@ class Corpus:
             return self.get_stressed_word(target_stress, target_pos)
 
     def get_rhyming_word(self, rhyme_with, target_stress, target_pos):
-        if not rhyme_with.rhymes:
+        if not rhyme_with.get_rhymes():
             rhyme_with = import_rhymes(rhyme_with)
+            rhyme_with = repo.get_word(rhyme_with.word, load_rhymes=True)
 
-        perfect_rhymes = [r for r in rhyme_with.rhymes2() if r.score >= 300]
-        imperfect_rhymes = [r for r in rhyme_with.rhymes2() if r.score < 300]
+        perfect_rhymes = [r for r in rhyme_with.get_rhymes() if r.score >= 300]
+        imperfect_rhymes = [r for r in rhyme_with.get_rhymes() if r.score < 300]
 
 
         # TODO: Weight towards more common words for rhymes

@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer, ForeignKey, String
 from sqlalchemy.orm import declarative_base, relationship, backref
+from sqlalchemy.orm.exc import DetachedInstanceError
 
 from parody.analysis.AnalysedWord import AnalysedWord
 from .. import schema
@@ -16,8 +17,12 @@ class Word(Base):
 
     rhymes = relationship("WordRhyme")
 
-    def rhymes2(self):
-        return [r for r in self.rhymes]
+    def get_rhymes(self):
+        try:
+            return [r for r in self.rhymes]
+        # TODO: Ew this is hacky, work out a better way of dealing with lazy loading
+        except DetachedInstanceError as e:
+            return None
 
     def analysedWord(self):
         return AnalysedWord(raw_word=self.word, part_of_speech=self.part_of_speech, stress=self.stress)
