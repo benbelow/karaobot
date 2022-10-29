@@ -40,6 +40,10 @@ class Karafun:
             original_lyrics = ""
             original_lyrics_by_line_id = {}
 
+            song = [x for x in root if x.tag == "song"][0]
+            title = [x for x in song if x.tag == "title"][0].text
+            artist = [x for x in song if x.tag == "artist"][0].text
+
             karaoke = [x for x in root if x.tag == "karaoke"][0]
             pages = [x for x in karaoke if x.tag == "page"]
 
@@ -86,7 +90,11 @@ class Karafun:
                 log.write("\n")
             try:
                 # TODO: Fix external (actually internal?) dependencies in mitmproxy
-                parody = requests.post("http://localhost:5000/parody", json=original_lyrics_by_line_id).json()
+                parody = requests.post(
+                    "http://localhost:5000/parody",
+                    json=original_lyrics_by_line_id,
+                    headers={"Karafun-Title": title, "Karafun-Artist": artist}
+                ).json()
 
             except Exception as e:
                 log.write(e)

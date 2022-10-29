@@ -7,6 +7,9 @@ from parody.analysis.RhymeFinder import import_rhymes
 from parody.generation.ParodyGenerator import generate_parody_with_line_ids, generate_parody, \
     generate_parody_from_metadata
 
+HEADER_ARTIST = 'Karafun-Artist'
+HEADER_TITLE = 'Karafun-Title'
+
 app = Flask(__name__)
 
 repo = WordRepository()
@@ -20,7 +23,9 @@ def index():
 @app.route('/parody', methods=['POST'])
 def generate_parody_with_ids():
     data = request.get_json()
-    parody = generate_parody_with_line_ids(data)
+    artist = request.headers.get(HEADER_ARTIST)
+    title = request.headers.get(HEADER_TITLE)
+    parody = generate_parody_with_line_ids(data, artist, title)
     print(parody)
     return parody
 
@@ -28,8 +33,10 @@ def generate_parody_with_ids():
 @app.route('/parody/no-ids', methods=['POST'])
 def generate_parody_no_ids():
     data = request.get_data().decode("utf-8")
+    artist = request.headers.get('Karafun-Artist')
+    title = request.headers.get('Karafun-Title')
     parody = ""
-    for line in generate_parody(data):
+    for line in generate_parody(data, artist, title):
         parody += line
         parody += "\n"
     return parody

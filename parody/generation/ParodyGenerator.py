@@ -16,14 +16,50 @@ with open("data/source_data/blocklist.txt", 'r') as block_file:
 
 
 class Cache:
-    rhyming_word_cache = {}
-    word_cache = {}
-    line_cache = {}
+    rhyming_word_cache_by_metadata = {}
+    word_cache_by_metadata = {}
+    line_cache_by_metadata = {}
 
     def clear(self):
-        self.rhyming_word_cache = {}
-        self.word_cache = {}
-        self.line_cache = {}
+        self.rhyming_word_cache_by_metadata = {}
+        self.word_cache_by_metadata = {}
+        self.line_cache_by_metadata = {}
+
+    def rhyming_word_cache(self, artist, title):
+        artist = artist if artist else "Unknown"
+        title = title if title else "Unknown"
+        if artist not in self.rhyming_word_cache_by_metadata.keys():
+            self.rhyming_word_cache_by_metadata[artist] = {}
+
+        artist_cache = self.rhyming_word_cache_by_metadata[artist]
+
+        if title not in artist_cache.keys():
+            artist_cache[title] = {}
+        return artist_cache[title]
+
+    def word_cache(self, artist, title):
+        artist = artist if artist else "Unknown"
+        title = title if title else "Unknown"
+        if artist not in self.word_cache_by_metadata.keys():
+            self.word_cache_by_metadata[artist] = {}
+
+        artist_cache = self.word_cache_by_metadata[artist]
+
+        if title not in artist_cache.keys():
+            artist_cache[title] = {}
+        return artist_cache[title]
+
+    def line_cache(self, artist, title):
+        artist = artist if artist else "Unknown"
+        title = title if title else "Unknown"
+        if artist not in self.line_cache_by_metadata.keys():
+            self.line_cache_by_metadata[artist] = {}
+
+        artist_cache = self.line_cache_by_metadata[artist]
+
+        if title not in artist_cache.keys():
+            artist_cache[title] = {}
+        return artist_cache[title]
 
 
 corpus = Corpus()
@@ -33,17 +69,17 @@ cache = Cache()
 repo = WordRepository()
 
 
-def generate_parody(lyrics):
+def generate_parody(lyrics, artist, title):
     lines = str.splitlines(lyrics)
     for line in lines:
-        parody_line = generate_parody_line(line)
+        parody_line = generate_parody_line(line, artist, title)
         yield parody_line
-    cache.clear()
+    # cache.clear()
 
 
 def generate_parody_from_metadata(artist, title):
     original_lyrics = fetch_lyrics(artist, title)
-    parody = generate_parody(original_lyrics)
+    parody = generate_parody(original_lyrics, artist, title)
     for parody_line in parody:
         yield parody_line
     # Don't clear cache, as this will be called in background, and we don't want to clear it mid-generation if someone
@@ -52,22 +88,26 @@ def generate_parody_from_metadata(artist, title):
     # cache.clear()
 
 
-def generate_parody_with_line_ids(lyrics):
+def generate_parody_with_line_ids(lyrics, artist, title):
     parody = {}
 
     for line_id in lyrics:
-        parody_line = generate_parody_line(lyrics[line_id])
+        parody_line = generate_parody_line(lyrics[line_id], artist, title)
         parody[line_id] = parody_line.strip()
-    cache.clear()
+    # cache.clear()
     return parody
 
 
-def generate_parody_line(line):
+def generate_parody_line(line, artist, title):
+    line_cache = cache.line_cache(artist, title)
+    word_cache = cache.word_cache(artist, title)
+    rhyming_word_cache = cache.rhyming_word_cache(artist, title)
+
     line = line.lower()
     if len(line) == 0:
         return ''
-    if line in cache.line_cache:
-        return cache.line_cache[line]
+    if line in line_cache:
+        return line_cache[line]
 
     # TODO: It would be nice to keep punctuation in, but for now it is treated as a whole word and so leaves off the end - fix later
     line = line.replace(",", "")
@@ -105,8 +145,8 @@ def generate_parody_line(line):
         # TODO: Make this more resilient to all punctuations
         if word.word == ",":
             parody_word = analyse_word(word.word)
-        elif word.word in cache.word_cache:
-            parody_word = cache.word_cache[word.word]
+        elif word.word in word_cache:
+            parody_word = word_cache[word.word]
         else:
             target_stress = word.stress
             target_pos = get_pos(word.word)
@@ -114,14 +154,14 @@ def generate_parody_line(line):
                                          target_stress=target_stress,
                                          target_pos=target_pos)
             parody_word = corpus.get_word(gen_options)
-            cache.word_cache[word.word] = parody_word
+            word_cache[word.word] = parody_word
 
         line = line + " " + enforce_blocklist(parody_word.rawWord, word.word)
 
     # Parody last word
     # TODO: Lookahead to ensure all last words rhyme up front, rather than using different substitutions for mid/emd line versions of same word
-    if last_word.word in cache.rhyming_word_cache:
-        final_word = cache.rhyming_word_cache[last_word.word]
+    if last_word.word in rhyming_word_cache:
+        final_word = rhyming_word_cache[last_word.word]
     else:
         options = WordGenOptions(
             original=last_word.word,
@@ -129,11 +169,11 @@ def generate_parody_line(line):
             target_pos=get_pos(last_word.word),
             rhyme_with=last_word)
         final_word = corpus.get_word(options)
-        cache.rhyming_word_cache[last_word.word] = final_word
+        rhyming_word_cache[last_word.word] = final_word
 
     line = line + " " + enforce_blocklist(final_word.rawWord, last_word.word)
 
-    cache.line_cache[line] = line
+    line_cache[line] = line
     return line
 
 
