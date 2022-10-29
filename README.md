@@ -27,18 +27,20 @@ __________________
 
 Currently this is just a python script with hardcoded values.
 
+Before running, you must first run the `setup.py` script to seed the database with processed words 
+
+Required config: 
+
+* `DB_URI=postgresql+psycopg2://postgres:<mypassword>@localhost:5432/karaobot`
+
+
 To generate a parody:
 
-#### Via Genius
+#### As a REST API
 
-* Replace the artist name and song name in the `fetch_lyrics` call of `main.py` with the target song details
-
-#### From local input
-
-* Remove the line fetching original lyrics from genius (`fetch_lyrics` in `main.py`)
-* Modify `input.txt` with your desired input
-
-* Output lyrics will be written to `output.txt`
+* Run `server.py` using flask
+  * Required config:
+    * environment variable of `DB_URI=postgresql+psycopg2://postgres:<mypassword>@localhost:5432/karaobot` 
 
 __________________
 
