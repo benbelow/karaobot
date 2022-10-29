@@ -23,6 +23,7 @@ ever
 every
 far
 for
+from
 go
 got
 had
@@ -84,12 +85,14 @@ saw
 see
 she
 so
+that
 the
 them
 then
 there
 these
 they
+this
 to
 too
 us

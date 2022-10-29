@@ -62,6 +62,10 @@ def generate_parody_line(line):
     line = line.replace(".", "")
     line = line.replace(":", "")
     line = line.replace(";", "")
+    line = line.replace("?", "")
+    line = line.replace("?", "")
+    line = line.replace("(", "")
+    line = line.replace(")", "")
 
     line_words = line.split()
     words_in_line = repo.get_words(line_words)
