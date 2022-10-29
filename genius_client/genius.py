@@ -1,3 +1,5 @@
+import re
+
 import lyricsgenius
 
 client_id = 'hjaqSeeyYSoqjhHQxpoKS4bgR0hIJyGupDRialQ2ahS6oFdA5snmlLvYehEZ3bCu'
@@ -9,4 +11,7 @@ genius = lyricsgenius.Genius(client_access_token)
 
 def fetch_lyrics(artist, song):
     result = genius.search_song(title=song, artist=artist)
-    return result.lyrics
+    lyrics = result.lyrics
+    lyrics = re.sub("[\[].*?[\]]", "", lyrics)
+    lyrics = re.sub("[0-9]+Embed", "", lyrics)
+    return lyrics

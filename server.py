@@ -4,7 +4,8 @@ import json
 
 from data.repositories.wordRepository import WordRepository
 from parody.analysis.RhymeFinder import import_rhymes
-from parody.generation.ParodyGenerator import generate_parody_with_line_ids, generate_parody
+from parody.generation.ParodyGenerator import generate_parody_with_line_ids, generate_parody, \
+    generate_parody_from_metadata
 
 app = Flask(__name__)
 
@@ -29,6 +30,17 @@ def generate_parody_no_ids():
     data = request.get_data().decode("utf-8")
     parody = ""
     for line in generate_parody(data):
+        parody += line
+        parody += "\n"
+    return parody
+
+
+@app.route('/parody/from-metadata', methods=['POST'])
+def generate_parody_from_metadata_http():
+    data = request.get_data().decode("utf-8")
+    metadata = json.loads(data)
+    parody = ""
+    for line in generate_parody_from_metadata(metadata["Artist"], metadata["Title"]):
         parody += line
         parody += "\n"
     return parody

@@ -2,6 +2,7 @@ import nltk as nltk
 import prosodic as prosodic
 
 from data.repositories.wordRepository import WordRepository
+from genius_client.genius import fetch_lyrics
 from parody.analysis.AnalysedWord import analyse_word, AnalysedWord
 from parody.analysis.WordImporter import import_words
 from parody.generation.Corpus import Corpus, WordGenOptions
@@ -40,6 +41,17 @@ def generate_parody(lyrics):
     cache.clear()
 
 
+def generate_parody_from_metadata(artist, title):
+    original_lyrics = fetch_lyrics(artist, title)
+    parody = generate_parody(original_lyrics)
+    for parody_line in parody:
+        yield parody_line
+    # Don't clear cache, as this will be called in background, and we don't want to clear it mid-generation if someone
+    # is queuing songs just as another hits the front of the queue
+    # TODO: Cache per request scope, so we can clear again here
+    # cache.clear()
+
+
 def generate_parody_with_line_ids(lyrics):
     parody = {}
 
@@ -66,6 +78,10 @@ def generate_parody_line(line):
     line = line.replace("?", "")
     line = line.replace("(", "")
     line = line.replace(")", "")
+    line = line.replace("[", "")
+    line = line.replace("]", "")
+    line = line.replace("{", "")
+    line = line.replace("}", "")
 
     line_words = line.split()
     words_in_line = repo.get_words(line_words)

@@ -5,6 +5,7 @@ from mitmproxy import ctx
 import xml.etree.ElementTree as ET
 import requests
 
+
 class Karafun:
     # Intercept all responses
     # API docs: https://docs.mitmproxy.org/stable/api/mitmproxy/http.html#HTTPFlow
@@ -12,6 +13,23 @@ class Karafun:
         log = open("log.txt", "a")
 
         request_path = flow.request.path
+
+        if "info.php" in request_path:
+            text = flow.response.text
+            root = ET.fromstring(text)
+
+            song = [x for x in root if x.tag == "song"][0]
+            title = [x for x in song if x.tag == "title"][0].text
+            artist = [x for x in song if x.tag == "artist"][0].text
+
+            try:
+                # TODO: Fix external (actually internal?) dependencies in mitmproxy
+                requests.post("http://localhost:5000/parody/from-metadata",
+                              json={"Title": title, "Artist": artist}
+                              )
+
+            except Exception as e:
+                log.write(e)
 
         # Only modify the lyrics
         if "request.php" in request_path:
@@ -68,7 +86,7 @@ class Karafun:
                 log.write("\n")
             try:
                 # TODO: Fix external (actually internal?) dependencies in mitmproxy
-                parody = requests.post("http://localhost:5000/parody", json= original_lyrics_by_line_id).json()
+                parody = requests.post("http://localhost:5000/parody", json=original_lyrics_by_line_id).json()
 
             except Exception as e:
                 log.write(e)
