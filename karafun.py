@@ -1,9 +1,24 @@
 """
 Run as follows: mitmproxy -s karafun.py
 """
+import asyncio
+
 from mitmproxy import ctx
 import xml.etree.ElementTree as ET
 import requests
+import aiohttp
+
+
+async def pre_load(artist, title):
+    try:
+        async with aiohttp.ClientSession() as session:
+            # TODO: Fix external (actually internal?) dependencies in mitmproxy
+            await session.post("http://localhost:5000/parody/from-metadata",
+                               json={"Title": title, "Artist": artist}
+                               )
+
+    except Exception as e:
+        print(e)
 
 
 class Karafun:
@@ -24,9 +39,7 @@ class Karafun:
 
             try:
                 # TODO: Fix external (actually internal?) dependencies in mitmproxy
-                requests.post("http://localhost:5000/parody/from-metadata",
-                              json={"Title": title, "Artist": artist}
-                              )
+                asyncio.create_task(pre_load(artist, title))
 
             except Exception as e:
                 log.write(e)

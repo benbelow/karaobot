@@ -132,7 +132,7 @@ def lookup_last_words(lines):
         orm_last_words = orm_last_words + new_orm_last_words
 
     have_rhymes = [n for n in orm_last_words if n.get_rhymes()]
-    needing_rhymes = [n for n in orm_last_words if not n.get_rhymes()]
+    needing_rhymes = set([n for n in orm_last_words if not n.get_rhymes()])
     print("HOW MANY NEED RHYMES?")
     print(len(needing_rhymes))
 

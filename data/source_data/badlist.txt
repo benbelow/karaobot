@@ -325,3 +325,8 @@ thru
 pri
 dal
 sal
+mem
+bai
+kio
+wan
+mc
