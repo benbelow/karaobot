@@ -5,9 +5,33 @@ from parody.analysis.AnalysedWord import AnalysedWord, analyse_word
 from pyrhyme import rhyming_list
 
 from parody.analysis.RhymeFinder import import_rhymes
+from parody.analysis.WordImporter import import_words
+from utils.random_utils import chance
+
+CHANCE_OF_SPOOKY_WORD_IN_NON_RHYME = 10
 
 repo = WordRepository()
 
+spooky_words_by_stress = {}
+
+with open("data/source_data/spooky_words.txt", 'r') as block_file:
+    spooky_words = []
+    lines = block_file.readlines()
+    for line in lines:
+        spooky_words.append(line.strip())
+
+    orm_words = repo.get_words(spooky_words)
+    new_words = list(set(spooky_words) - set([w.word for w in orm_words]))
+    import_words(new_words)
+    orm_words = orm_words + repo.get_words(new_words)
+
+    for orm_word in orm_words:
+        word = orm_word.analysed_word()
+        stress = word.stress
+
+        if stress not in spooky_words_by_stress:
+            spooky_words_by_stress[stress] = []
+        spooky_words_by_stress[stress].append(word)
 
 class WordGenOptions:
     def __init__(self, original, target_stress=None, rhyme_with=None, target_pos=None):
@@ -74,7 +98,7 @@ class Corpus:
         # TODO: Sort out mixture of AnalysedWord and DTO
 
         # TODO: Implement fallback for stress? Eg. PP might be a good replacement for UP if it rhymes, but is currently rejected
-        valid_rhyming_words = [r.analysedWord() for r in orm_rhymes if r.stress == target_stress] \
+        valid_rhyming_words = [r.analysed_word() for r in orm_rhymes if r.stress == target_stress] \
             if target_stress is not None \
             else orm_rhymes
 
@@ -84,7 +108,7 @@ class Corpus:
             # TODO: Deduplicate this code
             rhyme_source = imperfect_rhymes
             orm_rhymes = repo.get_words([r.word2 for r in rhyme_source])
-            valid_rhyming_words = [r.analysedWord() for r in orm_rhymes if r.stress == target_stress] \
+            valid_rhyming_words = [r.analysed_word() for r in orm_rhymes if r.stress == target_stress] \
                 if target_stress is not None \
                 else orm_rhymes
 
@@ -93,7 +117,13 @@ class Corpus:
             else self.get_stressed_word(target_stress, target_pos)
 
     def get_stressed_word(self, target_stress, target_pos):
-        if target_pos not in self.words_by_stress_then_speech_part[target_stress]:
+        if target_stress in spooky_words_by_stress.keys() \
+                and spooky_words_by_stress[target_stress] \
+                and chance(CHANCE_OF_SPOOKY_WORD_IN_NON_RHYME):
+            return random.choice(spooky_words_by_stress[target_stress])
+
+        if target_stress not in self.words_by_stress_then_speech_part.keys() \
+                or target_pos not in self.words_by_stress_then_speech_part[target_stress]:
             # Correct POS not mandatory - just matching scansion is a good fallback!
             # TODO: Randomise rather than always taking first matching POS
             first_valid_pos = next(iter(self.words_by_stress_then_speech_part[target_stress]))

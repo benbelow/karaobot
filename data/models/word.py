@@ -24,7 +24,7 @@ class Word(Base):
         except DetachedInstanceError as e:
             return None
 
-    def analysedWord(self):
+    def analysed_word(self):
         return AnalysedWord(raw_word=self.word, part_of_speech=self.part_of_speech, stress=self.stress)
 
 

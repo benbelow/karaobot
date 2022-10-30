@@ -10,9 +10,17 @@ from parody.generation.Corpus import Corpus, WordGenOptions
 from stopwatch import Stopwatch
 
 blocked_words = []
+bad_words = []
 
-with open("data/source_data/blocklist.txt", 'r') as block_file:
-    lines = block_file.readlines()
+# These words are offensive and should never be shown
+with open("data/source_data/blocklist.txt", 'r') as bad_list:
+    lines = bad_list.readlines()
+    for line in lines:
+        blocked_words.append(line.strip())
+
+# These words aren't offensive, but are rubbish words.
+with open("data/source_data/badlist.txt", 'r') as bad_list:
+    lines = bad_list.readlines()
     for line in lines:
         blocked_words.append(line.strip())
 
@@ -128,6 +136,10 @@ def lookup_last_words(lines):
     print("HOW MANY NEED RHYMES?")
     print(len(needing_rhymes))
 
+    if len(needing_rhymes) > 50:
+        # Somethimes genius thinks there's far too many lyrics and we start getting rate limited on rhyming - mostly these are easier to just ignore the initial pre-load for
+        raise Exception
+
     for lw in needing_rhymes:
         import_rhymes(lw)
 
@@ -235,11 +247,12 @@ def remove_special_characters(line):
     line = line.replace("{", "")
     line = line.replace("}", "")
     line = line.replace("!", "")
+    line = line.replace("\"", "")
     return line
 
-
+# TODO: Make this pre-selection, so we don't fall back to the original words
 def enforce_blocklist(parody_word, original):
-    return original if parody_word in blocked_words else parody_word
+    return original if (parody_word in blocked_words or parody_word in bad_words) else parody_word
 
 
 def get_pos(word):

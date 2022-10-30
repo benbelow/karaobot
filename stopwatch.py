@@ -13,7 +13,9 @@ class Stopwatch:
         return round(time.time_ns() - self.start_time, 0) / 1000000
 
     def print_elapsed(self, log):
-        print("" + log + ": " + str(self.elapsed()))
+        x = 1
+        # UNCOMMENT FOR PERF. DEBUGGING
+        # print("" + log + ": " + str(self.elapsed()))
 
     def split(self, log):
         self.print_elapsed(log)

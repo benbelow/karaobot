@@ -31,5 +31,5 @@ rhymes = Table('WordRhymes', metadata,
 # This is happening every time the API is called! Extract to a migrations script only!
 # Create all tables
 metadata.create_all()
-for _t in metadata.tables:
-    print("Table: ", _t)
+# for _t in metadata.tables:
+#     print("Table: ", _t)
