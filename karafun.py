@@ -96,11 +96,11 @@ class Karafun:
                         original_lyrics_by_line_id[line_id] += " "
                     original_lyrics += "\n"
 
-            for k in original_lyrics_by_line_id:
-                log.write(str(k))
-                log.write(":")
-                log.write(original_lyrics_by_line_id[k])
-                log.write("\n")
+            # for k in original_lyrics_by_line_id:
+            #     log.write(str(k))
+            #     log.write(":")
+            #     log.write(original_lyrics_by_line_id[k])
+            #     log.write("\n")
             try:
                 # TODO: Fix external (actually internal?) dependencies in mitmproxy
                 parody = requests.post(
@@ -111,6 +111,14 @@ class Karafun:
 
             except Exception as e:
                 log.write(e)
+
+            log.write("++++++++++++++++++++++++++++++++++++++++++\n")
+            log.write(title + " - " + artist + "\n")
+            log.write("\n")
+
+            for k in parody:
+                log.write(parody[str(k)])
+                log.write("\n")
 
             for ip, page in enumerate(pages):
                 lines = [x for x in page if x.tag == "line"]
