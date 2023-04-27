@@ -6,6 +6,11 @@
 
 * Python 3
 
+C tooling is required for some dependencies. 
+
+On Mac I've had to add: `export C_INCLUDE_PATH="/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/include/python3.9"` 
+to my bash profile, and after that pip install worked in a venv in PyCharm
+
 ### Setup
 
 #### Database

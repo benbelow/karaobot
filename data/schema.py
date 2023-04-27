@@ -7,9 +7,11 @@ from sqlalchemy import Integer, String
 from sqlalchemy_utils import database_exists, create_database
 
 db_uri = os.getenv('DB_URI')
+print(db_uri)
 engine = create_engine(db_uri)
 
 if not database_exists(engine.url):
+    print("creating db")
     create_database(engine.url)
 
 # Create a metadata instance

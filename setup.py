@@ -1,6 +1,10 @@
 from data.repositories.wordRepository import WordRepository
 from parody.analysis.WordImporter import import_words
 
+import nltk
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
+
 repo = WordRepository()
 
 with open("data/source_data/english_words_58_000.txt", 'r') as stop_words_file:
