@@ -15,6 +15,7 @@ class Word(Base):
     stress = Column(String)
     nltk_part_of_speech = Column(String)
     spacy_part_of_speech = Column(String)
+    spacy_morph = Column(String)
 
     rhymes = relationship("WordRhyme")
 
@@ -30,7 +31,8 @@ class Word(Base):
             raw_word=self.word,
             nltk_part_of_speech=self.nltk_part_of_speech,
             stress=self.stress,
-            spacy_pos=self.spacy_part_of_speech)
+            spacy_pos=self.spacy_part_of_speech,
+            spacy_morph=self.spacy_morph)
 
 
 class WordRhyme(Base):

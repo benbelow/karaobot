@@ -34,9 +34,10 @@ with open("data/source_data/spooky_words.txt", 'r') as block_file:
         spooky_words_by_stress[stress].append(word)
 
 class WordGenOptions:
-    def __init__(self, original, target_stress=None, rhyme_with=None, target_pos=None):
+    def __init__(self, original, target_stress=None, rhyme_with=None, target_pos=None, target_morph=None):
         self.original = original
         self.target_stress = target_stress
+        self.target_morph = target_morph
 
         # ORM WORD (not raw word) for use of join table
         self.rhyme_with = rhyme_with
@@ -72,6 +73,7 @@ class Corpus:
         rhyme_with = generation_options.rhyme_with
         target_stress = generation_options.target_stress
         target_pos = generation_options.target_pos
+        target_morph = generation_options.target_morph
 
         if len(target_stress) == 0:
             return analyse_word("")
@@ -79,11 +81,11 @@ class Corpus:
         if generation_options.original in self.stop_words:
             return analyse_word(generation_options.original)
         if rhyme_with is not None:
-            return self.get_rhyming_word(rhyme_with, target_stress, target_pos)
+            return self.get_rhyming_word(rhyme_with, target_stress, target_pos, target_morph)
         if target_stress is not None:
-            return self.get_stressed_word(target_stress, target_pos)
+            return self.get_stressed_word(target_stress, target_pos, target_morph)
 
-    def get_rhyming_word(self, rhyme_with, target_stress, target_pos):
+    def get_rhyming_word(self, rhyme_with, target_stress, target_pos, target_morph):
         if not rhyme_with.get_rhymes():
             import_rhymes(rhyme_with)
             rhyme_with = repo.get_word(rhyme_with.word, load_rhymes=True)
@@ -116,7 +118,7 @@ class Corpus:
             if len(valid_rhyming_words) != 0 \
             else self.get_stressed_word(target_stress, target_pos)
 
-    def get_stressed_word(self, target_stress, target_pos):
+    def get_stressed_word(self, target_stress, target_pos, target_morph):
         if target_stress in spooky_words_by_stress.keys() \
                 and spooky_words_by_stress[target_stress] \
                 and chance(CHANCE_OF_SPOOKY_WORD_IN_NON_RHYME):
@@ -131,4 +133,20 @@ class Corpus:
         valid_words = self.words_by_stress_then_speech_part[target_stress][target_pos]
         if len(valid_words) == 0:
             raise Exception(f'No valid words found with target stress: {target_stress} and pos: {target_pos}')
-        return random.choice(valid_words)
+
+        extra_valid_words = [vw for vw in valid_words if vw.spacy_morph == target_morph]
+
+        chosen = random.choice(extra_valid_words) if extra_valid_words else random.choice(valid_words)
+
+        # self.log_stressed_word(chosen, True, True, extra_valid_words)
+        return chosen
+
+    def log_stressed_word(self,
+                          chosen_word,
+                          is_target_stress,
+                          is_target_pos,
+                          is_target_morph):
+        print(f" -> {chosen_word.rawWord}: {self.log_glyph(is_target_stress)}{self.log_glyph(is_target_pos)}{self.log_glyph(is_target_morph)}")
+
+    def log_glyph(self, flag):
+        return "✅" if flag else "❌";

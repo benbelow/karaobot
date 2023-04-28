@@ -3,23 +3,30 @@ from data.repositories.wordRepository import WordRepository
 from parody.analysis.AnalysedWord import analyse_word
 
 
+def batch(iterable, n=1):
+    l = len(iterable)
+    for ndx in range(0, l, n):
+        yield iterable[ndx:min(ndx + n, l)]
+
+
 def import_words(raw_words):
     raw_words = [w for w in raw_words]
     if not raw_words:
         return
-    dtos = []
-    i = 0
-    for raw_word in raw_words:
-        i += 1
-        if i % 1000 == 0:
-            print("Import: Analysed: " + str(i) + " words - last seen: " + raw_word)
-        word = analyse_word(raw_word.strip())
-        dto_word = Word(
-            word=word.rawWord,
-            stress=word.stress,
-            nltk_part_of_speech=word.nltkPartOfSpeech,
-            spacy_part_of_speech=word.spacy_pos)
-        dtos.append(dto_word)
+
     repo = WordRepository()
-    repo.bulk_insert_words(dtos)
-    print("Imported " + str(len(dtos)) + " words.")
+
+    for b in batch(raw_words, 1000):
+        dtos = []
+        for raw_word in b:
+            word = analyse_word(raw_word.strip())
+            dto_word = Word(
+                word=word.rawWord,
+                stress=word.stress,
+                nltk_part_of_speech=word.nltkPartOfSpeech,
+                spacy_part_of_speech=word.spacy_pos,
+                spacy_morph=word.spacy_morph)
+            dtos.append(dto_word)
+        repo.bulk_insert_words(dtos)
+        print("Imported " + str(len(dtos)) + " words.")
+        print("Last Seen: " + b[-1])

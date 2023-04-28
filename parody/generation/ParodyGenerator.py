@@ -204,9 +204,11 @@ def generate_parody_line(line, last_word_dict, artist, title):
         else:
             target_stress = word.stress
             target_pos = token.pos_
+            target_morph = token.morph.__str__()
             gen_options = WordGenOptions(original=word.word,
                                          target_stress=target_stress,
-                                         target_pos=target_pos)
+                                         target_pos=target_pos,
+                                         target_morph=target_morph)
             parody_word = corpus.get_word(gen_options)
             word_cache[word.word] = parody_word
 
