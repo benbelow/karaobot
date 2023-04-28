@@ -1,6 +1,6 @@
 from data.models.word import Word
 from data.repositories.wordRepository import WordRepository
-from parody.analysis.AnalysedWord import analyse_word
+from parody.analysis.AnalysedWord import analyse_word, analyse_sentence
 
 
 def batch(iterable, n=1):
@@ -9,24 +9,32 @@ def batch(iterable, n=1):
         yield iterable[ndx:min(ndx + n, l)]
 
 
-def import_words(raw_words):
-    raw_words = [w for w in raw_words]
-    if not raw_words:
+def import_words(lines):
+    lines = [l for l in lines]
+    if not lines:
         return
 
     repo = WordRepository()
 
-    for b in batch(raw_words, 1000):
+
+
+    existing = [w.word for w in repo.fetch_all_words()]
+
+    for line_batch in batch(lines, 1000):
         dtos = []
-        for raw_word in b:
-            word = analyse_word(raw_word.strip())
-            dto_word = Word(
-                word=word.rawWord,
-                stress=word.stress,
-                nltk_part_of_speech=word.nltkPartOfSpeech,
-                spacy_part_of_speech=word.spacy_pos,
-                spacy_morph=word.spacy_morph)
-            dtos.append(dto_word)
+        for line in line_batch:
+            sentence = analyse_sentence(line.strip())
+            for analysed_word in sentence:
+                if analysed_word.rawWord not in existing:
+                    dto_word = Word(
+                        word=analysed_word.rawWord,
+                        stress=analysed_word.stress,
+                        nltk_part_of_speech=analysed_word.nltkPartOfSpeech,
+                        spacy_part_of_speech=analysed_word.spacy_pos,
+                        spacy_morph=analysed_word.spacy_morph)
+                    dtos.append(dto_word)
+                    existing.append(dto_word.word)
+
         repo.bulk_insert_words(dtos)
         print("Imported " + str(len(dtos)) + " words.")
-        print("Last Seen: " + b[-1])
+        print("Last Seen: " + line_batch[-1])

@@ -4,7 +4,13 @@ import spacy
 nlp = spacy.load("en_core_web_sm")
 
 
-def analyse_word(raw_word):
+def analyse_sentence(raw_sentence):
+    raw_sentence = raw_sentence.lower()
+    sentence = nlp(raw_sentence)
+    return [analyse_word(sw.text, sw) for sw in sentence]
+
+
+def analyse_word(raw_word, spacy_word=None):
     prosodic_word = prosodic.Word(raw_word)
     stress = prosodic_word.stress
 
@@ -12,7 +18,9 @@ def analyse_word(raw_word):
         tokenized = nltk.word_tokenize(raw_word)
         part_of_speech = nltk.pos_tag(tokenized)[0][1]
 
-        spacy_word = nlp(raw_word)[0]
+        if spacy_word is None:
+            spacy_word = nlp(raw_word)[0]
+
         spacy_pos = spacy_word.pos_
         spacy_morph = spacy_word.morph.__str__()
     else:
