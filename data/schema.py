@@ -20,7 +20,8 @@ metadata = MetaData(engine)
 words = Table('Words', metadata,
               Column('word', String, primary_key=True),
               Column('stress', String),
-              Column('part_of_speech', String),
+              Column('nltk_part_of_speech', String),
+              Column('spacy_part_of_speech', String)
               )
 
 rhymes = Table('WordRhymes', metadata,

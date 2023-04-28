@@ -1,5 +1,7 @@
 import nltk as nltk
 import prosodic as prosodic
+import spacy
+nlp = spacy.load("en_core_web_sm")
 
 from data.repositories.wordRepository import WordRepository
 from genius_client.genius import fetch_lyrics
@@ -163,9 +165,11 @@ def generate_parody_line(line, last_word_dict, artist, title):
 
     line = remove_special_characters(line)
 
+    tokens = nlp(line)
+
     sw = Stopwatch().start()
 
-    line_words = line.split()
+    line_words = [t.text for t in tokens]
     words_in_line = repo.get_words(line_words)
 
     sw.split("Get Words In Line")
@@ -190,7 +194,8 @@ def generate_parody_line(line, last_word_dict, artist, title):
     # TODO: Sort out apostrophes! It currently adds far too many syllables!
 
     # Parody all but last word
-    for word in orm_line_words[0:len(orm_line_words) - 1]:
+    for token in tokens[0:len(tokens) - 1]:
+        word = words_by_token[token.text]
         # TODO: Make this more resilient to all punctuations
         if word.word == ",":
             parody_word = analyse_word(word.word)
@@ -198,7 +203,7 @@ def generate_parody_line(line, last_word_dict, artist, title):
             parody_word = word_cache[word.word]
         else:
             target_stress = word.stress
-            target_pos = get_pos(word.word)
+            target_pos = token.pos_
             gen_options = WordGenOptions(original=word.word,
                                          target_stress=target_stress,
                                          target_pos=target_pos)

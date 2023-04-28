@@ -12,9 +12,13 @@ def import_words(raw_words):
     for raw_word in raw_words:
         i += 1
         if i % 1000 == 0:
-            print("Imported: " + str(i) + " words - last seen: " + raw_word)
+            print("Import: Analysed: " + str(i) + " words - last seen: " + raw_word)
         word = analyse_word(raw_word.strip())
-        dto_word = Word(word=word.rawWord, stress=word.stress, part_of_speech=word.partOfSpeech)
+        dto_word = Word(
+            word=word.rawWord,
+            stress=word.stress,
+            nltk_part_of_speech=word.nltkPartOfSpeech,
+            spacy_part_of_speech=word.spacy_pos)
         dtos.append(dto_word)
     repo = WordRepository()
     repo.bulk_insert_words(dtos)

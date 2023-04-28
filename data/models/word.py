@@ -13,7 +13,8 @@ class Word(Base):
 
     word = Column(String, primary_key=True)
     stress = Column(String)
-    part_of_speech = Column(String)
+    nltk_part_of_speech = Column(String)
+    spacy_part_of_speech = Column(String)
 
     rhymes = relationship("WordRhyme")
 
@@ -25,7 +26,11 @@ class Word(Base):
             return None
 
     def analysed_word(self):
-        return AnalysedWord(raw_word=self.word, part_of_speech=self.part_of_speech, stress=self.stress)
+        return AnalysedWord(
+            raw_word=self.word,
+            nltk_part_of_speech=self.nltk_part_of_speech,
+            stress=self.stress,
+            spacy_pos=self.spacy_part_of_speech)
 
 
 class WordRhyme(Base):

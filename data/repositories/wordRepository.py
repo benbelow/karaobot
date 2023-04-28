@@ -3,7 +3,7 @@ import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session, joinedload
 
-from data.models.word import Word
+from data.models.word import Word, WordRhyme
 
 
 class WordRepository:
@@ -13,6 +13,7 @@ class WordRepository:
 
     def delete_all_words(self):
         with Session(self.engine) as session:
+            session.query(WordRhyme).delete()
             session.query(Word).delete()
             session.commit()
 

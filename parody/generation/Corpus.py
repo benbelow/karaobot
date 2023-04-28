@@ -51,9 +51,9 @@ class Corpus:
         words = repo.fetch_all_words()
 
         for db_word in words:
-            word = AnalysedWord(raw_word=db_word.word, stress=db_word.stress, part_of_speech=db_word.part_of_speech)
+            word = db_word.analysed_word()
             stress = word.stress
-            pos = word.partOfSpeech
+            pos = word.spacy_pos
 
             if stress not in self.words_by_stress_then_speech_part:
                 self.words_by_stress_then_speech_part[stress] = {}

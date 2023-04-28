@@ -13,6 +13,8 @@ to my bash profile, and after that pip install worked in a venv in PyCharm
 
 ### Setup
 
+`python -m spacy download en_core_web_sm` to download spacy data
+
 #### Database
 
 * Install dependencies
