@@ -8,7 +8,7 @@ from parody.analysis.RhymeFinder import import_rhymes
 from parody.analysis.WordImporter import import_words
 from utils.random_utils import chance
 
-CHANCE_OF_SPOOKY_WORD_IN_NON_RHYME = 10
+CHANCE_OF_SPOOKY_WORD_IN_NON_RHYME = 0
 
 repo = WordRepository()
 
@@ -98,25 +98,36 @@ class Corpus:
         rhyme_source = perfect_rhymes if perfect_rhymes else imperfect_rhymes
         orm_rhymes = repo.get_words([r.word2 for r in rhyme_source])
         # TODO: Sort out mixture of AnalysedWord and DTO
+        potential_words = [w.analysed_word() for w in orm_rhymes]
 
-        # TODO: Implement fallback for stress? Eg. PP might be a good replacement for UP if it rhymes, but is currently rejected
-        valid_rhyming_words = [r.analysed_word() for r in orm_rhymes if r.stress == target_stress] \
-            if target_stress is not None \
-            else orm_rhymes
+        # TODO: Commonise with non-rhyme / imperfect rhyme paths here
+        stress_matches = [o for o in potential_words if o.stress == target_stress]
+        pos_matches = [w for w in stress_matches if target_pos == w.spacy_pos]
+        morph_matches = [w for w in pos_matches if target_morph == w.spacy_morph]
 
-        # Needed for case where there *are* perfect rhymes, but none of them scan - so we want to check imperfect
-        # rhymes that scan before giving up on rhyming
-        if not valid_rhyming_words and perfect_rhymes:
-            # TODO: Deduplicate this code
-            rhyme_source = imperfect_rhymes
-            orm_rhymes = repo.get_words([r.word2 for r in rhyme_source])
-            valid_rhyming_words = [r.analysed_word() for r in orm_rhymes if r.stress == target_stress] \
-                if target_stress is not None \
-                else orm_rhymes
+        if morph_matches:
+            return random.choice(morph_matches)
+        if pos_matches:
+            return random.choice(pos_matches)
+        if stress_matches:
+            return random.choice(stress_matches)
 
-        return random.choice(valid_rhyming_words) \
-            if len(valid_rhyming_words) != 0 \
-            else self.get_stressed_word(target_stress, target_pos)
+        orm_rhymes = repo.get_words([r.word2 for r in imperfect_rhymes])
+        potential_words = [w.analysed_word() for w in orm_rhymes]
+
+        stress_matches = [o for o in potential_words if o.stress == target_stress]
+        pos_matches = [w for w in stress_matches if target_pos == w.spacy_pos]
+        morph_matches = [w for w in pos_matches if target_morph == w.spacy_morph]
+
+        if morph_matches:
+            return random.choice(morph_matches)
+        if pos_matches:
+            return random.choice(pos_matches)
+        if stress_matches:
+            return random.choice(stress_matches)
+
+        return self.get_stressed_word(target_stress, target_pos, target_morph)
+
 
     def get_stressed_word(self, target_stress, target_pos, target_morph):
         if target_stress in spooky_words_by_stress.keys() \
