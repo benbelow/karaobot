@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, ForeignKey, String
 from sqlalchemy.orm import declarative_base, relationship, backref
 from sqlalchemy.orm.exc import DetachedInstanceError
 
-from parody.analysis.AnalysedWord import AnalysedWord
+from parody.analysis.WordAnalyser import AnalysedWord
 from .. import schema
 
 Base = declarative_base()

@@ -1,6 +1,6 @@
 from data.models.word import Word
 from data.repositories.wordRepository import WordRepository
-from parody.analysis.AnalysedWord import analyse_word, analyse_sentence
+from parody.analysis.WordAnalyser import analyse_word, analyse_sentence
 
 
 def batch(iterable, n=1):
@@ -15,8 +15,6 @@ def import_words(lines):
         return
 
     repo = WordRepository()
-
-
 
     existing = [w.word for w in repo.fetch_all_words()]
 

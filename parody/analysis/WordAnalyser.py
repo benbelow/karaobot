@@ -11,6 +11,13 @@ def analyse_sentence(raw_sentence):
 
 
 def analyse_word(raw_word, spacy_word=None):
+    """
+    Three types of analysis currently in place:
+    * Prosodic = covers scansion / amphasis
+    * nltk = one option for nlp.
+    * spacy = an alternate option for nlp. Works between with context, so optional spacy_word param can be used to
+    pass pre-analysed words from a sentence
+    """
     prosodic_word = prosodic.Word(raw_word)
     stress = prosodic_word.stress
 
@@ -39,3 +46,8 @@ class AnalysedWord:
         self.nltkPartOfSpeech = nltk_part_of_speech
         self.spacy_pos = spacy_pos
         self.spacy_morph = spacy_morph
+
+
+def get_pos(word):
+    tokenized = nltk.word_tokenize(word)
+    return nltk.pos_tag(tokenized)[0][1]

@@ -1,7 +1,7 @@
 import random
 
 from data.repositories.wordRepository import WordRepository
-from parody.analysis.AnalysedWord import AnalysedWord, analyse_word
+from parody.analysis.WordAnalyser import AnalysedWord, analyse_word
 from pyrhyme import rhyming_list
 
 from parody.analysis.RhymeFinder import import_rhymes
