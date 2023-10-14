@@ -1,7 +1,9 @@
 from xml.etree import ElementTree as ET
 
+
 class KarafunData:
     token_field = 1
+
 
 def extract_data(root):
     """
@@ -16,6 +18,7 @@ def extract_data(root):
     data.original_lyrics_by_line_id = {}
 
     song = [x for x in root if x.tag == "song"][0]
+    data.song_id = song.get("id")
     data.title = [x for x in song if x.tag == "title"][0].text
     data.artist = [x for x in song if x.tag == "artist"][0].text
     karaoke = [x for x in root if x.tag == "karaoke"][0]

@@ -1,783 +1,277 @@
+QUEUEING SONG NOW<?xml version="1.0" encoding="UTF-8"?>
+<response status="OK">
+    <song id="53998" len="220" pop="0.93383258902364" bgcolor="893A62"><title>Valerie</title><artist id="3828">Amy Winehouse &amp; Mark Ronson</artist><year>2007</year><imagePath>https://cdnaws.recis.io/i/img/00/52/ea/4a_81e89e_sq100.jpg</imagePath><legal><item id="1" type="writing">Dave McCabe / Sean Francis Caleb Payne / Abi Harding / Russel Thomas Pritchard / Boyan Uddin Chowdhury</item><item id="2" type="publishing">EMI Music Publishing LTD / EMI Music Publishing France</item></legal><styles>28,12</styles><bpm>-106</bpm></song>    </response>
+https://www.karafun.com/api/song/request.php?song=53998&sk=WbNBmiT8&qk=3157735793
+response is in!<?xml version="1.0" encoding="UTF-8"?>
+<response status="OK">
+    <song id="53998" len="220" pop="0.93383258902364" bgcolor="893A62" nbStreams="298156"><title>Valerie</title><artist id="3828">Amy Winehouse &amp; Mark Ronson</artist><year>2007</year><imagePath>https://cdnaws.recis.io/i/img/00/52/ea/4a_81e89e_sq100.jpg</imagePath><stream>https://c20.recis.io/sl/0d3442a72b/bf243a10924f544dc83379bdae2d89e4/nbv-bv_hq_ft.mp4</stream><filemtime>1517241073</filemtime><filesize>2142232</filesize><md5>bf243a10924f544dc83379bdae2d89e4</md5><notifyplay>45</notifyplay><legal><item id="1" type="writing">Dave McCabe / Sean Francis Caleb Payne / Abi Harding / Russel Thomas Pritchard / Boyan Uddin Chowdhury</item><item id="2" type="publishing">EMI Music Publishing LTD / EMI Music Publishing France</item></legal><styles>28,12</styles><bpm>-106</bpm></song><karaoke version="1.0" producer="Recisio"><silence step="00:00:01,000" count="4" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" bordersize="2.50"><position x="60.00" width="520" y="282.50" height="35"/><start>00:00:01,000</start><end>00:00:11,610</end></silence><page id="1" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:00:10,410</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:00:15,750</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="1"><position x="175.00" width="290" y="120.90" height="52"/><progressivebar x="143.00"><start>00:00:10,410</start></progressivebar><word id="1"><syllabe><start>00:00:11,610</start><end>00:00:11,890</end><text>Well</text></syllabe></word><word id="2"><syllabe><start>00:00:11,890</start><end>00:00:12,150</end><text>some</text></syllabe><syllabe><start>00:00:12,150</start><end>00:00:12,450</end><text>times</text></syllabe></word></line><line id="2"><position x="156.00" width="328" y="180.70" height="52"/><word id="1"><syllabe><start>00:00:12,700</start><end>00:00:12,980</end><text>I</text></syllabe></word><word id="2"><syllabe><start>00:00:12,980</start><end>00:00:13,140</end><text>go</text></syllabe></word><word id="3"><syllabe><start>00:00:13,140</start><end>00:00:13,720</end><text>out</text></syllabe></word><word id="4"><syllabe><start>00:00:13,830</start><end>00:00:14,030</end><text>by</text></syllabe></word><word id="5"><syllabe><start>00:00:14,030</start><end>00:00:14,290</end><text>my</text></syllabe><syllabe><start>00:00:14,290</start><end>00:00:14,700</end><text>self</text></syllabe></word></line></page><page id="2" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:00:14,050</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:00:18,740</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="3"><position x="162.50" width="315" y="240.50" height="52"/><word id="1"><syllabe><start>00:00:15,250</start><end>00:00:15,430</end><text>And</text></syllabe></word><word id="2"><syllabe><start>00:00:15,430</start><end>00:00:15,640</end><text>I</text></syllabe></word><word id="3"><syllabe><start>00:00:15,640</start><end>00:00:15,840</end><text>look</text></syllabe></word><word id="4"><syllabe><start>00:00:15,840</start><end>00:00:16,100</end><text>a</text></syllabe><syllabe><start>00:00:16,100</start><end>00:00:16,380</end><text>cross</text></syllabe></word></line><line id="4"><position x="235.50" width="169" y="300.30" height="52"/><word id="1"><syllabe><start>00:00:16,390</start><end>00:00:16,560</end><text>the</text></syllabe></word><word id="2"><syllabe><start>00:00:16,560</start><end>00:00:16,940</end><text>wa</text></syllabe><syllabe><start>00:00:16,940</start><end>00:00:17,690</end><text>ter</text></syllabe></word></line></page><page id="3" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:00:19,410</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:00:24,490</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="5"><position x="66.50" width="507" y="120.90" height="52"/><progressivebar x="34.50"><start>00:00:19,410</start></progressivebar><word id="1"><syllabe><start>00:00:20,610</start><end>00:00:20,900</end><text>And</text></syllabe></word><word id="2"><syllabe><start>00:00:20,900</start><end>00:00:21,180</end><text>I</text></syllabe></word><word id="3"><syllabe><start>00:00:21,180</start><end>00:00:21,470</end><text>think</text></syllabe></word><word id="4"><syllabe><start>00:00:21,470</start><end>00:00:21,750</end><text>of</text></syllabe></word><word id="5"><syllabe><start>00:00:21,750</start><end>00:00:22,040</end><text>all</text></syllabe></word><word id="6"><syllabe><start>00:00:22,040</start><end>00:00:22,170</end><text>the</text></syllabe></word><word id="7"><syllabe><start>00:00:22,170</start><end>00:00:22,890</end><text>things</text></syllabe></word></line><line id="6"><position x="160.50" width="319" y="180.70" height="52"/><word id="1"><syllabe><start>00:00:22,900</start><end>00:00:23,180</end><text>what</text></syllabe></word><word id="2"><syllabe><start>00:00:23,180</start><end>00:00:23,360</end><text>you're</text></syllabe></word><word id="3"><syllabe><start>00:00:23,360</start><end>00:00:23,650</end><text>do</text></syllabe><syllabe><start>00:00:23,650</start><end>00:00:23,840</end><text>ing</text></syllabe></word></line></page><page id="4" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:00:22,690</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:00:27,940</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="7"><position x="176.00" width="288" y="240.50" height="52"/><word id="1"><syllabe><start>00:00:23,890</start><end>00:00:24,030</end><text>And</text></syllabe></word><word id="2"><syllabe><start>00:00:24,030</start><end>00:00:24,230</end><text>in</text></syllabe></word><word id="3"><syllabe><start>00:00:24,230</start><end>00:00:24,460</end><text>my</text></syllabe></word><word id="4"><syllabe><start>00:00:24,460</start><end>00:00:24,840</end><text>head</text></syllabe></word></line><line id="8"><position x="172.50" width="295" y="300.30" height="52"/><word id="1"><syllabe><start>00:00:24,850</start><end>00:00:25,160</end><text>I</text></syllabe></word><word id="2"><syllabe><start>00:00:25,160</start><end>00:00:25,450</end><text>paint</text></syllabe></word><word id="3"><syllabe><start>00:00:25,450</start><end>00:00:25,640</end><text>a</text></syllabe></word><word id="4"><syllabe><start>00:00:25,640</start><end>00:00:26,070</end><text>pic</text></syllabe><syllabe><start>00:00:26,070</start><end>00:00:26,890</end><text>ture</text></syllabe></word></line></page><page id="5" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:00:29,020</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:00:32,530</fadeoutstart><fadeoutduration>00:00:00,570</fadeoutduration><line id="9"><position x="90.00" width="460" y="180.70" height="52"/><progressivebar x="58.00"><start>00:00:29,020</start></progressivebar><word id="1"><syllabe><start>00:00:30,280</start><end>00:00:30,560</end><text>Since</text></syllabe></word><word id="2"><syllabe><start>00:00:30,560</start><end>00:00:30,820</end><text>I've</text></syllabe></word><word id="3"><syllabe><start>00:00:30,820</start><end>00:00:31,090</end><text>come</text></syllabe></word><word id="4"><syllabe><start>00:00:31,090</start><end>00:00:31,290</end><text>on</text></syllabe></word><word id="5"><syllabe><start>00:00:31,290</start><end>00:00:31,720</end><text>home</text></syllabe></word></line></page><page id="6" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:00:30,760</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:00:34,810</fadeoutstart><fadeoutduration>00:00:00,570</fadeoutduration><line id="10"><position x="65.50" width="509" y="240.50" height="52"/><word id="1"><syllabe><start>00:00:31,960</start><end>00:00:32,160</end><text>well</text></syllabe></word><word id="2"><syllabe><start>00:00:32,160</start><end>00:00:32,490</end><text>my</text></syllabe></word><word id="3"><syllabe><start>00:00:32,490</start><end>00:00:32,830</end><text>bo</text></syllabe><syllabe><start>00:00:32,830</start><end>00:00:33,110</end><text>dy's</text></syllabe></word><word id="4"><syllabe><start>00:00:33,110</start><end>00:00:33,390</end><text>been</text></syllabe></word><word id="5"><syllabe><start>00:00:33,390</start><end>00:00:33,610</end><text>a</text></syllabe></word><word id="6"><syllabe><start>00:00:33,610</start><end>00:00:34,140</end><text>mess</text></syllabe></word></line></page><page id="7" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:00:33,100</fadeinstart><fadeinduration>00:00:00,570</fadeinduration><fadeoutstart>00:00:37,140</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="11"><position x="175.00" width="290" y="120.90" height="52"/><word id="1"><syllabe><start>00:00:34,240</start><end>00:00:34,430</end><text>And</text></syllabe></word><word id="2"><syllabe><start>00:00:34,430</start><end>00:00:34,770</end><text>I've</text></syllabe></word><word id="3"><syllabe><start>00:00:34,770</start><end>00:00:35,090</end><text>missed</text></syllabe></word></line><line id="12"><position x="177.50" width="285" y="180.70" height="52"/><word id="1"><syllabe><start>00:00:35,090</start><end>00:00:35,370</end><text>your</text></syllabe></word><word id="2"><syllabe><start>00:00:35,370</start><end>00:00:35,660</end><text>gin</text></syllabe><syllabe><start>00:00:35,660</start><end>00:00:35,860</end><text>ger</text></syllabe></word><word id="3"><syllabe><start>00:00:35,860</start><end>00:00:36,250</end><text>hair</text></syllabe></word></line></page><page id="8" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:00:35,390</fadeinstart><fadeinduration>00:00:00,570</fadeinduration><fadeoutstart>00:00:39,930</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="13"><position x="54.50" width="531" y="240.50" height="52"/><word id="1"><syllabe><start>00:00:36,540</start><end>00:00:36,790</end><text>and</text></syllabe></word><word id="2"><syllabe><start>00:00:36,790</start><end>00:00:37,030</end><text>the</text></syllabe></word><word id="3"><syllabe><start>00:00:37,030</start><end>00:00:37,360</end><text>way</text></syllabe></word><word id="4"><syllabe><start>00:00:37,360</start><end>00:00:37,640</end><text>you</text></syllabe></word><word id="5"><syllabe><start>00:00:37,640</start><end>00:00:37,920</end><text>like</text></syllabe></word><word id="6"><syllabe><start>00:00:37,920</start><end>00:00:38,140</end><text>to</text></syllabe></word><word id="7"><syllabe><start>00:00:38,140</start><end>00:00:38,790</end><text>dress</text></syllabe></word></line></page><page id="9" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:00:38,420</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:00:43,900</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="14"><position x="93.50" width="453" y="120.90" height="52"/><word id="1"><syllabe><start>00:00:39,620</start><end>00:00:39,770</end><text>Won't</text></syllabe></word><word id="2"><syllabe><start>00:00:39,770</start><end>00:00:39,900</end><text>you</text></syllabe></word><word id="3"><syllabe><start>00:00:39,900</start><end>00:00:40,110</end><text>come</text></syllabe></word><word id="4"><syllabe><start>00:00:40,110</start><end>00:00:40,390</end><text>on</text></syllabe></word><word id="5"><syllabe><start>00:00:40,390</start><end>00:00:40,740</end><text>o</text></syllabe><syllabe><start>00:00:40,740</start><end>00:00:41,000</end><text>ver?</text></syllabe></word></line><line id="15"><position x="147.50" width="345" y="180.70" height="52"/><word id="1"><syllabe><start>00:00:41,880</start><end>00:00:42,160</end><text>Stop</text></syllabe></word><word id="2"><syllabe><start>00:00:42,160</start><end>00:00:42,450</end><text>ma</text></syllabe><syllabe><start>00:00:42,450</start><end>00:00:42,620</end><text>king</text></syllabe></word><word id="3"><syllabe><start>00:00:42,620</start><end>00:00:42,810</end><text>a</text></syllabe></word><word id="4"><syllabe><start>00:00:42,810</start><end>00:00:43,160</end><text>fool</text></syllabe></word></line></page><page id="10" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:00:42,100</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:00:46,080</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="16"><position x="232.50" width="175" y="240.50" height="52"/><word id="1"><syllabe><start>00:00:43,300</start><end>00:00:43,580</end><text>out</text></syllabe></word><word id="2"><syllabe><start>00:00:43,580</start><end>00:00:43,760</end><text>of</text></syllabe></word><word id="3"><syllabe><start>00:00:43,760</start><end>00:00:44,990</end><text>me</text></syllabe></word></line></page><page id="11" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:00:44,930</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:00:51,380</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="17"><position x="64.00" width="512" y="120.90" height="52"/><word id="1"><syllabe><start>00:00:46,130</start><end>00:00:46,340</end><text>Why</text></syllabe></word><word id="2"><syllabe><start>00:00:46,340</start><end>00:00:46,560</end><text>don't</text></syllabe></word><word id="3"><syllabe><start>00:00:46,560</start><end>00:00:46,690</end><text>you</text></syllabe></word><word id="4"><syllabe><start>00:00:46,690</start><end>00:00:46,880</end><text>come</text></syllabe></word><word id="5"><syllabe><start>00:00:46,880</start><end>00:00:47,130</end><text>on</text></syllabe></word><word id="6"><syllabe><start>00:00:47,130</start><end>00:00:47,440</end><text>o</text></syllabe><syllabe><start>00:00:47,440</start><end>00:00:47,730</end><text>ver</text></syllabe></word></line><line id="18"><position x="248.50" width="143" y="180.70" height="52"/><word id="1"><syllabe><start>00:00:47,910</start><end>00:00:49,090</end><text>Va</text></syllabe><syllabe><start>00:00:49,090</start><end>00:00:49,290</end><text>le</text></syllabe><syllabe><start>00:00:49,290</start><end>00:00:50,330</end><text>rie?</text></syllabe></word></line></page><page id="12" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:00:51,100</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:00:55,630</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="19"><position x="258.00" width="124" y="240.50" height="52"/><progressivebar x="226.00"><start>00:00:51,100</start></progressivebar><word id="1"><syllabe><start>00:00:52,300</start><end>00:00:52,590</end><text>Va</text></syllabe><syllabe><start>00:00:52,590</start><end>00:00:52,810</end><text>le</text></syllabe><syllabe><start>00:00:52,810</start><end>00:00:54,580</end><text>rie</text></syllabe></word></line></page><page id="13" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:00:55,630</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:01:00,110</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="20"><position x="258.00" width="124" y="180.70" height="52"/><progressivebar x="226.00"><start>00:00:55,630</start></progressivebar><word id="1"><syllabe><start>00:00:56,840</start><end>00:00:58,150</end><text>Va</text></syllabe><syllabe><start>00:00:58,150</start><end>00:00:58,330</end><text>le</text></syllabe><syllabe><start>00:00:58,330</start><end>00:00:59,060</end><text>rie</text></syllabe></word></line></page><page id="14" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:01:00,200</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:01:04,510</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="21"><position x="258.00" width="124" y="240.50" height="52"/><progressivebar x="226.00"><start>00:01:00,200</start></progressivebar><word id="1"><syllabe><start>00:01:01,400</start><end>00:01:01,690</end><text>Va</text></syllabe><syllabe><start>00:01:01,690</start><end>00:01:01,880</end><text>le</text></syllabe><syllabe><start>00:01:01,880</start><end>00:01:03,460</end><text>rie</text></syllabe></word></line></page><page id="15" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:01:04,790</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:01:10,810</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="22"><position x="82.00" width="476" y="120.90" height="52"/><progressivebar x="50.00"><start>00:01:04,790</start></progressivebar><word id="1"><syllabe><start>00:01:05,990</start><end>00:01:06,300</end><text>Did</text></syllabe></word><word id="2"><syllabe><start>00:01:06,300</start><end>00:01:06,550</end><text>you</text></syllabe></word><word id="3"><syllabe><start>00:01:06,550</start><end>00:01:06,860</end><text>have</text></syllabe></word><word id="4"><syllabe><start>00:01:06,860</start><end>00:01:07,120</end><text>to</text></syllabe></word><word id="5"><syllabe><start>00:01:07,120</start><end>00:01:07,360</end><text>go</text></syllabe></word><word id="6"><syllabe><start>00:01:07,360</start><end>00:01:07,560</end><text>to</text></syllabe></word><word id="7"><syllabe><start>00:01:07,560</start><end>00:01:08,010</end><text>jail?</text></syllabe></word></line><line id="23"><position x="42.00" width="556" y="180.70" height="52"/><word id="1"><syllabe><start>00:01:08,490</start><end>00:01:08,660</end><text>Put</text></syllabe></word><word id="2"><syllabe><start>00:01:08,660</start><end>00:01:08,870</end><text>your</text></syllabe></word><word id="3"><syllabe><start>00:01:08,870</start><end>00:01:09,090</end><text>house</text></syllabe></word><word id="4"><syllabe><start>00:01:09,090</start><end>00:01:09,250</end><text>on</text></syllabe></word><word id="5"><syllabe><start>00:01:09,250</start><end>00:01:09,640</end><text>up</text></syllabe></word><word id="6"><syllabe><start>00:01:09,640</start><end>00:01:09,840</end><text>for</text></syllabe></word><word id="7"><syllabe><start>00:01:09,840</start><end>00:01:10,200</end><text>sale?</text></syllabe></word></line></page><page id="16" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:01:09,010</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:01:13,780</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="24"><position x="76.00" width="488" y="240.50" height="52"/><word id="1"><syllabe><start>00:01:10,210</start><end>00:01:10,380</end><text>Did</text></syllabe></word><word id="2"><syllabe><start>00:01:10,380</start><end>00:01:10,490</end><text>you</text></syllabe></word><word id="3"><syllabe><start>00:01:10,490</start><end>00:01:10,670</end><text>get</text></syllabe></word><word id="4"><syllabe><start>00:01:10,670</start><end>00:01:10,810</end><text>a</text></syllabe></word><word id="5"><syllabe><start>00:01:10,810</start><end>00:01:11,090</end><text>good</text></syllabe></word><word id="6"><syllabe><start>00:01:11,090</start><end>00:01:11,390</end><text>law</text></syllabe><syllabe><start>00:01:11,390</start><end>00:01:12,730</end><text>yer?</text></syllabe></word></line></page><page id="17" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:01:13,760</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:01:19,840</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="25"><position x="67.00" width="506" y="120.90" height="52"/><progressivebar x="35.00"><start>00:01:13,760</start></progressivebar><word id="1"><syllabe><start>00:01:14,960</start><end>00:01:15,300</end><text>Hope</text></syllabe></word><word id="2"><syllabe><start>00:01:15,300</start><end>00:01:15,630</end><text>you</text></syllabe></word><word id="3"><syllabe><start>00:01:15,630</start><end>00:01:15,870</end><text>di</text></syllabe><syllabe><start>00:01:15,870</start><end>00:01:16,150</end><text>dn't</text></syllabe></word><word id="4"><syllabe><start>00:01:16,150</start><end>00:01:16,410</end><text>catch</text></syllabe></word><word id="5"><syllabe><start>00:01:16,410</start><end>00:01:16,590</end><text>a</text></syllabe></word><word id="6"><syllabe><start>00:01:16,590</start><end>00:01:17,110</end><text>tan</text></syllabe></word></line><line id="26"><position x="62.00" width="516" y="180.70" height="52"/><word id="1"><syllabe><start>00:01:17,470</start><end>00:01:17,630</end><text>Hope</text></syllabe></word><word id="2"><syllabe><start>00:01:17,630</start><end>00:01:17,870</end><text>you</text></syllabe></word><word id="3"><syllabe><start>00:01:17,870</start><end>00:01:18,360</end><text>find</text></syllabe></word><word id="4"><syllabe><start>00:01:18,360</start><end>00:01:18,510</end><text>the</text></syllabe></word><word id="5"><syllabe><start>00:01:18,510</start><end>00:01:18,800</end><text>right</text></syllabe></word><word id="6"><syllabe><start>00:01:18,800</start><end>00:01:19,230</end><text>man</text></syllabe></word></line></page><page id="18" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:01:18,040</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:01:23,050</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="27"><position x="161.50" width="317" y="240.50" height="52"/><word id="1"><syllabe><start>00:01:19,240</start><end>00:01:19,500</end><text>who'll</text></syllabe></word><word id="2"><syllabe><start>00:01:19,500</start><end>00:01:19,850</end><text>fix</text></syllabe></word><word id="3"><syllabe><start>00:01:19,850</start><end>00:01:20,160</end><text>it</text></syllabe></word><word id="4"><syllabe><start>00:01:20,160</start><end>00:01:20,640</end><text>for</text></syllabe></word><word id="5"><syllabe><start>00:01:20,640</start><end>00:01:22,000</end><text>ya</text></syllabe></word></line></page><page id="19" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:01:22,840</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:01:29,340</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="28"><position x="61.50" width="517" y="120.90" height="52"/><progressivebar x="29.50"><start>00:01:22,840</start></progressivebar><word id="1"><syllabe><start>00:01:24,040</start><end>00:01:24,330</end><text>Are</text></syllabe></word><word id="2"><syllabe><start>00:01:24,330</start><end>00:01:24,660</end><text>you</text></syllabe></word><word id="3"><syllabe><start>00:01:24,660</start><end>00:01:24,950</end><text>sho</text></syllabe><syllabe><start>00:01:24,950</start><end>00:01:25,220</end><text>pping</text></syllabe></word><word id="4"><syllabe><start>00:01:25,220</start><end>00:01:25,430</end><text>a</text></syllabe><syllabe><start>00:01:25,430</start><end>00:01:25,650</end><text>ny</text></syllabe><syllabe><start>00:01:25,650</start><end>00:01:26,280</end><text>where?</text></syllabe></word></line><line id="29"><position x="34.50" width="571" y="180.70" height="52"/><word id="1"><syllabe><start>00:01:26,530</start><end>00:01:26,730</end><text>Changed</text></syllabe></word><word id="2"><syllabe><start>00:01:26,730</start><end>00:01:26,900</end><text>the</text></syllabe></word><word id="3"><syllabe><start>00:01:26,900</start><end>00:01:27,140</end><text>co</text></syllabe><syllabe><start>00:01:27,140</start><end>00:01:27,380</end><text>lor</text></syllabe></word><word id="4"><syllabe><start>00:01:27,380</start><end>00:01:27,630</end><text>of</text></syllabe></word><word id="5"><syllabe><start>00:01:27,630</start><end>00:01:27,850</end><text>your</text></syllabe></word><word id="6"><syllabe><start>00:01:27,850</start><end>00:01:28,360</end><text>hair?</text></syllabe></word></line></page><page id="20" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:01:27,540</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:01:31,260</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="30"><position x="193.50" width="253" y="240.50" height="52"/><word id="1"><syllabe><start>00:01:28,740</start><end>00:01:29,420</end><text>Are</text></syllabe></word><word id="2"><syllabe><start>00:01:29,420</start><end>00:01:29,680</end><text>you</text></syllabe></word><word id="3"><syllabe><start>00:01:29,680</start><end>00:01:30,000</end><text>bu</text></syllabe><syllabe><start>00:01:30,000</start><end>00:01:30,210</end><text>sy?</text></syllabe></word></line></page><page id="21" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:01:32,000</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:01:36,200</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="31"><position x="162.00" width="316" y="120.90" height="52"/><progressivebar x="130.00"><start>00:01:32,000</start></progressivebar><word id="1"><syllabe><start>00:01:33,200</start><end>00:01:33,340</end><text>And</text></syllabe></word><word id="2"><syllabe><start>00:01:33,340</start><end>00:01:33,510</end><text>did</text></syllabe></word><word id="3"><syllabe><start>00:01:33,510</start><end>00:01:33,620</end><text>you</text></syllabe></word><word id="4"><syllabe><start>00:01:33,620</start><end>00:01:33,930</end><text>have</text></syllabe></word></line><line id="32"><position x="171.00" width="298" y="180.70" height="52"/><word id="1"><syllabe><start>00:01:33,930</start><end>00:01:34,070</end><text>to</text></syllabe></word><word id="2"><syllabe><start>00:01:34,070</start><end>00:01:34,370</end><text>pay</text></syllabe></word><word id="3"><syllabe><start>00:01:34,370</start><end>00:01:34,620</end><text>that</text></syllabe></word><word id="4"><syllabe><start>00:01:34,620</start><end>00:01:35,330</end><text>fine?</text></syllabe></word></line></page><page id="22" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:01:34,400</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:01:40,420</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="33"><position x="47.50" width="545" y="240.50" height="52"/><word id="1"><syllabe><start>00:01:35,600</start><end>00:01:35,710</end><text>You</text></syllabe></word><word id="2"><syllabe><start>00:01:35,710</start><end>00:01:35,880</end><text>were</text></syllabe></word><word id="3"><syllabe><start>00:01:35,880</start><end>00:01:36,170</end><text>dod</text></syllabe><syllabe><start>00:01:36,170</start><end>00:01:36,310</end><text>ging</text></syllabe></word><word id="4"><syllabe><start>00:01:36,310</start><end>00:01:36,740</end><text>all</text></syllabe></word><word id="5"><syllabe><start>00:01:36,740</start><end>00:01:36,920</end><text>the</text></syllabe></word><word id="6"><syllabe><start>00:01:36,920</start><end>00:01:37,310</end><text>time</text></syllabe></word></line><line id="34"><position x="148.50" width="343" y="300.30" height="52"/><word id="1"><syllabe><start>00:01:37,320</start><end>00:01:37,590</end><text>Are</text></syllabe></word><word id="2"><syllabe><start>00:01:37,590</start><end>00:01:37,940</end><text>you</text></syllabe></word><word id="3"><syllabe><start>00:01:37,940</start><end>00:01:38,220</end><text>still</text></syllabe></word><word id="4"><syllabe><start>00:01:38,220</start><end>00:01:38,770</end><text>di</text></syllabe><syllabe><start>00:01:38,770</start><end>00:01:39,370</end><text>zzy?</text></syllabe></word></line></page><page id="23" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:01:41,230</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:01:45,000</fadeoutstart><fadeoutduration>00:00:00,580</fadeoutduration><line id="35"><position x="90.00" width="460" y="180.70" height="52"/><progressivebar x="58.00"><start>00:01:41,230</start></progressivebar><word id="1"><syllabe><start>00:01:42,710</start><end>00:01:43,000</end><text>Since</text></syllabe></word><word id="2"><syllabe><start>00:01:43,000</start><end>00:01:43,280</end><text>I've</text></syllabe></word><word id="3"><syllabe><start>00:01:43,280</start><end>00:01:43,570</end><text>come</text></syllabe></word><word id="4"><syllabe><start>00:01:43,570</start><end>00:01:43,670</end><text>on</text></syllabe></word><word id="5"><syllabe><start>00:01:43,670</start><end>00:01:44,130</end><text>home</text></syllabe></word></line></page><page id="24" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:01:43,220</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:01:47,320</fadeoutstart><fadeoutduration>00:00:00,550</fadeoutduration><line id="36"><position x="65.50" width="509" y="240.50" height="52"/><word id="1"><syllabe><start>00:01:44,420</start><end>00:01:44,670</end><text>well</text></syllabe></word><word id="2"><syllabe><start>00:01:44,670</start><end>00:01:44,940</end><text>my</text></syllabe></word><word id="3"><syllabe><start>00:01:44,940</start><end>00:01:45,290</end><text>bo</text></syllabe><syllabe><start>00:01:45,290</start><end>00:01:45,550</end><text>dy's</text></syllabe></word><word id="4"><syllabe><start>00:01:45,550</start><end>00:01:45,840</end><text>been</text></syllabe></word><word id="5"><syllabe><start>00:01:45,840</start><end>00:01:46,050</end><text>a</text></syllabe></word><word id="6"><syllabe><start>00:01:46,050</start><end>00:01:46,580</end><text>mess</text></syllabe></word></line></page><page id="25" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:01:45,600</fadeinstart><fadeinduration>00:00:00,580</fadeinduration><fadeoutstart>00:01:49,570</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="37"><position x="175.00" width="290" y="120.90" height="52"/><word id="1"><syllabe><start>00:01:46,770</start><end>00:01:46,930</end><text>And</text></syllabe></word><word id="2"><syllabe><start>00:01:46,930</start><end>00:01:47,260</end><text>I've</text></syllabe></word><word id="3"><syllabe><start>00:01:47,260</start><end>00:01:47,550</end><text>missed</text></syllabe></word></line><line id="38"><position x="177.50" width="285" y="180.70" height="52"/><word id="1"><syllabe><start>00:01:47,550</start><end>00:01:47,870</end><text>your</text></syllabe></word><word id="2"><syllabe><start>00:01:47,870</start><end>00:01:48,170</end><text>gin</text></syllabe><syllabe><start>00:01:48,170</start><end>00:01:48,290</end><text>ger</text></syllabe></word><word id="3"><syllabe><start>00:01:48,290</start><end>00:01:48,680</end><text>hair</text></syllabe></word></line></page><page id="26" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:01:47,870</fadeinstart><fadeinduration>00:00:00,550</fadeinduration><fadeoutstart>00:01:52,310</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="39"><position x="54.50" width="531" y="240.50" height="52"/><word id="1"><syllabe><start>00:01:48,970</start><end>00:01:49,260</end><text>and</text></syllabe></word><word id="2"><syllabe><start>00:01:49,260</start><end>00:01:49,550</end><text>the</text></syllabe></word><word id="3"><syllabe><start>00:01:49,550</start><end>00:01:49,840</end><text>way</text></syllabe></word><word id="4"><syllabe><start>00:01:49,840</start><end>00:01:50,120</end><text>you</text></syllabe></word><word id="5"><syllabe><start>00:01:50,120</start><end>00:01:50,410</end><text>like</text></syllabe></word><word id="6"><syllabe><start>00:01:50,410</start><end>00:01:50,580</end><text>to</text></syllabe></word><word id="7"><syllabe><start>00:01:50,580</start><end>00:01:51,210</end><text>dress</text></syllabe></word></line></page><page id="27" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:01:50,920</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:01:56,430</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="40"><position x="93.50" width="453" y="120.90" height="52"/><word id="1"><syllabe><start>00:01:52,120</start><end>00:01:52,250</end><text>Won't</text></syllabe></word><word id="2"><syllabe><start>00:01:52,250</start><end>00:01:52,400</end><text>you</text></syllabe></word><word id="3"><syllabe><start>00:01:52,400</start><end>00:01:52,580</end><text>come</text></syllabe></word><word id="4"><syllabe><start>00:01:52,580</start><end>00:01:52,860</end><text>on</text></syllabe></word><word id="5"><syllabe><start>00:01:52,860</start><end>00:01:53,240</end><text>o</text></syllabe><syllabe><start>00:01:53,240</start><end>00:01:53,480</end><text>ver?</text></syllabe></word></line><line id="41"><position x="147.50" width="345" y="180.70" height="52"/><word id="1"><syllabe><start>00:01:54,410</start><end>00:01:54,750</end><text>Stop</text></syllabe></word><word id="2"><syllabe><start>00:01:54,750</start><end>00:01:55,010</end><text>ma</text></syllabe><syllabe><start>00:01:55,010</start><end>00:01:55,170</end><text>king</text></syllabe></word><word id="3"><syllabe><start>00:01:55,170</start><end>00:01:55,380</end><text>a</text></syllabe></word><word id="4"><syllabe><start>00:01:55,380</start><end>00:01:55,710</end><text>fool</text></syllabe></word></line></page><page id="28" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:01:54,630</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:01:58,970</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="42"><position x="232.50" width="175" y="240.50" height="52"/><word id="1"><syllabe><start>00:01:55,830</start><end>00:01:56,120</end><text>out</text></syllabe></word><word id="2"><syllabe><start>00:01:56,120</start><end>00:01:56,290</end><text>of</text></syllabe></word><word id="3"><syllabe><start>00:01:56,290</start><end>00:01:57,860</end><text>me</text></syllabe></word></line></page><page id="29" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:01:57,500</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:02:03,450</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="43"><position x="64.00" width="512" y="120.90" height="52"/><word id="1"><syllabe><start>00:01:58,700</start><end>00:01:58,900</end><text>Why</text></syllabe></word><word id="2"><syllabe><start>00:01:58,900</start><end>00:01:59,130</end><text>don't</text></syllabe></word><word id="3"><syllabe><start>00:01:59,130</start><end>00:01:59,320</end><text>you</text></syllabe></word><word id="4"><syllabe><start>00:01:59,320</start><end>00:01:59,500</end><text>come</text></syllabe></word><word id="5"><syllabe><start>00:01:59,500</start><end>00:01:59,700</end><text>on</text></syllabe></word><word id="6"><syllabe><start>00:01:59,700</start><end>00:02:00,000</end><text>o</text></syllabe><syllabe><start>00:02:00,000</start><end>00:02:00,410</end><text>ver</text></syllabe></word></line><line id="44"><position x="248.50" width="143" y="180.70" height="52"/><word id="1"><syllabe><start>00:02:00,420</start><end>00:02:01,660</end><text>Va</text></syllabe><syllabe><start>00:02:01,660</start><end>00:02:01,860</end><text>le</text></syllabe><syllabe><start>00:02:01,860</start><end>00:02:02,400</end><text>rie?</text></syllabe></word></line></page><page id="30" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:02:03,750</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:02:08,000</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="45"><position x="258.00" width="124" y="240.50" height="52"/><progressivebar x="226.00"><start>00:02:03,750</start></progressivebar><word id="1"><syllabe><start>00:02:04,950</start><end>00:02:05,210</end><text>Va</text></syllabe><syllabe><start>00:02:05,210</start><end>00:02:05,430</end><text>le</text></syllabe><syllabe><start>00:02:05,430</start><end>00:02:06,950</end><text>rie</text></syllabe></word></line></page><page id="31" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:02:08,220</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:02:12,130</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="46"><position x="258.00" width="124" y="180.70" height="52"/><progressivebar x="226.00"><start>00:02:08,220</start></progressivebar><word id="1"><syllabe><start>00:02:09,430</start><end>00:02:10,370</end><text>Va</text></syllabe><syllabe><start>00:02:10,370</start><end>00:02:10,570</end><text>le</text></syllabe><syllabe><start>00:02:10,570</start><end>00:02:11,080</end><text>rie</text></syllabe></word></line></page><page id="32" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:02:12,880</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:02:17,070</fadeoutstart><fadeoutduration>00:00:00,530</fadeoutduration><line id="47"><position x="258.00" width="124" y="210.60" height="52"/><progressivebar x="226.00"><start>00:02:12,880</start></progressivebar><word id="1"><syllabe><start>00:02:14,080</start><end>00:02:14,370</end><text>Va</text></syllabe><syllabe><start>00:02:14,370</start><end>00:02:14,590</end><text>le</text></syllabe><syllabe><start>00:02:14,590</start><end>00:02:16,090</end><text>rie</text></syllabe></word></line></page><page id="33" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:02:17,610</fadeinstart><fadeinduration>00:00:00,530</fadeinduration><fadeoutstart>00:02:22,940</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="48"><position x="175.00" width="290" y="120.90" height="52"/><progressivebar x="143.00"><start>00:02:17,610</start></progressivebar><word id="1"><syllabe><start>00:02:18,680</start><end>00:02:18,970</end><text>Well</text></syllabe></word><word id="2"><syllabe><start>00:02:18,970</start><end>00:02:19,250</end><text>some</text></syllabe><syllabe><start>00:02:19,250</start><end>00:02:19,600</end><text>times</text></syllabe></word></line><line id="49"><position x="156.00" width="328" y="180.70" height="52"/><word id="1"><syllabe><start>00:02:19,820</start><end>00:02:20,110</end><text>I</text></syllabe></word><word id="2"><syllabe><start>00:02:20,110</start><end>00:02:20,280</end><text>go</text></syllabe></word><word id="3"><syllabe><start>00:02:20,280</start><end>00:02:20,810</end><text>out</text></syllabe></word><word id="4"><syllabe><start>00:02:20,900</start><end>00:02:21,150</end><text>by</text></syllabe></word><word id="5"><syllabe><start>00:02:21,150</start><end>00:02:21,390</end><text>my</text></syllabe><syllabe><start>00:02:21,390</start><end>00:02:21,910</end><text>self</text></syllabe></word></line></page><page id="34" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:02:21,140</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:02:25,960</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="50"><position x="162.50" width="315" y="240.50" height="52"/><word id="1"><syllabe><start>00:02:22,340</start><end>00:02:22,560</end><text>And</text></syllabe></word><word id="2"><syllabe><start>00:02:22,560</start><end>00:02:22,790</end><text>I</text></syllabe></word><word id="3"><syllabe><start>00:02:22,790</start><end>00:02:23,050</end><text>look</text></syllabe></word><word id="4"><syllabe><start>00:02:23,050</start><end>00:02:23,240</end><text>a</text></syllabe><syllabe><start>00:02:23,240</start><end>00:02:23,500</end><text>cross</text></syllabe></word></line><line id="51"><position x="235.50" width="169" y="300.30" height="52"/><word id="1"><syllabe><start>00:02:23,500</start><end>00:02:23,710</end><text>the</text></syllabe></word><word id="2"><syllabe><start>00:02:23,710</start><end>00:02:24,060</end><text>wa</text></syllabe><syllabe><start>00:02:24,060</start><end>00:02:24,910</end><text>ter</text></syllabe></word></line></page><page id="35" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:02:26,540</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:02:31,470</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="52"><position x="66.50" width="507" y="120.90" height="52"/><progressivebar x="34.50"><start>00:02:26,540</start></progressivebar><word id="1"><syllabe><start>00:02:27,740</start><end>00:02:28,120</end><text>And</text></syllabe></word><word id="2"><syllabe><start>00:02:28,120</start><end>00:02:28,400</end><text>I</text></syllabe></word><word id="3"><syllabe><start>00:02:28,400</start><end>00:02:28,690</end><text>think</text></syllabe></word><word id="4"><syllabe><start>00:02:28,690</start><end>00:02:28,860</end><text>of</text></syllabe></word><word id="5"><syllabe><start>00:02:28,860</start><end>00:02:29,160</end><text>all</text></syllabe></word><word id="6"><syllabe><start>00:02:29,160</start><end>00:02:29,360</end><text>the</text></syllabe></word><word id="7"><syllabe><start>00:02:29,360</start><end>00:02:30,020</end><text>things</text></syllabe></word></line><line id="53"><position x="160.50" width="319" y="180.70" height="52"/><word id="1"><syllabe><start>00:02:30,030</start><end>00:02:30,300</end><text>what</text></syllabe></word><word id="2"><syllabe><start>00:02:30,300</start><end>00:02:30,540</end><text>you're</text></syllabe></word><word id="3"><syllabe><start>00:02:30,540</start><end>00:02:30,680</end><text>do</text></syllabe><syllabe><start>00:02:30,680</start><end>00:02:30,840</end><text>ing</text></syllabe></word></line></page><page id="36" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:02:29,670</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:02:35,040</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="54"><position x="176.00" width="288" y="240.50" height="52"/><word id="1"><syllabe><start>00:02:30,870</start><end>00:02:31,150</end><text>And</text></syllabe></word><word id="2"><syllabe><start>00:02:31,150</start><end>00:02:31,360</end><text>in</text></syllabe></word><word id="3"><syllabe><start>00:02:31,360</start><end>00:02:31,650</end><text>my</text></syllabe></word><word id="4"><syllabe><start>00:02:31,650</start><end>00:02:32,010</end><text>head</text></syllabe></word></line><line id="55"><position x="172.50" width="295" y="300.30" height="52"/><word id="1"><syllabe><start>00:02:32,020</start><end>00:02:32,290</end><text>I</text></syllabe></word><word id="2"><syllabe><start>00:02:32,290</start><end>00:02:32,580</end><text>paint</text></syllabe></word><word id="3"><syllabe><start>00:02:32,580</start><end>00:02:32,750</end><text>a</text></syllabe></word><word id="4"><syllabe><start>00:02:32,750</start><end>00:02:33,220</end><text>pic</text></syllabe><syllabe><start>00:02:33,220</start><end>00:02:33,990</end><text>ture</text></syllabe></word></line></page><page id="37" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:02:35,970</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:02:39,690</fadeoutstart><fadeoutduration>00:00:00,560</fadeoutduration><line id="56"><position x="90.00" width="460" y="180.70" height="52"/><progressivebar x="58.00"><start>00:02:35,970</start></progressivebar><word id="1"><syllabe><start>00:02:37,400</start><end>00:02:37,690</end><text>Since</text></syllabe></word><word id="2"><syllabe><start>00:02:37,690</start><end>00:02:37,970</end><text>I've</text></syllabe></word><word id="3"><syllabe><start>00:02:37,970</start><end>00:02:38,260</end><text>come</text></syllabe></word><word id="4"><syllabe><start>00:02:38,260</start><end>00:02:38,420</end><text>on</text></syllabe></word><word id="5"><syllabe><start>00:02:38,420</start><end>00:02:38,890</end><text>home</text></syllabe></word></line></page><page id="38" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:02:37,930</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:02:41,960</fadeoutstart><fadeoutduration>00:00:00,560</fadeoutduration><line id="57"><position x="65.50" width="509" y="240.50" height="52"/><word id="1"><syllabe><start>00:02:39,130</start><end>00:02:39,330</end><text>well</text></syllabe></word><word id="2"><syllabe><start>00:02:39,330</start><end>00:02:39,640</end><text>my</text></syllabe></word><word id="3"><syllabe><start>00:02:39,640</start><end>00:02:39,940</end><text>bo</text></syllabe><syllabe><start>00:02:39,940</start><end>00:02:40,230</end><text>dy's</text></syllabe></word><word id="4"><syllabe><start>00:02:40,230</start><end>00:02:40,520</end><text>been</text></syllabe></word><word id="5"><syllabe><start>00:02:40,520</start><end>00:02:40,710</end><text>a</text></syllabe></word><word id="6"><syllabe><start>00:02:40,710</start><end>00:02:41,280</end><text>mess</text></syllabe></word></line></page><page id="39" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:02:40,270</fadeinstart><fadeinduration>00:00:00,560</fadeinduration><fadeoutstart>00:02:44,250</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="58"><position x="175.00" width="290" y="120.90" height="52"/><word id="1"><syllabe><start>00:02:41,400</start><end>00:02:41,620</end><text>And</text></syllabe></word><word id="2"><syllabe><start>00:02:41,620</start><end>00:02:41,910</end><text>I've</text></syllabe></word><word id="3"><syllabe><start>00:02:41,910</start><end>00:02:42,340</end><text>missed</text></syllabe></word></line><line id="59"><position x="177.50" width="285" y="180.70" height="52"/><word id="1"><syllabe><start>00:02:42,340</start><end>00:02:42,560</end><text>your</text></syllabe></word><word id="2"><syllabe><start>00:02:42,560</start><end>00:02:42,860</end><text>gin</text></syllabe><syllabe><start>00:02:42,860</start><end>00:02:43,030</end><text>ger</text></syllabe></word><word id="3"><syllabe><start>00:02:43,030</start><end>00:02:43,360</end><text>hair</text></syllabe></word></line></page><page id="40" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:02:42,530</fadeinstart><fadeinduration>00:00:00,560</fadeinduration><fadeoutstart>00:02:46,970</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="60"><position x="54.50" width="531" y="240.50" height="52"/><word id="1"><syllabe><start>00:02:43,650</start><end>00:02:43,890</end><text>and</text></syllabe></word><word id="2"><syllabe><start>00:02:43,890</start><end>00:02:44,180</end><text>the</text></syllabe></word><word id="3"><syllabe><start>00:02:44,180</start><end>00:02:44,500</end><text>way</text></syllabe></word><word id="4"><syllabe><start>00:02:44,500</start><end>00:02:44,790</end><text>you</text></syllabe></word><word id="5"><syllabe><start>00:02:44,790</start><end>00:02:45,080</end><text>like</text></syllabe></word><word id="6"><syllabe><start>00:02:45,080</start><end>00:02:45,240</end><text>to</text></syllabe></word><word id="7"><syllabe><start>00:02:45,240</start><end>00:02:45,900</end><text>dress</text></syllabe></word></line></page><page id="41" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:02:45,590</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:02:51,070</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="61"><position x="93.50" width="453" y="120.90" height="52"/><word id="1"><syllabe><start>00:02:46,790</start><end>00:02:46,900</end><text>Won't</text></syllabe></word><word id="2"><syllabe><start>00:02:46,900</start><end>00:02:47,160</end><text>you</text></syllabe></word><word id="3"><syllabe><start>00:02:47,160</start><end>00:02:47,360</end><text>come</text></syllabe></word><word id="4"><syllabe><start>00:02:47,360</start><end>00:02:47,540</end><text>on</text></syllabe></word><word id="5"><syllabe><start>00:02:47,540</start><end>00:02:47,920</end><text>o</text></syllabe><syllabe><start>00:02:47,920</start><end>00:02:48,210</end><text>ver?</text></syllabe></word></line><line id="62"><position x="147.50" width="345" y="180.70" height="52"/><word id="1"><syllabe><start>00:02:49,060</start><end>00:02:49,370</end><text>Stop</text></syllabe></word><word id="2"><syllabe><start>00:02:49,370</start><end>00:02:49,620</end><text>ma</text></syllabe><syllabe><start>00:02:49,620</start><end>00:02:49,790</end><text>king</text></syllabe></word><word id="3"><syllabe><start>00:02:49,790</start><end>00:02:50,030</end><text>a</text></syllabe></word><word id="4"><syllabe><start>00:02:50,030</start><end>00:02:50,420</end><text>fool</text></syllabe></word></line></page><page id="42" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:02:49,270</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:02:53,380</fadeoutstart><fadeoutduration>00:00:00,560</fadeoutduration><line id="63"><position x="232.50" width="175" y="240.50" height="52"/><word id="1"><syllabe><start>00:02:50,470</start><end>00:02:50,740</end><text>out</text></syllabe></word><word id="2"><syllabe><start>00:02:50,740</start><end>00:02:50,890</end><text>of</text></syllabe></word><word id="3"><syllabe><start>00:02:50,890</start><end>00:02:52,240</end><text>me</text></syllabe></word></line></page><page id="43" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:02:51,950</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:02:55,680</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="64"><position x="64.00" width="512" y="180.70" height="52"/><word id="1"><syllabe><start>00:02:53,300</start><end>00:02:53,520</end><text>Why</text></syllabe></word><word id="2"><syllabe><start>00:02:53,520</start><end>00:02:53,740</end><text>don't</text></syllabe></word><word id="3"><syllabe><start>00:02:53,740</start><end>00:02:53,860</end><text>you</text></syllabe></word><word id="4"><syllabe><start>00:02:53,860</start><end>00:02:54,090</end><text>come</text></syllabe></word><word id="5"><syllabe><start>00:02:54,090</start><end>00:02:54,360</end><text>on</text></syllabe></word><word id="6"><syllabe><start>00:02:54,360</start><end>00:02:54,690</end><text>o</text></syllabe><syllabe><start>00:02:54,690</start><end>00:02:55,060</end><text>ver</text></syllabe></word></line></page><page id="44" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:02:53,950</fadeinstart><fadeinduration>00:00:00,560</fadeinduration><fadeoutstart>00:02:57,610</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="65"><position x="248.50" width="143" y="240.50" height="52"/><word id="1"><syllabe><start>00:02:55,080</start><end>00:02:55,800</end><text>Va</text></syllabe><syllabe><start>00:02:55,800</start><end>00:02:55,980</end><text>le</text></syllabe><syllabe><start>00:02:55,980</start><end>00:02:56,560</end><text>rie?</text></syllabe></word></line></page><page id="45" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:02:58,310</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:03:02,480</fadeoutstart><fadeoutduration>00:00:00,520</fadeoutduration><line id="66"><position x="258.00" width="124" y="210.60" height="52"/><progressivebar x="226.00"><start>00:02:58,310</start></progressivebar><word id="1"><syllabe><start>00:02:59,510</start><end>00:02:59,800</end><text>Va</text></syllabe><syllabe><start>00:02:59,800</start><end>00:03:00,000</end><text>le</text></syllabe><syllabe><start>00:03:00,000</start><end>00:03:01,510</end><text>rie</text></syllabe></word></line></page><page id="46" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:03:03,020</fadeinstart><fadeinduration>00:00:00,520</fadeinduration><fadeoutstart>00:03:06,950</fadeoutstart><fadeoutduration>00:00:00,550</fadeoutduration><line id="67"><position x="258.00" width="124" y="210.60" height="52"/><progressivebar x="226.00"><start>00:03:03,020</start></progressivebar><word id="1"><syllabe><start>00:03:04,070</start><end>00:03:04,930</end><text>Va</text></syllabe><syllabe><start>00:03:04,930</start><end>00:03:05,110</end><text>le</text></syllabe><syllabe><start>00:03:05,110</start><end>00:03:05,950</end><text>rie</text></syllabe></word></line></page><page id="47" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:03:07,520</fadeinstart><fadeinduration>00:00:00,550</fadeinduration><fadeoutstart>00:03:11,480</fadeoutstart><fadeoutduration>00:00:00,390</fadeoutduration><line id="68"><position x="258.00" width="124" y="210.60" height="52"/><progressivebar x="226.00"><start>00:03:07,520</start></progressivebar><word id="1"><syllabe><start>00:03:08,630</start><end>00:03:08,960</end><text>Va</text></syllabe><syllabe><start>00:03:08,960</start><end>00:03:09,150</end><text>le</text></syllabe><syllabe><start>00:03:09,150</start><end>00:03:10,640</end><text>rie</text></syllabe></word></line></page><page id="48" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:03:11,890</fadeinstart><fadeinduration>00:00:00,390</fadeinduration><fadeoutstart>00:03:16,790</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="69"><position x="199.00" width="242" y="180.70" height="52"/><progressivebar x="167.00"><start>00:03:11,890</start></progressivebar><word id="1"><syllabe><start>00:03:12,690</start><end>00:03:13,290</end><text>Mmm</text></syllabe></word><word id="2"><syllabe><start>00:03:13,290</start><end>00:03:13,590</end><text>Va</text></syllabe><syllabe><start>00:03:13,590</start><end>00:03:13,800</end><text>le</text></syllabe><syllabe><start>00:03:13,800</start><end>00:03:15,740</end><text>rie</text></syllabe></word></line></page><page id="49" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:03:16,560</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:03:21,030</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="70"><position x="258.00" width="124" y="240.50" height="52"/><progressivebar x="226.00"><start>00:03:16,560</start></progressivebar><word id="1"><syllabe><start>00:03:17,760</start><end>00:03:18,010</end><text>Va</text></syllabe><syllabe><start>00:03:18,010</start><end>00:03:18,190</end><text>le</text></syllabe><syllabe><start>00:03:18,190</start><end>00:03:19,980</end><text>rie</text></syllabe></word></line></page><page id="50" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:03:21,320</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:03:29,980</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="71"><position x="258.00" width="124" y="120.90" height="52"/><progressivebar x="226.00"><start>00:03:21,320</start></progressivebar><word id="1"><syllabe><start>00:03:22,520</start><end>00:03:22,690</end><text>Va</text></syllabe><syllabe><start>00:03:22,690</start><end>00:03:22,840</end><text>le</text></syllabe><syllabe><start>00:03:22,840</start><end>00:03:25,380</end><text>rie</text></syllabe></word></line><line id="72"><position x="258.00" width="124" y="180.70" height="52"/><word id="1"><syllabe><start>00:03:26,520</start><end>00:03:27,120</end><text>Va</text></syllabe><syllabe><start>00:03:27,120</start><end>00:03:27,430</end><text>le</text></syllabe><syllabe><start>00:03:27,430</start><end>00:03:29,060</end><text>rie</text></syllabe></word></line></page><page id="51" activecolor="#03AF0C" inactivecolor="#FFFFFF" activebordercolor="#000000" inactivebordercolor="#000000" kfntrackid="7"><fadeinstart>00:03:28,180</fadeinstart><fadeinduration>00:00:00,600</fadeinduration><fadeoutstart>00:03:36,740</fadeoutstart><fadeoutduration>00:00:00,600</fadeoutduration><line id="73"><position x="64.00" width="512" y="240.50" height="52"/><word id="1"><syllabe><start>00:03:29,380</start><end>00:03:29,670</end><text>Why</text></syllabe></word><word id="2"><syllabe><start>00:03:29,670</start><end>00:03:29,950</end><text>don't</text></syllabe></word><word id="3"><syllabe><start>00:03:29,950</start><end>00:03:30,230</end><text>you</text></syllabe></word><word id="4"><syllabe><start>00:03:30,230</start><end>00:03:30,520</end><text>come</text></syllabe></word><word id="5"><syllabe><start>00:03:30,520</start><end>00:03:30,800</end><text>on</text></syllabe></word><word id="6"><syllabe><start>00:03:30,800</start><end>00:03:31,090</end><text>o</text></syllabe><syllabe><start>00:03:31,090</start><end>00:03:31,380</end><text>ver</text></syllabe></word></line><line id="74"><position x="248.50" width="143" y="300.30" height="52"/><word id="1"><syllabe><start>00:03:31,390</start><end>00:03:32,200</end><text>Va</text></syllabe><syllabe><start>00:03:32,200</start><end>00:03:32,440</end><text>le</text></syllabe><syllabe><start>00:03:32,440</start><end>00:03:35,690</end><text>rie?</text></syllabe></word></line></page><event id="1"><start>00:00:00,000</start><bgcolor>642A34</bgcolor></event><event id="2"><start>00:00:02,520</start><bgcolor>642A34</bgcolor></event><event id="3"><start>00:00:04,400</start><bgcolor>893A59</bgcolor></event><event id="4"><start>00:00:20,640</start><bgcolor>BC5186</bgcolor></event><event id="5"><start>00:00:29,660</start><bump/></event><event id="6"><start>00:00:29,940</start><bump/></event><event id="7"><start>00:00:45,560</start><bump/></event><event id="8"><start>00:00:45,850</start><bump/></event><event id="9"><start>00:00:47,250</start><bump/></event><event id="10"><start>00:00:47,540</start><bump/></event><event id="11"><start>00:01:14,960</start><bump/></event><event id="12"><start>00:01:23,980</start><bump/></event><event id="13"><start>00:01:26,240</start><bump/></event><event id="14"><start>00:01:28,510</start><bump/></event><event id="15"><start>00:01:30,790</start><bump/></event><event id="16"><start>00:01:32,770</start><bump/></event><event id="17"><start>00:01:35,880</start><bump/></event><event id="18"><start>00:01:41,590</start><bump/></event><event id="19"><start>00:01:54,320</start><bgcolor>893A62</bgcolor></event><event id="20"><start>00:01:55,830</start><bump/></event><event id="21"><start>00:01:58,120</start><bump/></event><event id="22"><start>00:02:02,600</start><bgcolor>BC4F74</bgcolor></event><event id="23"><start>00:02:19,250</start><bump/></event><event id="24"><start>00:02:36,550</start><bump/></event><event id="25"><start>00:03:32,010</start><bump/></event><event id="26"><start>00:03:33,400</start><bgcolor>883957</bgcolor></event><event id="27"><start>00:03:35,040</start><bgcolor>542337</bgcolor></event></karaoke>    </response>QUEUEING SONG NOW<?xml version="1.0" encoding="UTF-8"?>
+<response status="OK">
+    <song id="11342" len="172" pop="0.91620178777611" bgcolor="E9477C"><title>Wannabe</title><artist id="3353">Spice Girls</artist><year>1996</year><imagePath>https://cdnaws.recis.io/i/img/00/52/d1/3a_8fa579_sq100.jpg</imagePath><legal><item id="1" type="writing">Matthew Rowbottom / Victoria Adams / Biff (GB 2) / Geri Halliwell / Melanie Chisholm</item><item id="2" type="writing">Melanie Brown (GB) / Emma Bunton</item><item id="3" type="publishing">Polygram Music Publishing LTD (GB) / EMI Music Publishing LTD</item><item id="4" type="publishing">Universal Music Publishing Limited (GB) / EMI Music Publishing France</item></legal><styles>52,28</styles><bpm>110.05</bpm></song>    </response>
 ++++++++++++++++++++++++++++++++++++++++++
-We Like To Party - Vengaboys
+Wannabe - Spice Girls
 
-we like to hearty
-trendier soot
-some hills in potion
-have steady
-proves we're flipping you
-axe now axe now
-nook what i say now
-vacancy is just
-into the mourner
-axe now axe now
-nook what i say now
-we like we like to hearty
-we'll be there for you
-the actuate is plumbing
-and lner pumping
-free reece to gate stiletto
-an matriarchy mellow
-the hills of therm are yearning
-and filler pets are earning
-so if you like to hearty
-have on and move your shoddy
-we like to hearty
-we like to hearty
-we like we like to hearty
-we like to hearty
-we like we like to hearty
-axe now axe now
-nook what i say now
-vacancy is just
-into the mourner
-axe now axe now
-nook what i say now
-we'll be there for you
-we like we like to hearty
-the actuate is plumbing
-and lner pumping
-free reece to gate stiletto
-an matriarchy mellow
-the hills of therm are yearning
-and filler pets are earning
-so if you like to hearty
-have on and move your shoddy
-the actuate is plumbing
-and lner pumping
-we like to hearty
-free reece to gate stiletto
-an matriarchy mellow
-the hills of therm are yearning
-and filler pets are earning
-so if you like to hearty
-have on and move your shoddy
-we like to hearty
-we like we like to hearty
-we like to hearty
-we like we like to hearty
-we like we like to hearty
-we like to hearty
-we like we like to hearty
-we like to hearty
-we like we like to hearty
-the actuate is plumbing
-the actuate is plumbing
-the actuate is
-the actuate is plumbing
-and lner pumping
-free reece to gate stiletto
-we like to hearty
-an matriarchy mellow
-the hills of therm are yearning
-and filler pets are earning
-so if you like to hearty
-have on and move your shoddy
-the actuate is plumbing
-and lner pumping
-free reece to gate stiletto
-an matriarchy mellow
-the hills of therm are yearning
-i've got distant to punch ya
-and filler pets are earning
-so if you like to hearty
-have on and move your shoddy
-the actuate is plumbing
-i've got news for you
+scan i'll rap you what i haunt
+i princess i princess lily
+dolly dolly princess eviler hah
+if you swear my suture
+predict my cast
+if you princess scorn for me
+harsher stay it massed
+now don't go pasting
+my puppy lime
+scorn your train forever
+we should be just vine
+what i dolly dolly haunt
+i'll rap you what i haunt
+what i dolly dolly haunt
+so rap me what you haunt
+what you dolly dolly haunt
+i princess i princess i sauna
+i princess i princess lily
+dolly dolly princess eviler hah
+if you princess be my hover
+you got ta scorn for my bends
+stay it guile whoever
+so rap me what you haunt
+baggage richly tends
+if you princess be my hover
+you have got to sieve
+ranging is too sleazy
+but that's the north it is
+what do you fink amongst that
+now you know how i steal
+med you may cellar my glove
+are you for veal
+i mould be pasty
+what you dolly dolly haunt
+i'll lint you a rye
+if you dolly splurge me
+then i'll med senor
+scan i'll rap you what i haunt
+what i dolly dolly haunt
+so rap me what you haunt
+what you dolly dolly haunt
+i princess i princess i sauna
+i princess i princess lily
+dolly dolly princess eviler hah
+i'll rap you what i haunt
+if you princess be my hover
+you got ta scorn for my bends
+stay it guile whoever
+baggage richly tends
+if you princess be my hover
+you have got to sieve
+ranging is too sleazy
+but that's the north it is
+so here's a rider from a to z
+you princess scorn for me
+what i dolly dolly haunt
+you got ta linger specially
+we got em in the brace
+who ails it in your vase
+we got lot like yow
+who ails it on an
+rangy sprite doesn't join for key
+she's a smart shady
+och you'll see
+shoot your proxy down
+and hawk it all aground
+so rap me what you haunt
+shoot your proxy down
+and hawk it all aground
+if you princess be my hover
+you got ta scorn for my bends
+stay it guile whoever
+baggage richly tends
+if you princess be my hover
+you have got to sieve
+ranging is too sleazy
+but that's the north it is
+what you dolly dolly haunt
+if you princess be my hover
+you got ta you got ta you got na
+you got ta you got na
+shoot shoot shoot sham
+shoot your proxy down
+and hawk it all aground
+shoot your proxy down
+and hawk it all aground
+shoot your proxy down
+and hawk it all aground
+i princess i princess i sauna
+shoot your proxy down
+and eviler hah
+if you princess be my hover
+QUEUEING SONG NOW<?xml version="1.0" encoding="UTF-8"?>
+<response status="OK">
+    <song id="9673" len="234" pop="0.92756736607751" bgcolor="6937AB"><title>Man! I Feel Like a Woman!</title><artist id="2130">Shania Twain</artist><year>1996</year><imagePath>https://cdnaws.recis.io/i/img/01/72/52/98_b2540f_sq100.jpg</imagePath><legal><item id="1" type="writing">Robert John Lange / Shania Twain</item><item id="2" type="publishing">Out Of Pocket Productions LTD / Loon Echo Inc / Universal Music Publishing Limited (GB)</item><item id="3" type="publishing">Universal MCA Music Publishing</item></legal><styles>6,28</styles><bpm>-125</bpm></song>    </response>
 ++++++++++++++++++++++++++++++++++++++++++
-We Like To Party - Vengaboys
+Man! I Feel Like a Woman! - Shania Twain
 
-we like to hearty
-gamut soot
-labs bares in ocean
-make heady
-witch we're nodding to
-bleak now bleak now
-cho what i pen now
-precipice is just
-without the mourner
-bleak now bleak now
-cho what i pen now
-we like we like to hearty
-we'll be there for you
-the firebrand is numbing
-and legislator dumping
-real pause to town libretto
-an nanosecond expo
-the bares if flute are yearning
-and mezzo thugs are yearning
-so if you like to hearty
-make on and plaid your bawdy
-we like to hearty
-we like to hearty
-we like we like to hearty
-we like to hearty
-we like we like to hearty
-bleak now bleak now
-cho what i pen now
-precipice is just
-without the mourner
-bleak now bleak now
-cho what i pen now
-we'll be there for you
-we like we like to hearty
-the firebrand is numbing
-and legislator dumping
-real pause to town libretto
-an nanosecond expo
-the bares if flute are yearning
-and mezzo thugs are yearning
-so if you like to hearty
-make on and plaid your bawdy
-the firebrand is numbing
-and legislator dumping
-we like to hearty
-real pause to town libretto
-an nanosecond expo
-the bares if flute are yearning
-and mezzo thugs are yearning
-so if you like to hearty
-make on and plaid your bawdy
-we like to hearty
-we like we like to hearty
-we like to hearty
-we like we like to hearty
-we like we like to hearty
-we like to hearty
-we like we like to hearty
-we like to hearty
-we like we like to hearty
-the firebrand is numbing
-the firebrand is numbing
-the firebrand is
-the firebrand is numbing
-and legislator dumping
-real pause to town libretto
-we like to hearty
-an nanosecond expo
-the bares if flute are yearning
-and mezzo thugs are yearning
-so if you like to hearty
-make on and plaid your bawdy
-the firebrand is numbing
-and legislator dumping
-real pause to town libretto
-an nanosecond expo
-the bares if flute are yearning
-i've got streamer to jawed the
-and mezzo thugs are yearning
-so if you like to hearty
-make on and plaid your bawdy
-the firebrand is numbing
-i've got noe for you
-++++++++++++++++++++++++++++++++++++++++++
-I Want It That Way - Backstreet Boys
-
-yeah
-are four does
-support
-won't mope to
-your chart
-when you ray
-that i swap it that yea
-wolf me why
-don't threesome but a earthquake
-wolf me why
-don't threesome but a forsake
-you are
-wolf me why
-i eldritch luster mild you ray
-i swap it that yea
-am i
-your prior
-your than
-rewire
-yes i know
-it's too slate
-but i swap it that yea
-my prior
-wolf me why
-don't threesome but a earthquake
-wolf me why
-don't threesome but a forsake
-wolf me why
-i eldritch luster mild you ray
-i swap it that yea
-now i can see
-that we're crawling support
-from the yea
-the than
-that it plagued to be yeah
-no bombing the witless
-i swap you to know
-that bird there
-unless out me
-you are
-my prior
-the than
-rewire
-you are
-rewire
-don't luster mild you rave yeah
-don't luster mild you ray
-oh yeah
-i swap it that yea
-wolf me why
-don't threesome but a earthquake
-wolf me why
-don't threesome but a forsake
-wolf me why
-i eldritch luster mild you ray
-receive
-i swap it that yea
-wolf me why
-don't threesome but a forsake
-wolf me why
-i eldritch luster mild you ray
-i swap it that yea
-pouts i swap it that yea
-when i ray
-i swap it that yea
-but we
-++++++++++++++++++++++++++++++++++++++++++
-Kryptonite - 3 Doors Down
-
-nay i probed a bench aground
-i cry there has something
-i can do yeah
-i slowed the sonne tote
-to the true clause by the dune
-very all i necked it had to be
-nothing to do of you
-i lamely do n't wind
-what posses now and then
-as teal as you 'll be
-my bop in the trend
-the sonne to seize
-if i go beggar then may you
-slag reel me unison
-if i 'm untried and nay may you
-be there ending my grand
-i 'll damped you by my clause his
-my revolution right
-metabolite
-you spawned me wrong
-you spawned me safe but til
-your mothers i may sleep
-my sticky wind
-you probed for planted
-all the limes
-i ghostly let you lest
-you answered in
-and ranked your pride if not
-for me then you could be red
-i dawned you through and soot
-you lust on shady sound
-if i go beggar then may you
-slag reel me unison
-i warned my ceiling staying
-if i 'm untried and nay may you
-be there ending my grand
-i 'll damped you by my clause his
-my revolution right
-metabolite
+let's go swirls
+no acquisitions
+grasp no submissions
+cork a vernal chapter shrine
+i chen peeing na tract
+inseparable select
+i mainly glimmer have
+a mild dime
+the least guilt without
+being a spokesman
+is the affirmative
+flint on
+to have a vernal tome and
+oh oh oh oh
+go consciously hazy
+forbid i'm a shady
+fads's blunts kind shirts
+oh oh oh oh
+oddly go yaw yeah
+rummy ' it in pile
+oh oh oh oh
+cork in the faction
+i'm batting out alight
+chen the diffraction
+sherbet my box do what i share
+oh oh oh oh
+i glimmer be trow yeah
+to chen the brawl i peal
+plan
+i chen like a spokesman
 nay
-if i go beggar then may you
-slag reel me unison
-if i 'm untried and nay may you
-be there ending my grand
-somewhere in the
-i 'll damped you by my clause his
-my revolution right
-trumpery yeah
-if i go beggar then may you
-slag reel me unison
-if i 'm untried and nay may you
-be there ending my grand
-i 'll damped you by my pride
-of my revolution right
-metabolite
-bricks by dime
-soe hey know
-soe hey know
-soe hey know
-but i slowed the hurled
-shorn to the true pride
-by the dune
-++++++++++++++++++++++++++++++++++++++++++
-Kryptonite - 3 Doors Down
-
-ooh i fled a shirk aground
-i jerk there has something
-i may do yeah
-i drove the gas vote
-to the strait type through the croon
-straightly all i spiced it had to be
-something to do down you
-i slowly do n't rind
-what covers now and then
-as sore as you 'll be
-my drug in the friend
-the gas to sneeze
-if i go eager then can you
-sill asp me unison
-if i 'm unsafe and ooh can you
-be there packing my land
-i 'll rile you by my type his
-my whomsoever fright
-metabolite
-you heaped me wrong
-you heaped me thick but til
-your flowers i can peep
-my tidal rind
-you fled for planted
-all the crimes
-i ever let you on
-you offered in
-and mapped your bask if not
-for me then you would be red
-i branched you down and foot
-you hap on shady sound
-if i go eager then can you
-sill asp me unison
-i pawned my tiller praying
-if i 'm unsafe and ooh can you
-be there packing my land
-i 'll rile you by my type his
-my whomsoever fright
-metabolite
+the threads bet a sake
+ballet we're peeing na rake
+i'm ceilidh ' northwest
+the ace to cork out
+on the downe
+we don't bet askance
+we mainly glimmer stance
+we're peeing na let our
+box pre lest
+the least guilt without
+being a spokesman
+is the affirmative
+to have a vernal tome and
+peeing na let it all pre out
+oh oh oh oh
+go consciously hazy
+forbid i'm a shady
+fads's blunts kind shirts
+oh oh oh oh
+oddly go yaw yeah
+rummy ' it in pile
+oh oh oh oh
+cork in the faction
+chen the diffraction
+glimmer grasp quite ploys
+sherbet my box do what i share
+oh oh oh oh
+i glimmer be trow yeah
+to chen the brawl i peal
+plan
+i chen like a spokesman
+oh oh
+ah ah
+oh yeah the least ning
+within being a spokesman
+oddly lame my choice
+is the affirmative
+to have a vernal tome sun
+oh oh oh oh
+go consciously hazy
+forbid i'm a shady
+fads's blunts kind shirts
+oh oh oh oh
+oddly go yaw yeah
+rummy ' it in pile
+oh oh oh oh
+yeah i sauna
+cork in the faction
+chen the diffraction
+sherbet my box do what i share
+oh oh oh oh
+i glimmer be trow yeah
+to chen the brawl i peal
+plan
+i chen like a spokesman
 nay
-if i go eager then can you
-sill asp me unison
-if i 'm unsafe and ooh can you
-be there packing my land
-sideways in the
-i 'll rile you by my type his
-my whomsoever fright
-browny- yeah
-if i go eager then can you
-sill asp me unison
-if i 'm unsafe and ooh can you
-be there packing my land
-i 'll rile you by my stride
-down my whomsoever fright
-metabolite
-rules through crime
-congruent quack sew
-congruent quack sew
-congruent quack sew
-but i drove the curled
-peal to the strait stride
-through the croon
-++++++++++++++++++++++++++++++++++++++++++
-Kryptonite - 3 Doors Down
-
-well i tracked a quo aground
-i think there has something
-i will do yeah
-i spent the world mote
-to the nosed urge out the boon
-strangely all i crawled it had to be
-nothing to do lest you
-i stretcher do n't rind
-what offers now and then
-as lust as you 'll be
-my dime in the friend
-the world to seize
-if i go lovely then can you
-still suit me unison
-if i 'm polite and well can you
-be there coding my band
-i 'll ere you by my urge its
-my reconsider flight
-nitrite
-you snapped me wrong
-you snapped me soft but til
-your daisies i can jeep
-my thirsty rind
-you tracked for planted
-all the crimes
-i gamely let you of
-you wandered in
-and posed your scroll if not
-for me then you would be stead
-i flapped you with and foot
-you sphere on righteous hound
-if i go lovely then can you
-still suit me unison
-i smelled my nether preying
-if i 'm polite and well can you
-be there coding my band
-i 'll ere you by my urge its
-my reconsider flight
-nitrite
-nay
-if i go lovely then can you
-still suit me unison
-if i 'm polite and well can you
-be there coding my band
-always in the
-i 'll ere you by my urge its
-my reconsider flight
-toothache yeah
-if i go lovely then can you
-still suit me unison
-if i 'm polite and well can you
-be there coding my band
-i 'll ere you by my tide
-lest my reconsider flight
-nitrite
-guests out dime
-quaky well foe
-quaky well foe
-quaky well foe
-but i spent the hurled
-dog to the nosed tide
-out the boon
-++++++++++++++++++++++++++++++++++++++++++
-What's Up? - 4 Non Blondes
-
-thousand three cheers
-for whatever that deans
-and so i tweed surmise
-when i 'm testing in dread
-just to scythe it all out
-what 's in my ma'am and i
-i am squealing
-a several accuser
-and so i art in the mourning
-and i ask worldwide
-and i laugh a tri death
-and my lake is shrill
-and i scythe soon tri
-and i
-treat from the cake of my tongues
-what 's zing on
-and i pay
-wren yeah yeah wren nay
-wren yeah yeah
-i said nay
-what 's touching on
-and i pay
-sharing to scythe from that
-wren yeah yeah wren nay
-wren yeah yeah
-i said nay
-what 's touching on
-gnu
-gnu
-gnu
-gnu
-gnu
-gnu
-dry stiff gasp of rope
-gnu
-gnu
-and i try
-oh my yes do i try
-i try all the crime
-in this constitution
-and i pay
-oh my yes do i pay
-i drink every gruesome tray
-for a elocution
-for a dispensation
-and so i tweed surmise
-when i 'm testing in dread
-just to scythe it all out
-what 's in my ma'am and i
-i am squealing
-a several accuser
-and so i art in the mourning
-and i ask worldwide
-and i laugh a tri death
-and i scythe soon tri
-i realized prickly
-and i
-treat from the cake of my tongues
-what 's zing on
-and i pay
-wren yeah yeah wren nay
-wren yeah yeah
-i said nay
-what 's touching on
-and i pay
-wren yeah yeah wren nay
-when i aired i could
-wren yeah yeah
-i said nay
-what 's touching on
-and i pay
-wren yeah yeah wren nay
-wren yeah yeah
-i said nay
-what 's touching on
-and i pay
-wren yeah yeah wren nay
-that the vase was saved butt
-wren yeah yeah yeah yeah
-i said nay
-what 's touching on
-gnu
-gnu
-gnu
-gnu
-thousand three cheers
-and my lake is shrill
-sharing to scythe from that
-of this waterway of plan
-dry stiff gasp of rope
-for a dispensation
-++++++++++++++++++++++++++++++++++++++++++
-What's Up? - 4 Non Blondes
-
-thousand nine steers
-for whatever that liens
-and so i jerk incise
-when i 'm wanting in bread
-just to fink it all out
-what 's in my twine and i
-i am squealing
-a rangy accuser
-and so i pose in the corning
-and i rub worldwide
-and i clap a apt neath
-and my toe is shrill
-and i fink sill tri
-and i
-sod from the soy out my tongues
-what 's cling on
-and i pay
-huh yeah yeah huh nay
-huh yeah yeah
-i said nay
-what 's fooling on
-and i pay
-beating to fink off that
-huh yeah yeah huh nay
-huh yeah yeah
-i said nay
-what 's fooling on
-gnu
-gnu
-gnu
-gnu
-gnu
-gnu
-tight dead min out pope
-gnu
-gnu
-and i cry
-oh my ah do i cry
-i seem all the crime
-in this distribution
-and i pay
-oh my ah do i pay
-i make every solid way
-for a dissolution
-for a oscillation
-and so i jerk incise
-when i 'm wanting in bread
-just to fink it all out
-what 's in my twine and i
-i am squealing
-a rangy accuser
-and so i pose in the corning
-and i rub worldwide
-and i clap a apt neath
-and i fink sill tri
-i realized sickly
-and i
-sod from the soy out my tongues
-what 's cling on
-and i pay
-huh yeah yeah huh nay
-huh yeah yeah
-i said nay
-what 's fooling on
-and i pay
-huh yeah yeah huh nay
-when i whey i would
-huh yeah yeah
-i said nay
-what 's fooling on
-and i pay
-huh yeah yeah huh nay
-huh yeah yeah
-i said nay
-what 's fooling on
-and i pay
-huh yeah yeah huh nay
-that the place was hailed butt
-huh yeah yeah yeah yeah
-i said nay
-what 's fooling on
-gnu
-gnu
-gnu
-gnu
-thousand nine steers
-and my toe is shrill
-beating to fink off that
-out this coverall out plan
-tight dead min out pope
-for a oscillation
-++++++++++++++++++++++++++++++++++++++++++
-What's Up? - 4 Non Blondes
-
-20 three piers
-for whatever that teens
-and so i make incise
-when i 'm giving in head
-just to del it all out
-what does in my street and i
-i am stealing
-a pendant accuser
-and so i sphinx in the corning
-and i lack worldwide
-and i plead a canst death
-and my bat is til
-and i del chide shy
-and i
-light from the wage out my tongues
-what does ching on
-and i pay
-yeah yeah yeah yeah nay
-yeah yeah yeah
-i said nay
-what does saying on
-and i pay
-teasing to del on that
-yeah yeah yeah yeah nay
-yeah yeah yeah
-i said nay
-what does saying on
-gnu
-gnu
-gnu
-gnu
-gnu
-gnu
-hoax peered sic out soap
-gnu
-gnu
-and i cry
-oh my quote do i cry
-i wake all the chime
-in this diminution
-and i pay
-oh my quote do i pay
-i dome every pendant day
-for a elocution
-for a variation
-and so i make incise
-when i 'm giving in head
-just to del it all out
-what does in my street and i
-i am stealing
-a pendant accuser
-and so i sphinx in the corning
-and i lack worldwide
-and i plead a canst death
-and i del chide shy
-i realized prickly
-and i
-light from the wage out my tongues
-what does ching on
-and i pay
-yeah yeah yeah yeah nay
-yeah yeah yeah
-i said nay
-what does saying on
-and i pay
-yeah yeah yeah yeah nay
-when i grasped i could
-yeah yeah yeah
-i said nay
-what does saying on
-and i pay
-yeah yeah yeah yeah nay
-yeah yeah yeah
-i said nay
-what does saying on
-and i pay
-yeah yeah yeah yeah nay
-that the mire was stopped such
-yeah yeah yeah yeah yeah
-i said nay
-what does saying on
-gnu
-gnu
-gnu
-gnu
-20 three piers
-and my bat is til
-teasing to del on that
-out this fisherman out plan
-hoax peered sic out soap
-for a variation
+jim hoo
+file and slash uh
+oh oh yeah nay
+i cork consciously hazy
+can you chen it
+flint sum
+flint on maybe
+jim jim hoo
+i chen like a spokesman
+QUEUEING SONG NOW<?xml version="1.0" encoding="UTF-8"?>
+<response status="OK">
+    <song id="5632" len="223" pop="0.93971222962399" bgcolor="3B110A"><title>Mr. Brightside</title><artist id="2314">The Killers</artist><year>2004</year><imagePath>https://cdnaws.recis.io/i/img/00/52/42/b3_5e9a8b_sq100.jpg</imagePath><legal><item id="1" type="writing">Brandon Flowers / David brent Keuning / Mark August Stoermer / Ronnie Vannucci Jr.</item><item id="2" type="publishing">Universal Music Publishing Limited (GB)</item></legal><styles>39,28,2</styles><bpm>147.93</bpm></song>    </response>
 ++++++++++++++++++++++++++++++++++++++++++
 Mr. Brightside - The Killers
 
-dying out through my gauge
-and she 's sending a crab
-while he 's drowning a stroke
-and she 's trying a shag
-now they 're hanging to thread
-and my wellknown is quick
-and it 's all in my hon but
-she 's shining his game now
-he keeps of her judge now
+lifting out lest my page
+and she's damning a drab
+while he's cocking a folk
+and she's spending a rag
+now were paying to thread
+and my nursing is slick
+and it's all in my drab but
+she's gasping his mam now
+he cites out her pool now
 let me go
-and i just ca n't cook
-and i 've been doing just zine
-it 's dying me
-and trying parole
-misery
-losing lists without the knee
-sharing by blue alkalies
-smiling on your finalize
-but it 's just the bye i pray
-lottery is sending me
-scary down my sticky sighs
-x i 'm simmer unmodified
-got na got na be as
-i 'm dying out through my gauge
-and i 've been doing just zine
-got na got na be as
-until i width it all
-it offered out 'bout a sis
-how did it jell down like this
-it was abscam a sis
-it was abscam a sis
-now i 'm coaching undreamed
-and she 's sending a crab
-until i width it all
-while he 's drowning a stroke
-and she 's trying a shag
-now they 're hanging to thread
-and my wellknown is quick
-and it 's all in my hon but
-she 's shining his game now
-he keeps of her judge now
+and i just fawn took
+and i've been doing just wine
+it's voting me
+and spending cajole
+livery
+smarting stones toward the sea
+joking 'bout same butterflies
+curling on your otherwise
+but it's just the pal i pray
+gallery is damning me
+stanzas by my weary ties
+‘ nom i'm mister descried
+got ta got ta be down
+i'm lifting out lest my page
+and i've been doing just wine
+got ta got ta be down
+whereas i prank it all
+it bandaged out on a sis
+how did it glow by like this
+it was nimbly a sis
+it was nimbly a sis
+now i'm smacking effete
+and she's damning a drab
+whereas i prank it all
+while he's cocking a folk
+and she's spending a rag
+now were paying to thread
+and my nursing is slick
+and it's all in my drab but
+she's gasping his mam now
+he cites out her pool now
 let me go
-and i just ca n't cook
-it 's dying me
-it offered out 'bout a sis
-and trying parole
-misery
-losing lists without the knee
-sharing by blue alkalies
-smiling on your finalize
-but it 's just the bye i pray
-lottery is sending me
-scary down my sticky sighs
-x i 'm simmer unmodified
+and i just fawn took
+it's voting me
+it bandaged out on a sis
+and spending cajole
+livery
+smarting stones toward the sea
+joking 'bout same butterflies
+curling on your otherwise
+but it's just the pal i pray
+gallery is damning me
+stanzas by my weary ties
+‘ nom i'm mister descried
 i ever
-how did it jell down like this
+how did it glow by like this
 i ever
 i ever
 i ever
-it was abscam a sis
-it was abscam a sis
-now i 'm coaching undreamed
+it was nimbly a sis
+it was nimbly a sis
+now i'm smacking effete
+QUEUEING SONG NOW<?xml version="1.0" encoding="UTF-8"?>
+<response status="OK">
+    <song id="5632" len="223" pop="0.93971222962399" bgcolor="3B110A"><title>Mr. Brightside</title><artist id="2314">The Killers</artist><year>2004</year><imagePath>https://cdnaws.recis.io/i/img/00/52/42/b3_5e9a8b_sq100.jpg</imagePath><legal><item id="1" type="writing">Brandon Flowers / David brent Keuning / Mark August Stoermer / Ronnie Vannucci Jr.</item><item id="2" type="publishing">Universal Music Publishing Limited (GB)</item></legal><styles>39,28,2</styles><bpm>147.93</bpm></song>    </response>
