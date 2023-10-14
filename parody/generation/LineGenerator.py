@@ -11,6 +11,8 @@ nlp.tokenizer.rules = {key: value for key, value in nlp.tokenizer.rules.items() 
 
 
 def generate_parody_line(line, last_word_dict, artist, title):
+    context_id = (artist, title)
+
     line_cache = cache.line_cache(artist, title)
     word_cache = cache.word_cache(artist, title)
     rhyming_word_cache = cache.rhyming_word_cache(artist, title)
@@ -57,7 +59,7 @@ def generate_parody_line(line, last_word_dict, artist, title):
                                          target_stress=target_stress,
                                          target_pos=target_pos,
                                          target_morph=target_morph)
-            parody_word = corpus.get_word(gen_options)
+            parody_word = corpus.get_word(gen_options, context_id)
             word_cache[word.word] = parody_word
 
         line = line + " " + enforce_blocklist(parody_word.rawWord, word.word)
@@ -79,7 +81,7 @@ def generate_parody_line(line, last_word_dict, artist, title):
             target_pos=token.pos_,
             target_morph=token.morph.__str__(),
             rhyme_with=last_word)
-        final_word = corpus.get_word(options)
+        final_word = corpus.get_word(options, context_id)
         rhyming_word_cache[last_word.word] = final_word
 
     sw.split("Last Word")

@@ -1,5 +1,26 @@
 # Karaobot
 
+## Architecture Overview
+
+There are a few components here: 
+
+* SQL Database
+  * Stores pre-analysed words and rhymes. When new words are encountered, they are added to this database once processed.
+* Parody Server
+  * Generates parodies of provided text via HTTP API
+  * Requires: 
+    * SQL Database
+    * Similarity Server
+* Similarity Server
+  * HTTP API to wrap around Word2Vec (via gensim library)
+  * This is a separate component as importing even a pre-trained corpus for Word2Vec increases the cold start time by at least 10 seconds or so,
+  which isn't really suitable for quick changes / hotfixes to the main parody generation, where change (and bugs) are more likely
+* MITM Proxy
+  * Proxy which knows how to intercept calls to karafun, including: 
+    * Replacing words of karaoke tracks with some parodied by the parody server
+    * Pre-fetching tracks as they're queued, and pre-generating parody data
+    * VERY rudimentary queuing of pre-fetched tracks
+
 ## Local Setup
 
 ### Pre-requisites
@@ -45,9 +66,14 @@ To generate a parody:
 
 #### As a REST API
 
-* Run `server.py` using flask
+* Run `parody/server.py` using flask
   * Required config:
     * environment variable of `DB_URI=postgresql+psycopg2://postgres:<mypassword>@localhost:5432/karaobot` 
+
+* Run `similarity/server.py` using flask
+  * Required: 
+    * data/source_data/GoogleNews-vectors-negative300.bin (https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/)
+    * This is git ignored as it's very very large, please set it up manually for now on servers running the similarity app
 
 __________________
 

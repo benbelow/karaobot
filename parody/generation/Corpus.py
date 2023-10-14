@@ -8,11 +8,12 @@ from parody.analysis.RhymeFinder import import_rhymes
 from parody.analysis.WordImporter import import_words
 from utils.random_utils import chance
 
-CHANCE_OF_SPOOKY_WORD_IN_NON_RHYME = 0
+CHANCE_OF_SPOOKY_WORD_IN_NON_RHYME = 60
 
 repo = WordRepository()
 
 spooky_words_by_stress = {}
+themes = {}
 
 with open("data/source_data/spooky_words.txt", 'r') as block_file:
     spooky_words = []
@@ -32,6 +33,7 @@ with open("data/source_data/spooky_words.txt", 'r') as block_file:
         if stress not in spooky_words_by_stress:
             spooky_words_by_stress[stress] = []
         spooky_words_by_stress[stress].append(word)
+
 
 class WordGenOptions:
     def __init__(self, original, target_stress=None, rhyme_with=None, target_pos=None, target_morph=None):
@@ -69,7 +71,7 @@ class Corpus:
             for line in lines:
                 self.stop_words.append(line.strip())
 
-    def get_word(self, generation_options):
+    def get_word(self, generation_options, context_id):
         rhyme_with = generation_options.rhyme_with
         target_stress = generation_options.target_stress
         target_pos = generation_options.target_pos
@@ -83,7 +85,7 @@ class Corpus:
         if rhyme_with is not None:
             return self.get_rhyming_word(rhyme_with, target_stress, target_pos, target_morph)
         if target_stress is not None:
-            return self.get_stressed_word(target_stress, target_pos, target_morph)
+            return self.get_stressed_word(target_stress, target_pos, target_morph, context_id)
 
     def get_rhyming_word(self, rhyme_with, target_stress, target_pos, target_morph):
         if not rhyme_with.get_rhymes():
@@ -92,7 +94,6 @@ class Corpus:
 
         perfect_rhymes = [r for r in rhyme_with.get_rhymes() if r.score >= 300]
         imperfect_rhymes = [r for r in rhyme_with.get_rhymes() if r.score < 300]
-
 
         # TODO: Weight towards more common words for rhymes
         rhyme_source = perfect_rhymes if perfect_rhymes else imperfect_rhymes
@@ -128,8 +129,14 @@ class Corpus:
 
         return self.get_stressed_word(target_stress, target_pos, target_morph)
 
+    def get_stressed_word(self, target_stress, target_pos, target_morph, context_id=None):
+        theme = themes.get(context_id)
+        if theme is not None \
+                and target_stress in theme["words_by_stress"].keys() \
+                and theme["words_by_stress"][target_stress] \
+                and chance(99):
+            return random.choice(theme["words_by_stress"][target_stress])
 
-    def get_stressed_word(self, target_stress, target_pos, target_morph):
         if target_stress in spooky_words_by_stress.keys() \
                 and spooky_words_by_stress[target_stress] \
                 and chance(CHANCE_OF_SPOOKY_WORD_IN_NON_RHYME):
@@ -157,7 +164,27 @@ class Corpus:
                           is_target_stress,
                           is_target_pos,
                           is_target_morph):
-        print(f" -> {chosen_word.rawWord}: {self.log_glyph(is_target_stress)}{self.log_glyph(is_target_pos)}{self.log_glyph(is_target_morph)}")
+        print(
+            f" -> {chosen_word.rawWord}: {self.log_glyph(is_target_stress)}{self.log_glyph(is_target_pos)}{self.log_glyph(is_target_morph)}")
+
+    # This feels a bit bad and global state-y. Use [artist, song_name] as a tuple unique id to allow parallel generation
+    # also quite duplicated to "spooky words". REFACTOR to make spooky words a subset of themed words. Also add phrases. Not a big ask :P
+    def set_theme(self, artist, name, theme_words):
+        themes[(artist, name)] = {"words_by_stress": {}}
+        theme_by_stress = themes[(artist, name)]["words_by_stress"]
+
+        theme_orm_words = repo.get_words(theme_words)
+        theme_new_words = list(set(theme_words) - set([w.word for w in theme_orm_words]))
+        import_words(theme_new_words)
+        theme_orm_words = theme_orm_words + repo.get_words(theme_new_words)
+
+        for theme_orm_word in theme_orm_words:
+            theme_word = theme_orm_word.analysed_word()
+            theme_word_stress = theme_word.stress
+
+            if theme_word_stress not in theme_by_stress:
+                theme_by_stress[theme_word_stress] = []
+            theme_by_stress[theme_word_stress].append(theme_word)
 
     def log_glyph(self, flag):
         return "✅" if flag else "❌";

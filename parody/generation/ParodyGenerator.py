@@ -1,16 +1,13 @@
-import nltk as nltk
 import spacy
 
 from parody.generation.LineGenerator import generate_parody_line
-from parody.generation.MetadataCache import MetadataCache
 from parody.generation.WordLookup import lookup_last_words
-from parody.singleton import cache
+from parody.singleton import cache, corpus
+from similarity.client import get_similar_words
 
 nlp = spacy.load("en_core_web_sm")
 
-from data.repositories.wordRepository import WordRepository
 from genius_client.genius import fetch_lyrics
-from parody.generation.Corpus import Corpus
 from stopwatch import Stopwatch
 
 
@@ -32,6 +29,10 @@ def generate_parody(lyrics, artist, title):
     last_word_dict = lookup_last_words(lines)
     sw.split("Get rhymes for *all* last words")
 
+    theme_pos = ["fish"]
+    theme_words = get_similar_words(theme_pos, [], 300)
+    corpus.set_theme(artist, title, theme_words)
+
     for line in lines:
         parody_line = generate_parody_line(line, last_word_dict, artist, title)
         sw.split("Line generation")
@@ -44,6 +45,10 @@ def generate_parody_with_line_ids(lyrics, artist, title):
 
     lines = [lyrics[k] for k in lyrics]
     last_word_dict = lookup_last_words(lines)
+
+    theme_pos = ["fish"]
+    theme_words = get_similar_words(theme_pos, [], 300)
+    corpus.set_theme(artist, title, theme_words)
 
     for line_id in lyrics:
         parody_line = generate_parody_line(lyrics[line_id], last_word_dict, artist, title)
