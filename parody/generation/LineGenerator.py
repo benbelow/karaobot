@@ -6,6 +6,9 @@ from parody.generation.WordLookup import lookup_words
 from parody.singleton import cache, corpus
 from stopwatch import Stopwatch
 
+nlp.tokenizer.rules = {key: value for key, value in nlp.tokenizer.rules.items() if
+                       "'" not in key and "’" not in key and "‘" not in key}
+
 
 def generate_parody_line(line, last_word_dict, artist, title):
     line_cache = cache.line_cache(artist, title)
@@ -39,6 +42,10 @@ def generate_parody_line(line, last_word_dict, artist, title):
         word = words_by_token[token.text]
         # TODO: Make this more resilient to all punctuations
         if word.word == ",":
+            parody_word = analyse_word(word.word)
+        # Tokeniser from Spacy splits words liek 'Ben's' into 'Ben' and "'s" so it can correctly identify the 1st part.
+        # We let it do its thing, then don't try to parody the possessive and add it back to the replacement later
+        if word.word == "'s":
             parody_word = analyse_word(word.word)
         elif word.word in word_cache:
             parody_word = word_cache[word.word]
@@ -79,7 +86,25 @@ def generate_parody_line(line, last_word_dict, artist, title):
 
     line = line + " " + enforce_blocklist(final_word.rawWord, last_word.word)
 
+    line = process_possessives(line)
+
     line_cache[line] = line
     return line
 
 
+def process_possessives(input_string):
+    input_strings = input_string.split()
+    output_strings = []
+    i = 0
+
+    while i < len(input_strings):
+        current_string = input_strings[i]
+        if current_string == "'s":
+            if i > 0:
+                output_strings[-1] += current_string
+        else:
+            output_strings.append(current_string)
+
+        i += 1
+
+    return ' '.join(output_strings)

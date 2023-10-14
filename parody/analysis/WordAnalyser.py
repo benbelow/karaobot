@@ -3,6 +3,8 @@ import nltk as nltk
 import spacy
 nlp = spacy.load("en_core_web_sm")
 
+nlp.tokenizer.rules = {key: value for key, value in nlp.tokenizer.rules.items() if
+                       "'" not in key and "’" not in key and "‘" not in key}
 
 def analyse_sentence(raw_sentence):
     raw_sentence = raw_sentence.lower()
