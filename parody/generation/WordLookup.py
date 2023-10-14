@@ -1,8 +1,11 @@
 from parody.analysis.RhymeFinder import import_rhymes
+from parody.analysis.WordAnalyser import nlp
 from parody.analysis.WordImporter import import_words
 from parody.generation.Sanitiser import remove_special_characters
 from parody.singleton import repo
 
+nlp.tokenizer.rules = {key: value for key, value in nlp.tokenizer.rules.items() if
+                       "'" not in key and "’" not in key and "‘" not in key}
 
 def lookup_last_words(lines):
     """
@@ -13,8 +16,10 @@ def lookup_last_words(lines):
     :param lines:
     :return: dictionary of word -> word with analysis + rhymes
     """
-    split_lines = [l.split() for l in lines if l]
-    last_words = [remove_special_characters(l[-1].lower()) for l in split_lines if l]
+    # tokenise here so that cache and lookup for last words agree on what the last word is.
+    # Otherwise problematic in cases where one word split by spaces but two words by tokens - e.g. gotta -> got ta & gotta
+    tokenised_lines = [nlp(remove_special_characters(l)) for l in lines if l]
+    last_words = [l[-1].text.lower() for l in tokenised_lines if l]
     last_words = list(set(last_words))
     orm_last_words = repo.get_words(last_words, load_rhymes=True)
 
