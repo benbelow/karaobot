@@ -10,7 +10,7 @@ def handle_play_song(flow, log):
     root = ET.fromstring(text)
 
     kf_data = extract_data(root)
-    parody = generate_parody(kf_data, log)
+    parody = generate_parody(kf_data, log, is_queued=False)
     write_parody_to_karafun(kf_data, parody)
     final = ET.tostring(root, "unicode")
     flow.response.text = final

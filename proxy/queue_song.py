@@ -28,7 +28,7 @@ async def pre_load_from_karafun(flow: http.HTTPFlow, log):
             response_text = await response.text()
             root_xml = ET.fromstring(response_text)
             kf_data = extract_data(root_xml)
-            generate_parody(kf_data, log)
+            generate_parody(kf_data, log, is_queued=True)
 
     except Exception as e:
         print(e)
