@@ -8,7 +8,7 @@ from parody.analysis.RhymeFinder import import_rhymes
 from parody.analysis.WordImporter import import_words
 from utils.random_utils import chance
 
-CHANCE_OF_SPOOKY_WORD_IN_NON_RHYME = 60
+CHANCE_OF_SPOOKY_WORD_IN_NON_RHYME = 5
 
 repo = WordRepository()
 
@@ -134,7 +134,7 @@ class Corpus:
         if theme is not None \
                 and target_stress in theme["words_by_stress"].keys() \
                 and theme["words_by_stress"][target_stress] \
-                and chance(99):
+                and chance(5):
             return random.choice(theme["words_by_stress"][target_stress])
 
         if target_stress in spooky_words_by_stress.keys() \

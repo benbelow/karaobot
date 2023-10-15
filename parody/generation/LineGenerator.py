@@ -29,11 +29,11 @@ def generate_parody_line(line, last_word_dict, artist, title):
 
     sw = Stopwatch().start()
 
-    line_words = [t.text for t in tokens]
+    line_words = [t.text for t in tokens if not t.text.isspace()]
 
     words_by_token = lookup_words(line_words, sw)
 
-    orm_line_words = [words_by_token[lw] for lw in line_words]
+    orm_line_words = [words_by_token[lw] for lw in line_words if not lw.isspace()]
 
     line = ""
 
