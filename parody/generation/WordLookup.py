@@ -7,6 +7,50 @@ from parody.singleton import repo
 nlp.tokenizer.rules = {key: value for key, value in nlp.tokenizer.rules.items() if
                        "'" not in key and "’" not in key and "‘" not in key}
 
+
+def lookup_all_words(lines):
+    """
+        Given a set of lines, extracts all words from each line, and performs a lookup.
+        * Imports new words
+        * Imports rhymes for words with none
+        * Fetches word data PLUS rhymes from DB
+        :param lines:
+        :return: dictionary of word -> word with analysis + rhymes
+        """
+    # tokenise here so that cache and lookup for last words agree on what the last word is.
+    # Otherwise problematic in cases where one word split by spaces but two words by tokens - e.g. gotta -> got ta & gotta
+    tokenised_lines = [nlp(remove_special_characters(l)) for l in lines if l]
+    words = [w.text.lower() for l in tokenised_lines if l for w in l]
+    words = list(set(words))
+    orm_words = repo.get_words(words, load_rhymes=True)
+
+    new_words = list(set(words) - set([w.word for w in orm_words]))
+
+    if new_words:
+        import_words(w for w in new_words)
+
+        new_orm_words = repo.get_words(new_words)
+        orm_words = orm_words + new_orm_words
+
+    have_rhymes = [n for n in orm_words if n.get_rhymes()]
+    needing_rhymes = set([n for n in orm_words if not n.get_rhymes()])
+    print("HOW MANY NEED RHYMES? " + len(needing_rhymes).__str__())
+
+    if len(needing_rhymes) > 50:
+        # Sometimes genius thinks there's far too many lyrics and we start getting rate limited on rhyming -
+        # mostly these are easier to just ignore the initial pre-load for
+        raise Exception
+
+    for lw in needing_rhymes:
+        import_rhymes(lw)
+
+    newly_added_rhymes = repo.get_words([w.word for w in needing_rhymes], load_rhymes=True)
+    orm_words = have_rhymes + newly_added_rhymes
+
+    word_dict = {lw.word: lw for lw in orm_words}
+    return word_dict
+
+
 def lookup_last_words(lines):
     """
     Given a set of lines, extracts the last word from each line, and performs a lookup.
@@ -50,8 +94,8 @@ def lookup_last_words(lines):
     return last_word_dict
 
 
-def lookup_words(line_words, sw):
-    words_in_line = repo.get_words(line_words)
+def lookup_words(line_words, sw, load_rhymes=False):
+    words_in_line = repo.get_words(line_words, load_rhymes)
     sw.split("Get Words In Line")
     new_words = list(set(line_words) - set([w.word for w in words_in_line]))
     if new_words:

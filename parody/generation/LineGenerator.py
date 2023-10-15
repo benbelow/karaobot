@@ -94,6 +94,52 @@ def generate_parody_line(line, last_word_dict, artist, title):
     return line
 
 
+#TODO: This is very copy pasted from generate line. This whole file could do with a refactor really
+def generate_fully_rhyming_parody_line(line, last_word_dict, artist, title):
+    context_id = (artist, title)
+
+    line_cache = cache.line_cache(artist, title)
+    word_cache = cache.word_cache(artist, title)
+    rhyming_word_cache = cache.rhyming_word_cache(artist, title)
+
+    line = line.lower()
+    if len(line) == 0:
+        return ''
+    if line in line_cache:
+        return line_cache[line]
+
+    line = remove_special_characters(line)
+
+    tokens = nlp(line)
+
+    sw = Stopwatch().start()
+
+    line_words = [t.text for t in tokens if not t.text.isspace()]
+
+    words_by_token = lookup_words(line_words, sw, load_rhymes=True)
+
+    orm_line_words = [words_by_token[lw] for lw in line_words if not lw.isspace()]
+
+    line = ""
+
+    for token in tokens:
+        word = words_by_token[token.text]
+        options = WordGenOptions(
+            original=word.word,
+            target_stress=word.stress,
+            target_pos=token.pos_,
+            target_morph=token.morph.__str__(),
+            rhyme_with=word)
+        new_word = corpus.get_word(options, context_id)
+
+        line = line + " " + enforce_blocklist(new_word.rawWord, token.text)
+
+    line = process_possessives(line)
+
+    line_cache[line] = line
+    return line
+
+
 def process_possessives(input_string):
     input_strings = input_string.split()
     output_strings = []

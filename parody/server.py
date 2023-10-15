@@ -5,7 +5,7 @@ import json
 from data.repositories.wordRepository import WordRepository
 from parody.analysis.RhymeFinder import import_rhymes
 from parody.generation.ParodyGenerator import generate_parody_with_line_ids, generate_parody, \
-    generate_parody_from_metadata
+    generate_parody_from_metadata, generate_fully_rhyming_parody
 
 HEADER_ARTIST = 'Karafun-Artist'
 HEADER_TITLE = 'Karafun-Title'
@@ -37,6 +37,18 @@ def generate_parody_no_ids():
     title = request.headers.get('Karafun-Title')
     parody = ""
     for line in generate_parody(data, artist, title):
+        parody += line
+        parody += "\n"
+    return parody
+
+
+@app.route('/parody/title', methods=['POST'])
+def generate_parody_title():
+    data = request.get_data().decode("utf-8")
+    artist = request.headers.get('Karafun-Artist')
+    title = request.headers.get('Karafun-Title')
+    parody = ""
+    for line in generate_fully_rhyming_parody(data, artist, title):
         parody += line
         parody += "\n"
     return parody

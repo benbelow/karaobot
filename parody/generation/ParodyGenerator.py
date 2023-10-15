@@ -1,7 +1,7 @@
 import spacy
 
-from parody.generation.LineGenerator import generate_parody_line
-from parody.generation.WordLookup import lookup_last_words
+from parody.generation.LineGenerator import generate_parody_line, generate_fully_rhyming_parody_line
+from parody.generation.WordLookup import lookup_last_words, lookup_all_words
 from parody.singleton import cache, corpus
 from similarity.client import get_similar_words
 
@@ -20,6 +20,20 @@ def generate_parody_from_metadata(artist, title):
     # is queuing songs just as another hits the front of the queue
     # TODO: Cache per request scope, so we can clear again here
     # cache.clear()
+
+
+def generate_fully_rhyming_parody(lyrics, artist, title):
+    lines = str.splitlines(lyrics)
+    sw = Stopwatch().start()
+
+    last_word_dict = lookup_all_words(lines)
+    sw.split("Get rhymes for *all* words")
+
+    for line in lines:
+        parody_line = generate_fully_rhyming_parody_line(line, last_word_dict, artist, title)
+        sw.split("Line generation")
+        yield parody_line
+    cache.clear()
 
 
 def generate_parody(lyrics, artist, title):
@@ -55,4 +69,3 @@ def generate_parody_with_line_ids(lyrics, artist, title):
         parody[line_id] = parody_line.strip()
     cache.clear()
     return parody
-
