@@ -4,7 +4,7 @@ from mitmproxy import http
 import aiohttp
 
 from karafun_parser import extract_data
-from generate_parody import generate_parody
+from generate_parody import generate_parody, generate_parody_title
 
 
 async def pre_load_from_genius(artist, title):
@@ -44,10 +44,15 @@ def handle_queue_song(flow, log):
 
     song = [x for x in root if x.tag == "song"][0]
     song_id = song.get("id")
-    title = [x for x in song if x.tag == "title"][0].text
-    artist = [x for x in song if x.tag == "artist"][0].text
+    title = [x for x in song if x.tag == "title"][0]
+    artist = [x for x in song if x.tag == "artist"][0]
 
     try:
+        parody_title = generate_parody_title(title.text)
+
+        title.text = parody_title.title()
+        flow.response.text = ET.tostring(root, "unicode")
+
         asyncio.create_task(pre_load_from_karafun(flow, log))
 
     except Exception as e:

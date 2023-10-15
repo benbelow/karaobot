@@ -6,6 +6,15 @@ import requests
 song_cache = {}
 
 
+def generate_parody_title(title):
+    parody = requests.post(
+        "http://localhost:5000/parody/no-ids",
+        data=title,
+        headers={"Karafun-Title": title}
+    )
+    return parody.text
+
+
 def generate_parody(kf_data, log, is_queued):
     if kf_data.song_id in song_cache:
         log.write(kf_data.song_id)
@@ -21,7 +30,7 @@ def generate_parody(kf_data, log, is_queued):
 
     except Exception as e:
         log.write(e)
-    log_parody(kf_data, log, parody)
+    # log_parody(kf_data, log, parody)
     if is_queued:
         song_cache[kf_data.song_id] = parody
     return parody
