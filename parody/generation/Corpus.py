@@ -88,6 +88,10 @@ class Corpus:
             return self.get_stressed_word(target_stress, target_pos, target_morph, context_id)
 
     def get_rhyming_word(self, rhyme_with, target_stress, target_pos, target_morph):
+        # matching ? to ? can lead to horrible mismatches
+        if target_stress == '?':
+            target_stress = 'P'
+
         if not rhyme_with.get_rhymes():
             import_rhymes(rhyme_with)
             rhyme_with = repo.get_word(rhyme_with.word, load_rhymes=True)
@@ -130,6 +134,10 @@ class Corpus:
         return self.get_stressed_word(target_stress, target_pos, target_morph)
 
     def get_stressed_word(self, target_stress, target_pos, target_morph, context_id=None):
+        # matching ? to ? can lead to horrible mismatches
+        if target_stress == '?':
+            target_stress = 'P'
+
         theme = themes.get(context_id)
         if theme is not None \
                 and target_stress in theme["words_by_stress"].keys() \
