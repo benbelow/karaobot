@@ -60,7 +60,7 @@ def generate_parody_with_line_ids(lyrics, artist, title):
     lines = [lyrics[k] for k in lyrics]
     last_word_dict = lookup_last_words(lines)
 
-    theme_pos = ["flamingo"]
+    theme_pos = ["fish"]
     theme_words = get_similar_words(theme_pos, [], 300)
     corpus.set_theme(artist, title, theme_words)
 

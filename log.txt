@@ -158,3 +158,352 @@ QUEUEING SONG NOW<?xml version="1.0" encoding="UTF-8"?>
 QUEUEING SONG NOW<?xml version="1.0" encoding="UTF-8"?>
 <response status="OK">
     <song id="29202" len="228" pop="0.74055636259253" bgcolor="051E11"><title>Mr. Brightside</title><artist id="3187">Paul Anka</artist><year>2007</year><imagePath>https://cdnaws.recis.io/i/img/00/52/d4/d2_50e410_sq100.jpg</imagePath><legal><item id="1" type="writing">Brandon Flowers / David brent Keuning / Mark August Stoermer / Ronnie Vannucci Jr.</item><item id="2" type="publishing">Universal Music Publishing Limited (GB)</item></legal><styles>20</styles><bpm>149.98</bpm></song>    </response>
+QUEUEING SONG NOW<?xml version="1.0" encoding="UTF-8"?>
+<response status="OK">
+    <song id="6534" len="213" pop="0.97779892801471" bgcolor="DF689E"><title>Sweet Caroline</title><artist id="2586">Neil Diamond</artist><year>1969</year><imagePath>https://cdnaws.recis.io/i/img/00/52/7c/56_27f856_sq100.jpg</imagePath><legal><item id="1" type="writing">Neil Diamond</item><item id="2" type="publishing">Universal Tunes / Stonebridge Music INC</item></legal><styles>28</styles><bpm>-128</bpm></song>    </response>
+https://www.karafun.com/api/song/request.php
+RESPONSE:
+<?xml version="1.0" encoding="UTF-8"?>
+<response status="Error">
+    <error action="restart">INVALID_SESSION</error>
+    <message display="none">Your request couldn't be processed, please try again or get in touch if the problem persists.</message>
+</response>
+
+PLAY SONG
+
+Generating Parody: Sweet CarolineQUEUEING SONG NOW<?xml version="1.0" encoding="UTF-8"?>
+<response status="OK">
+        <session>
+        <version>1</version>
+        <key>3lzCshHj</key>
+        <querykey>1101055471</querykey>
+        <plan>S</plan>
+        <user_id>6906045</user_id>
+        <offline_limit>1000</offline_limit>
+                    <subscription_end_date>2023-11-18 14:48:19</subscription_end_date>
+            <subscription_caption>You are currently subscribed to KaraFun and your subscription will be renewed on 11/14/23 at 13:48:19 (UTC).</subscription_caption>
+                <explicit_lyrics_action>logo</explicit_lyrics_action>
+                    <user_login>benjaminbelow</user_login>
+                <messages>
+                            <str id="kfnonline_limited_txt">Preview limited to a few seconds
+Subscribe to access the full service</str>
+                            <str id="word_inthestyleof">as made famous by</str>
+                            <str id="kfn_errorunexpected_txt">We're sorry but we can't process your request right now.KaraFun technical support has been warned and we are doing our best to correct this issue.</str>
+                            <str id="kfn_errorconnect_txt">KaraFun is not reachable. Please double check your internet connection and try again.</str>
+                            <str id="kfn_demo_txt">DEMO</str>
+                            <str id="word_song">Songs</str>
+                    </messages>
+                                    <webwindow>https%3A%2F%2Fwww.karafun.com%2Fkfplayer%2Findex.html%3FsessionId%3D3lzCshHj%26securityUid%3D6906045</webwindow>
+                                                    <logo>default</logo>
+                <use_full_catalog>0</use_full_catalog>
+        <use_remote_local>1</use_remote_local>
+        <has_pro_download>0</has_pro_download>         <hide_community></hide_community>
+                        <megachecksums>
+            <setlists></setlists>
+        </megachecksums>
+            </session>
+    </response>
+
+
+PLAY SONG
+
+Generating Parody: Sweet CarolineQUEUEING SONG NOW<?xml version="1.0" encoding="UTF-8"?>
+<response status="OK">
+    <song id="5468" len="296" pop="0.92493116939708" bgcolor="C0457F"><title>I Wanna Dance with Somebody (Who Loves Me)</title><artist id="2230">Whitney Houston</artist><year>1987</year><imagePath>https://cdnaws.recis.io/i/img/01/72/52/6c_943058_sq100.jpg</imagePath><legal><item id="1" type="writing">George Robert Merrill / Shannon Rubicam</item><item id="2" type="publishing">Boy Meets Girl Music / Irving Music</item></legal><styles>4,28</styles><bpm>-119</bpm></song>    </response>
+https://www.karafun.com/api/song/request.php
+RESPONSE:
+<?xml version="1.0" encoding="UTF-8"?>
+<response status="Error">
+    <error action="restart">INVALID_SESSION</error>
+    <message display="none">Your request couldn't be processed, please try again or get in touch if the problem persists.</message>
+</response>
+
+PLAY SONG
+
+Generating Parody: Daddy Cool
+
+PLAY SONG
+
+Generating Parody: I Wanna Dance with Somebody (Who Loves Me)
+
+PLAY SONG
+
+Generating Parody: Sweet CarolineQUEUEING SONG NOW<?xml version="1.0" encoding="UTF-8"?>
+<response status="OK">
+    <song id="13329" len="358" pop="0.918815197615" bgcolor="4E0100"><title>Sweet Child o' Mine</title><artist id="2890">Guns N' Roses</artist><year>1987</year><imagePath>https://cdnaws.recis.io/i/img/01/72/52/58_db6c8f_sq100.jpg</imagePath><legal><item id="1" type="writing">Steven Adler / Duff McKagan / Axl Rose / Slash / Izzy Stradlin</item><item id="2" type="publishing">Guns N Roses Music / Black Frog Music</item></legal><styles>2,7</styles><bpm>125</bpm></song>    </response>
+https://www.karafun.com/api/song/request.php
+RESPONSE:
+<?xml version="1.0" encoding="UTF-8"?>
+<response status="Error">
+    <error action="restart">INVALID_SESSION</error>
+    <message display="none">Your request couldn't be processed, please try again or get in touch if the problem persists.</message>
+</response>QUEUEING SONG NOW<?xml version="1.0" encoding="UTF-8"?>
+<response status="OK">
+    <song id="21664" len="206" pop="0.90825638189712" bgcolor="892A0C"><title>Sweet Transvestite</title><artist id="12410">The Rocky Horror Picture Show (film)</artist><year>1975</year><imagePath>https://cdnaws.recis.io/i/img/01/86/2d/c0_65f713_sq100.jpg</imagePath><legal><item id="1" type="writing">Richard O&amp;#039;Brien</item><item id="2" type="publishing">Druidcrest Music / Baboo Productions et Editions Musicales</item></legal><styles>38,56,2</styles><bpm>-107</bpm></song>    </response>
+https://www.karafun.com/api/song/request.php
+RESPONSE:
+<?xml version="1.0" encoding="UTF-8"?>
+<response status="Error">
+    <error action="restart">INVALID_SESSION</error>
+    <message display="none">Your request couldn't be processed, please try again or get in touch if the problem persists.</message>
+</response>
+
+PLAY SONG
+
+Generating Parody: Mr. BrightsideQUEUEING SONG NOW<?xml version="1.0" encoding="UTF-8"?>
+<response status="OK">
+        <session>
+        <version>1</version>
+        <key>3lzCshHj</key>
+        <querykey>1101055471</querykey>
+        <plan>S</plan>
+        <user_id>6906045</user_id>
+        <offline_limit>1000</offline_limit>
+                    <subscription_end_date>2023-11-18 14:48:19</subscription_end_date>
+            <subscription_caption>You are currently subscribed to KaraFun and your subscription will be renewed on 11/14/23 at 13:48:19 (UTC).</subscription_caption>
+                <explicit_lyrics_action>logo</explicit_lyrics_action>
+                    <user_login>benjaminbelow</user_login>
+                <messages>
+                            <str id="kfnonline_limited_txt">Preview limited to a few seconds
+Subscribe to access the full service</str>
+                            <str id="word_inthestyleof">as made famous by</str>
+                            <str id="kfn_errorunexpected_txt">We're sorry but we can't process your request right now.KaraFun technical support has been warned and we are doing our best to correct this issue.</str>
+                            <str id="kfn_errorconnect_txt">KaraFun is not reachable. Please double check your internet connection and try again.</str>
+                            <str id="kfn_demo_txt">DEMO</str>
+                            <str id="word_song">Songs</str>
+                    </messages>
+                                    <webwindow>https%3A%2F%2Fwww.karafun.com%2Fkfplayer%2Findex.html%3FsessionId%3D3lzCshHj%26securityUid%3D6906045</webwindow>
+                                                    <logo>default</logo>
+                <use_full_catalog>0</use_full_catalog>
+        <use_remote_local>1</use_remote_local>
+        <has_pro_download>0</has_pro_download>         <hide_community></hide_community>
+                        <megachecksums>
+            <setlists></setlists>
+        </megachecksums>
+            </session>
+    </response>
+
+
+PLAY SONG
+
+Generating Parody: Sweet Child o' Mine
+
+PLAY SONG
+
+Generating Parody: Sweet Child o' MineQUEUEING SONG NOW<?xml version="1.0" encoding="UTF-8"?>
+<response status="OK">
+        <session>
+        <version>1</version>
+        <key>3lzCshHj</key>
+        <querykey>1101055471</querykey>
+        <plan>S</plan>
+        <user_id>6906045</user_id>
+        <offline_limit>1000</offline_limit>
+                    <subscription_end_date>2023-11-18 14:48:19</subscription_end_date>
+            <subscription_caption>You are currently subscribed to KaraFun and your subscription will be renewed on 11/14/23 at 13:48:19 (UTC).</subscription_caption>
+                <explicit_lyrics_action>logo</explicit_lyrics_action>
+                    <user_login>benjaminbelow</user_login>
+                <messages>
+                            <str id="kfnonline_limited_txt">Preview limited to a few seconds
+Subscribe to access the full service</str>
+                            <str id="word_inthestyleof">as made famous by</str>
+                            <str id="kfn_errorunexpected_txt">We're sorry but we can't process your request right now.KaraFun technical support has been warned and we are doing our best to correct this issue.</str>
+                            <str id="kfn_errorconnect_txt">KaraFun is not reachable. Please double check your internet connection and try again.</str>
+                            <str id="kfn_demo_txt">DEMO</str>
+                            <str id="word_song">Songs</str>
+                    </messages>
+                                    <webwindow>https%3A%2F%2Fwww.karafun.com%2Fkfplayer%2Findex.html%3FsessionId%3D3lzCshHj%26securityUid%3D6906045</webwindow>
+                                                    <logo>default</logo>
+                <use_full_catalog>0</use_full_catalog>
+        <use_remote_local>1</use_remote_local>
+        <has_pro_download>0</has_pro_download>         <hide_community></hide_community>
+                        <megachecksums>
+            <setlists></setlists>
+        </megachecksums>
+            </session>
+    </response>
+QUEUEING SONG NOW<?xml version="1.0" encoding="UTF-8"?>
+<response status="OK">
+        <session>
+        <version>1</version>
+        <key>3lzCshHj</key>
+        <querykey>1101055471</querykey>
+        <plan>S</plan>
+        <user_id>6906045</user_id>
+        <offline_limit>1000</offline_limit>
+                    <subscription_end_date>2023-11-18 14:48:19</subscription_end_date>
+            <subscription_caption>You are currently subscribed to KaraFun and your subscription will be renewed on 11/14/23 at 13:48:19 (UTC).</subscription_caption>
+                <explicit_lyrics_action>logo</explicit_lyrics_action>
+                    <user_login>benjaminbelow</user_login>
+                <messages>
+                            <str id="kfnonline_limited_txt">Preview limited to a few seconds
+Subscribe to access the full service</str>
+                            <str id="word_inthestyleof">as made famous by</str>
+                            <str id="kfn_errorunexpected_txt">We're sorry but we can't process your request right now.KaraFun technical support has been warned and we are doing our best to correct this issue.</str>
+                            <str id="kfn_errorconnect_txt">KaraFun is not reachable. Please double check your internet connection and try again.</str>
+                            <str id="kfn_demo_txt">DEMO</str>
+                            <str id="word_song">Songs</str>
+                    </messages>
+                                    <webwindow>https%3A%2F%2Fwww.karafun.com%2Fkfplayer%2Findex.html%3FsessionId%3D3lzCshHj%26securityUid%3D6906045</webwindow>
+                                                    <logo>default</logo>
+                <use_full_catalog>0</use_full_catalog>
+        <use_remote_local>1</use_remote_local>
+        <has_pro_download>0</has_pro_download>         <hide_community></hide_community>
+                        <megachecksums>
+            <setlists></setlists>
+        </megachecksums>
+            </session>
+    </response>
+
+
+PLAY SONG
+
+Generating Parody: Sweet Child o' Mine
+
+PLAY SONG
+
+Generating Parody: Sweet Child o' MineQUEUEING SONG NOW<?xml version="1.0" encoding="UTF-8"?>
+<response status="OK">
+        <session>
+        <version>1</version>
+        <key>3lzCshHj</key>
+        <querykey>1101055471</querykey>
+        <plan>S</plan>
+        <user_id>6906045</user_id>
+        <offline_limit>1000</offline_limit>
+                    <subscription_end_date>2023-11-18 14:48:19</subscription_end_date>
+            <subscription_caption>You are currently subscribed to KaraFun and your subscription will be renewed on 11/14/23 at 13:48:19 (UTC).</subscription_caption>
+                <explicit_lyrics_action>logo</explicit_lyrics_action>
+                    <user_login>benjaminbelow</user_login>
+                <messages>
+                            <str id="kfnonline_limited_txt">Preview limited to a few seconds
+Subscribe to access the full service</str>
+                            <str id="word_inthestyleof">as made famous by</str>
+                            <str id="kfn_errorunexpected_txt">We're sorry but we can't process your request right now.KaraFun technical support has been warned and we are doing our best to correct this issue.</str>
+                            <str id="kfn_errorconnect_txt">KaraFun is not reachable. Please double check your internet connection and try again.</str>
+                            <str id="kfn_demo_txt">DEMO</str>
+                            <str id="word_song">Songs</str>
+                    </messages>
+                                    <webwindow>https%3A%2F%2Fwww.karafun.com%2Fkfplayer%2Findex.html%3FsessionId%3D3lzCshHj%26securityUid%3D6906045</webwindow>
+                                                    <logo>default</logo>
+                <use_full_catalog>0</use_full_catalog>
+        <use_remote_local>1</use_remote_local>
+        <has_pro_download>0</has_pro_download>         <hide_community></hide_community>
+                        <megachecksums>
+            <setlists></setlists>
+        </megachecksums>
+            </session>
+    </response>
+QUEUEING SONG NOW<?xml version="1.0" encoding="UTF-8"?>
+<response status="OK">
+        <session>
+        <version>1</version>
+        <key>3lzCshHj</key>
+        <querykey>1101055471</querykey>
+        <plan>S</plan>
+        <user_id>6906045</user_id>
+        <offline_limit>1000</offline_limit>
+                    <subscription_end_date>2023-11-18 14:48:19</subscription_end_date>
+            <subscription_caption>You are currently subscribed to KaraFun and your subscription will be renewed on 11/14/23 at 13:48:19 (UTC).</subscription_caption>
+                <explicit_lyrics_action>logo</explicit_lyrics_action>
+                    <user_login>benjaminbelow</user_login>
+                <messages>
+                            <str id="kfnonline_limited_txt">Preview limited to a few seconds
+Subscribe to access the full service</str>
+                            <str id="word_inthestyleof">as made famous by</str>
+                            <str id="kfn_errorunexpected_txt">We're sorry but we can't process your request right now.KaraFun technical support has been warned and we are doing our best to correct this issue.</str>
+                            <str id="kfn_errorconnect_txt">KaraFun is not reachable. Please double check your internet connection and try again.</str>
+                            <str id="kfn_demo_txt">DEMO</str>
+                            <str id="word_song">Songs</str>
+                    </messages>
+                                    <webwindow>https%3A%2F%2Fwww.karafun.com%2Fkfplayer%2Findex.html%3FsessionId%3D3lzCshHj%26securityUid%3D6906045</webwindow>
+                                                    <logo>default</logo>
+                <use_full_catalog>0</use_full_catalog>
+        <use_remote_local>1</use_remote_local>
+        <has_pro_download>0</has_pro_download>         <hide_community></hide_community>
+                        <megachecksums>
+            <setlists></setlists>
+        </megachecksums>
+            </session>
+    </response>
+QUEUEING SONG NOW<?xml version="1.0" encoding="UTF-8"?>
+<response status="OK">
+        <session>
+        <version>1</version>
+        <key>3lzCshHj</key>
+        <querykey>1101055471</querykey>
+        <plan>S</plan>
+        <user_id>6906045</user_id>
+        <offline_limit>1000</offline_limit>
+                    <subscription_end_date>2023-11-18 14:48:19</subscription_end_date>
+            <subscription_caption>You are currently subscribed to KaraFun and your subscription will be renewed on 11/14/23 at 13:48:19 (UTC).</subscription_caption>
+                <explicit_lyrics_action>logo</explicit_lyrics_action>
+                    <user_login>benjaminbelow</user_login>
+                <messages>
+                            <str id="kfnonline_limited_txt">Preview limited to a few seconds
+Subscribe to access the full service</str>
+                            <str id="word_inthestyleof">as made famous by</str>
+                            <str id="kfn_errorunexpected_txt">We're sorry but we can't process your request right now.KaraFun technical support has been warned and we are doing our best to correct this issue.</str>
+                            <str id="kfn_errorconnect_txt">KaraFun is not reachable. Please double check your internet connection and try again.</str>
+                            <str id="kfn_demo_txt">DEMO</str>
+                            <str id="word_song">Songs</str>
+                    </messages>
+                                    <webwindow>https%3A%2F%2Fwww.karafun.com%2Fkfplayer%2Findex.html%3FsessionId%3D3lzCshHj%26securityUid%3D6906045</webwindow>
+                                                    <logo>default</logo>
+                <use_full_catalog>0</use_full_catalog>
+        <use_remote_local>1</use_remote_local>
+        <has_pro_download>0</has_pro_download>         <hide_community></hide_community>
+                        <megachecksums>
+            <setlists></setlists>
+        </megachecksums>
+            </session>
+    </response>
+
+
+PLAY SONG
+
+Generating Parody: Sweet Child o' Mine
+
+PLAY SONG
+
+Generating Parody: Sweet Child o' MineQUEUEING SONG NOW<?xml version="1.0" encoding="UTF-8"?>
+<response status="OK">
+        <session>
+        <version>1</version>
+        <key>3lzCshHj</key>
+        <querykey>1101055471</querykey>
+        <plan>S</plan>
+        <user_id>6906045</user_id>
+        <offline_limit>1000</offline_limit>
+                    <subscription_end_date>2023-11-18 14:48:19</subscription_end_date>
+            <subscription_caption>You are currently subscribed to KaraFun and your subscription will be renewed on 11/14/23 at 13:48:19 (UTC).</subscription_caption>
+                <explicit_lyrics_action>logo</explicit_lyrics_action>
+                    <user_login>benjaminbelow</user_login>
+                <messages>
+                            <str id="kfnonline_limited_txt">Preview limited to a few seconds
+Subscribe to access the full service</str>
+                            <str id="word_inthestyleof">as made famous by</str>
+                            <str id="kfn_errorunexpected_txt">We're sorry but we can't process your request right now.KaraFun technical support has been warned and we are doing our best to correct this issue.</str>
+                            <str id="kfn_errorconnect_txt">KaraFun is not reachable. Please double check your internet connection and try again.</str>
+                            <str id="kfn_demo_txt">DEMO</str>
+                            <str id="word_song">Songs</str>
+                    </messages>
+                                    <webwindow>https%3A%2F%2Fwww.karafun.com%2Fkfplayer%2Findex.html%3FsessionId%3D3lzCshHj%26securityUid%3D6906045</webwindow>
+                                                    <logo>default</logo>
+                <use_full_catalog>0</use_full_catalog>
+        <use_remote_local>1</use_remote_local>
+        <has_pro_download>0</has_pro_download>         <hide_community></hide_community>
+                        <megachecksums>
+            <setlists></setlists>
+        </megachecksums>
+            </session>
+    </response>
+
+
+PLAY SONG
+
+Generating Parody: Sweet Child o' Mine
+
+PLAY SONG
+
+Generating Parody: Sweet Child o' Mine

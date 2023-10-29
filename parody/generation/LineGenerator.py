@@ -1,4 +1,5 @@
 from parody.analysis.WordAnalyser import analyse_word, nlp
+from parody.config import CHANCE_OF_CUSTOM_LINE
 from parody.generation.BlockList import enforce_blocklist
 from parody.generation.Corpus import WordGenOptions
 from parody.generation.CustomLineSubstitutor import replace_with_custom_line
@@ -10,8 +11,6 @@ from utils.random_utils import chance
 
 nlp.tokenizer.rules = {key: value for key, value in nlp.tokenizer.rules.items() if
                        "'" not in key and "’" not in key and "‘" not in key}
-
-CHANCE_OF_CUSTOM_LINE = 100
 
 
 def generate_parody_line(line, last_word_dict, artist, title):

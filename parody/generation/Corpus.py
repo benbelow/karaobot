@@ -6,9 +6,9 @@ from pyrhyme import rhyming_list
 
 from parody.analysis.RhymeFinder import import_rhymes
 from parody.analysis.WordImporter import import_words
+from parody.config import CHANCE_OF_SPOOKY_WORD_IN_NON_RHYME, CHANCE_OF_ON_THEME_WORD
 from utils.random_utils import chance
 
-CHANCE_OF_SPOOKY_WORD_IN_NON_RHYME = 5
 
 repo = WordRepository()
 
@@ -142,7 +142,7 @@ class Corpus:
         if theme is not None \
                 and target_stress in theme["words_by_stress"].keys() \
                 and theme["words_by_stress"][target_stress] \
-                and chance(5):
+                and chance(CHANCE_OF_ON_THEME_WORD):
             return random.choice(theme["words_by_stress"][target_stress])
 
         if target_stress in spooky_words_by_stress.keys() \
@@ -183,6 +183,9 @@ class Corpus:
 
         theme_orm_words = repo.get_words(theme_words)
         theme_new_words = list(set(theme_words) - set([w.word for w in theme_orm_words]))
+        # Word2Vec returns phrases separated by underscores. These are bad data, do not import
+        theme_new_words = [w for w in theme_new_words if '_' not in w]
+
         import_words(theme_new_words)
         theme_orm_words = theme_orm_words + repo.get_words(theme_new_words)
 
