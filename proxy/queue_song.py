@@ -7,16 +7,15 @@ from karafun_parser import extract_data
 from generate_parody import generate_parody, generate_parody_title
 
 
-async def pre_load_from_genius(artist, title):
+async def pre_load_from_genius(artist, title, log):
     try:
         async with aiohttp.ClientSession() as session:
-            # TODO: Fix external (actually internal?) dependencies in mitmproxy
             await session.post("http://localhost:5000/parody/from-metadata",
                                json={"Title": title, "Artist": artist}
                                )
 
     except Exception as e:
-        print(e)
+        log.write(str(e))
 
 
 async def pre_load_from_karafun(flow: http.HTTPFlow, log):
@@ -51,7 +50,7 @@ def handle_queue_song(flow, log):
     artist = [x for x in song if x.tag == "artist"][0]
 
     try:
-        asyncio.create_task(pre_load_from_karafun(flow, log))
+        asyncio.create_task(pre_load_from_genius(artist.text, title.text, log))
         parody_title = generate_parody_title(title.text)
 
         title.text = parody_title.title()
