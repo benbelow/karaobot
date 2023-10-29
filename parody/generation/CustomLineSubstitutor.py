@@ -36,8 +36,9 @@ def stress_for_line(line):
     word_lookup = lookup_words(line_words, Stopwatch())
     line_stress = ""
     for word in line_words:
-        orm_word = word_lookup[word]
-        line_stress += orm_word.stress
+        if word in word_lookup:
+            orm_word = word_lookup[word]
+            line_stress += orm_word.stress
     return line_stress
 
 
