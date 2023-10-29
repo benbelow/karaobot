@@ -8,7 +8,7 @@ song_cache = {}
 
 def generate_parody_title(title):
     parody = requests.post(
-        "http://localhost:5000/parody/no-ids",
+        "http://localhost:5000/parody/title",
         data=title,
         headers={"Karafun-Title": title}
     )
