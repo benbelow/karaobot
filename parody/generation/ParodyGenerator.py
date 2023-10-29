@@ -44,7 +44,6 @@ def generate_parody(lyrics, artist, title):
     last_word_dict = lookup_last_words(lines)
     sw.split("Get rhymes for *all* last words")
 
-    validate_themes()
     pick_theme(artist, title)
 
     for line in lines:

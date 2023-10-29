@@ -14,14 +14,15 @@ def pick_theme(artist, title):
     theme = random.choice(themes)
 
     theme_pos = [theme]
-    theme_words = get_similar_words(theme_pos, [], 300)
+    theme_words = get_similar_words(theme_pos, [], 500)
+    theme_words = [tw.replace('_', " ") for tw in theme_words]
     corpus.set_theme(artist, title, theme_words)
     print("CHOSEN THEME: " + theme + '\n')
 
 
 def validate_themes():
     for theme in themes:
-        theme_words = get_similar_words([theme], [], 300)
+        theme_words = get_similar_words([theme], [], 500)
         theme_words = [t for t in theme_words if '_' not in t]
         print('THEME: ' + theme + ' Words: ' + str(len(theme_words)) + '\n')
 
