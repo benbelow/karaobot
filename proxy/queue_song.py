@@ -21,11 +21,14 @@ async def pre_load_from_genius(artist, title):
 
 async def pre_load_from_karafun(flow: http.HTTPFlow, log):
     new_url = flow.request.url.replace("info", "request")
+    log.write(new_url)
 
     try:
         async with aiohttp.ClientSession() as session:
             response = await session.get(new_url)
             response_text = await response.text()
+            log.write("\nRESPONSE:\n")
+            log.write(response_text)
             root_xml = ET.fromstring(response_text)
             kf_data = extract_data(root_xml)
             generate_parody(kf_data, log, is_queued=True)
@@ -48,12 +51,11 @@ def handle_queue_song(flow, log):
     artist = [x for x in song if x.tag == "artist"][0]
 
     try:
+        asyncio.create_task(pre_load_from_karafun(flow, log))
         parody_title = generate_parody_title(title.text)
 
         title.text = parody_title.title()
         flow.response.text = ET.tostring(root, "unicode")
 
-        asyncio.create_task(pre_load_from_karafun(flow, log))
-
     except Exception as e:
-        log.write(e)
+        log.write(str(e))

@@ -22,6 +22,7 @@ def generate_parody(kf_data, log, is_queued):
         del song_cache[kf_data.song_id]
         return parody
     try:
+        log.write("Generating Parody: " + kf_data.title)
         parody = requests.post(
             "http://localhost:5000/parody",
             json=kf_data.original_lyrics_by_line_id,
