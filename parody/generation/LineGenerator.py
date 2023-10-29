@@ -1,16 +1,25 @@
 from parody.analysis.WordAnalyser import analyse_word, nlp
 from parody.generation.BlockList import enforce_blocklist
 from parody.generation.Corpus import WordGenOptions
+from parody.generation.CustomLineSubstitutor import replace_with_custom_line
 from parody.generation.Sanitiser import remove_special_characters
 from parody.generation.WordLookup import lookup_words
 from parody.singleton import cache, corpus
 from stopwatch import Stopwatch
+from utils.random_utils import chance
 
 nlp.tokenizer.rules = {key: value for key, value in nlp.tokenizer.rules.items() if
                        "'" not in key and "’" not in key and "‘" not in key}
 
+CHANCE_OF_CUSTOM_LINE = 100
+
 
 def generate_parody_line(line, last_word_dict, artist, title):
+    if chance(CHANCE_OF_CUSTOM_LINE):
+        custom = replace_with_custom_line(line)
+        if custom is not None:
+            return replace_with_custom_line(line)
+
     context_id = (artist, title)
 
     line_cache = cache.line_cache(artist, title)
@@ -94,7 +103,7 @@ def generate_parody_line(line, last_word_dict, artist, title):
     return line
 
 
-#TODO: This is very copy pasted from generate line. This whole file could do with a refactor really
+# TODO: This is very copy pasted from generate line. This whole file could do with a refactor really
 def generate_fully_rhyming_parody_line(line, last_word_dict, artist, title):
     context_id = (artist, title)
 

@@ -143,4 +143,18 @@ QUEUEING SONG NOW<?xml version="1.0" encoding="UTF-8"?>
 7383QUEUEING SONG NOW<?xml version="1.0" encoding="UTF-8"?>
 <response status="OK">
     <song id="14121" len="192" pop="0.9435367035046" bgcolor="8D8836"><title>Take Me Home, Country Roads</title><artist id="2241">John Denver</artist><year>1971</year><imagePath>https://cdnaws.recis.io/i/img/01/8e/84/3e_179f32_sq100.jpg</imagePath><legal><item id="1" type="writing">William Thomas Danoff / John Denver / Taffy Nivert Danoff</item><item id="2" type="publishing">Bmg Ruby Songs / Reservoir Media Music</item></legal><styles>6,5</styles><bpm>-82</bpm></song>    </response>
-14121
+14121QUEUEING SONG NOW<?xml version="1.0" encoding="UTF-8"?>
+<response status="OK">
+    <song id="7383" len="235" pop="0.92130478841386" bgcolor="376AC9"><title>Kryptonite</title><artist id="2308">3 Doors Down</artist><year>2000</year><imagePath>https://cdnaws.recis.io/i/img/00/52/f4/92_8ab5f2_sq100.jpg</imagePath><legal><item id="1" type="writing">Brad Arnold / Matt Roberts / Todd Harrell</item><item id="2" type="publishing">Songs Of Universal Inc / Escatawpa Songs / Universal MCA Music Publishing</item></legal><styles>2</styles><bpm>-99</bpm></song>    </response>
+QUEUEING SONG NOW<?xml version="1.0" encoding="UTF-8"?>
+<response status="OK">
+    <song id="12689" len="258" pop="0.90463592178802" bgcolor="64388C"><title>Beat It</title><artist id="2167">Michael Jackson</artist><year>1983</year><imagePath>https://cdnaws.recis.io/i/img/00/52/73/20_d504e5_sq100.jpg</imagePath><legal><item id="1" type="writing">Michael Jackson</item><item id="2" type="publishing">Mijac Music</item></legal><styles>2,28,4</styles><bpm>-139</bpm></song>    </response>
+QUEUEING SONG NOW<?xml version="1.0" encoding="UTF-8"?>
+<response status="OK">
+    <song id="5632" len="223" pop="0.94305248556663" bgcolor="3B110A"><title>Mr. Brightside</title><artist id="2314">The Killers</artist><year>2004</year><imagePath>https://cdnaws.recis.io/i/img/00/52/42/b3_5e9a8b_sq100.jpg</imagePath><legal><item id="1" type="writing">Brandon Flowers / David brent Keuning / Mark August Stoermer / Ronnie Vannucci Jr.</item><item id="2" type="publishing">Universal Music Publishing Limited (GB)</item></legal><styles>39,28,2</styles><bpm>147.93</bpm></song>    </response>
+QUEUEING SONG NOW<?xml version="1.0" encoding="UTF-8"?>
+<response status="OK">
+    <song id="5632" len="223" pop="0.94305248556663" bgcolor="3B110A"><title>Mr. Brightside</title><artist id="2314">The Killers</artist><year>2004</year><imagePath>https://cdnaws.recis.io/i/img/00/52/42/b3_5e9a8b_sq100.jpg</imagePath><legal><item id="1" type="writing">Brandon Flowers / David brent Keuning / Mark August Stoermer / Ronnie Vannucci Jr.</item><item id="2" type="publishing">Universal Music Publishing Limited (GB)</item></legal><styles>39,28,2</styles><bpm>147.93</bpm></song>    </response>
+QUEUEING SONG NOW<?xml version="1.0" encoding="UTF-8"?>
+<response status="OK">
+    <song id="29202" len="228" pop="0.74055636259253" bgcolor="051E11"><title>Mr. Brightside</title><artist id="3187">Paul Anka</artist><year>2007</year><imagePath>https://cdnaws.recis.io/i/img/00/52/d4/d2_50e410_sq100.jpg</imagePath><legal><item id="1" type="writing">Brandon Flowers / David brent Keuning / Mark August Stoermer / Ronnie Vannucci Jr.</item><item id="2" type="publishing">Universal Music Publishing Limited (GB)</item></legal><styles>20</styles><bpm>149.98</bpm></song>    </response>

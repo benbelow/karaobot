@@ -15,7 +15,7 @@ def analyse_sentence(raw_sentence):
 def analyse_word(raw_word, spacy_word=None):
     """
     Three types of analysis currently in place:
-    * Prosodic = covers scansion / amphasis
+    * Prosodic = covers scansion / emphasis
     * nltk = one option for nlp.
     * spacy = an alternate option for nlp. Works between with context, so optional spacy_word param can be used to
     pass pre-analysed words from a sentence

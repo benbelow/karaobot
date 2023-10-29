@@ -16,6 +16,8 @@ def import_words(lines):
 
     repo = WordRepository()
 
+    # this doesn't look super performant, at least once initial import is done.
+    # would probably be better to just check for words that already exist upfront rather than loading everything into memory
     existing = [w.word for w in repo.fetch_all_words()]
 
     for line_batch in batch(lines, 1000):

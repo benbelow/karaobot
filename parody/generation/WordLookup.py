@@ -77,7 +77,7 @@ def lookup_last_words(lines):
 
     have_rhymes = [n for n in orm_last_words if n.get_rhymes()]
     needing_rhymes = set([n for n in orm_last_words if not n.get_rhymes()])
-    print("HOW MANY NEED RHYMES?" + len(needing_rhymes).__str__())
+    print("HOW MANY NEED RHYMES? " + len(needing_rhymes).__str__())
 
     if len(needing_rhymes) > 50:
         # Sometimes genius thinks there's far too many lyrics and we start getting rate limited on rhyming -
