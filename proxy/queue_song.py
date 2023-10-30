@@ -50,7 +50,7 @@ def handle_queue_song(flow, log):
     artist = [x for x in song if x.tag == "artist"][0]
 
     try:
-        asyncio.create_task(pre_load_from_genius(artist.text, title.text, log))
+        # asyncio.create_task(pre_load_from_genius(artist.text, title.text, log))
         parody_title = generate_parody_title(title.text)
 
         title.text = parody_title.title()

@@ -1,8 +1,10 @@
+import random
+
 from parody.analysis.WordAnalyser import analyse_word, nlp
-from parody.config import CHANCE_OF_CUSTOM_LINE
+from parody.config import CHANCE_OF_CUSTOM_LINE, CHANCE_OF_ALTERNATE_WORDCOUNT
 from parody.generation.BlockList import enforce_blocklist
 from parody.generation.Corpus import WordGenOptions
-from parody.generation.CustomLineSubstitutor import replace_with_custom_line
+from parody.generation.CustomLineSubstitutor import replace_with_custom_line, stress_for_line
 from parody.generation.Sanitiser import remove_special_characters
 from parody.generation.WordLookup import lookup_words
 from parody.singleton import cache, corpus
@@ -13,11 +15,68 @@ nlp.tokenizer.rules = {key: value for key, value in nlp.tokenizer.rules.items() 
                        "'" not in key and "’" not in key and "‘" not in key}
 
 
+#this is experimental and dangerous, as we no longer have a fallback when no words can be found. If we randomly
+#generate a rare or impossible stress chunk, we're a bit screwed
+def generate_parody_line_with_alternate_wordcount(line, last_word_dict, artist, title):
+    line = line.lower()
+    if len(line) == 0:
+        return ''
+    line = remove_special_characters(line)
+
+    context_id = (artist, title)
+
+    possible_chunks = corpus.get_available_stress_chunks()
+
+    tokens = nlp(line)
+    line_words = [t.text for t in tokens if not t.text.isspace()]
+    last_word = last_word_dict[line_words[-1]]
+
+    line_stress = stress_for_line(line)
+    chunks = []
+    while len(line_stress) > 0:
+        if len(line_stress) <= 4 and line_stress in possible_chunks:
+            chunks.append(line_stress)
+            line_stress = ''
+        else:
+            potential_chunks = [line_stress[0:i] for i in range(1,min(len(line_stress) -1, 4))]
+            valid_chunks = [pc for pc in potential_chunks if pc in possible_chunks]
+            if len(valid_chunks) == 0:
+                return None
+            sylls = len(random.choice(valid_chunks))
+            chunks.append(line_stress[0:sylls])
+            line_stress = line_stress[sylls:]
+
+    line = ''
+
+    # 'last word' is now 'last chunk' and should rhyme
+    for chunk in chunks[0:len(chunks)-1]:
+        gen_options = WordGenOptions(original='qq', target_stress=chunk)
+        parody_word = corpus.get_word(gen_options, context_id)
+        line = line + ' ' + enforce_blocklist(parody_word.rawWord, 'qq')
+
+    options = WordGenOptions(
+        original='qq',
+        target_stress=chunks[-1],
+        rhyme_with=last_word)
+    final_word = corpus.get_word(options, context_id)
+
+    line = line + " " + enforce_blocklist(final_word.rawWord, 'qq')
+    if 'qq' in line:
+        return None
+
+    return line
+
+
 def generate_parody_line(line, last_word_dict, artist, title):
     if chance(CHANCE_OF_CUSTOM_LINE):
         custom = replace_with_custom_line(line)
         if custom is not None:
-            return replace_with_custom_line(line)
+            return custom
+
+    if chance(CHANCE_OF_ALTERNATE_WORDCOUNT):
+        new_line = generate_parody_line_with_alternate_wordcount(line, last_word_dict, artist, title)
+        if new_line is not None:
+            return new_line
 
     context_id = (artist, title)
 

@@ -71,6 +71,9 @@ class Corpus:
             for line in lines:
                 self.stop_words.append(line.strip())
 
+    def get_available_stress_chunks(self):
+        return self.words_by_stress_then_speech_part.keys()
+
     def get_word(self, generation_options, context_id):
         rhyme_with = generation_options.rhyme_with
         target_stress = generation_options.target_stress

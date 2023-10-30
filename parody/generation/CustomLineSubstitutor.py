@@ -33,6 +33,8 @@ def stress_for_line(line):
     tokens = nlp(line)
     line_words = [t.text.lower() for t in tokens if not t.text.isspace()]
 
+    line_words = [l for l in line_words if l not in ['\'s']]
+
     word_lookup = lookup_words(line_words, Stopwatch())
     line_stress = ""
     for word in line_words:

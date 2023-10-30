@@ -9,7 +9,6 @@ ghost
 zombie
 book
 film
-noir
 beer
 party
 teenager
