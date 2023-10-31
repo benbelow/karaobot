@@ -133,7 +133,10 @@ def generate_parody_line(line, last_word_dict, artist, title):
 
     sw.split("Body Words")
 
-    last_word = last_word_dict[line_words[-1]]
+    if line_words[-1] in last_word_dict:
+        last_word = last_word_dict[line_words[-1]]
+    else:
+        last_word = tokens[-1]
     token = tokens[-1]
 
     # Parody last word

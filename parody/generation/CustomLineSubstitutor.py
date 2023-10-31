@@ -58,6 +58,13 @@ with open("data/source_data/spooky_phrases.txt", 'r') as block_file:
             spooky_phrases_by_stress[line_stress] = []
         spooky_phrases_by_stress[line_stress].append(line)
 
+    log = open("need_manual_db_tweaks.txt", "a")
+    for spooky_phrase_stress in spooky_phrases_by_stress.keys():
+        if '?' in spooky_phrase_stress:
+            for phrase in spooky_phrases_by_stress[spooky_phrase_stress]:
+                log.write(phrase)
+
+
 
 def replace_with_custom_line(line):
     line_stress = stress_for_line(line)
