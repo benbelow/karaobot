@@ -10,7 +10,7 @@ nltk.download('averaged_perceptron_tagger')
 
 repo = WordRepository()
 
-use_lyrics = True
+use_lyrics = False
 
 if use_lyrics:
     # TODO: some words are lazily added - better to make the bulk insert a bulk insert (if not exist) than wipe words here
