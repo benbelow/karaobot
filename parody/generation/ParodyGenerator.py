@@ -53,7 +53,7 @@ def generate_parody(lyrics, artist, title):
     cache.clear()
 
 
-def generate_parody_with_line_ids(lyrics, artist, title):
+def generate_parody_with_line_ids(lyrics, artist, title, parody_title):
     parody = {}
 
     lines = [lyrics[k] for k in lyrics]
@@ -62,7 +62,7 @@ def generate_parody_with_line_ids(lyrics, artist, title):
     pick_theme(artist, title)
 
     for line_id in lyrics:
-        parody_line = generate_parody_line(lyrics[line_id], last_word_dict, artist, title)
+        parody_line = generate_parody_line(lyrics[line_id], last_word_dict, artist, title, parody_title)
         parody[line_id] = parody_line.strip()
     cache.clear()
     return parody

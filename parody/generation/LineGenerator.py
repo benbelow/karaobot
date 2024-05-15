@@ -67,7 +67,9 @@ def generate_parody_line_with_alternate_wordcount(line, last_word_dict, artist, 
     return line
 
 
-def generate_parody_line(line, last_word_dict, artist, title):
+def generate_parody_line(line, last_word_dict, artist, title, parody_title):
+    title_lower_words = title.lower().split()
+    parody_title_words = parody_title.lower().split()
     if chance(CHANCE_OF_CUSTOM_LINE):
         custom = replace_with_custom_line(line)
         if custom is not None:
@@ -116,6 +118,9 @@ def generate_parody_line(line, last_word_dict, artist, title):
         # We let it do its thing, then don't try to parody the possessive and add it back to the replacement later
         if word.word == "'s":
             parody_word = analyse_word(word.word)
+        elif word.word in title_lower_words and parody_title is not None:
+            index = title_lower_words.index(word.word)
+            parody_word = analyse_word(parody_title_words[index])
         elif word.word in word_cache:
             parody_word = word_cache[word.word]
         else:
