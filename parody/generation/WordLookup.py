@@ -4,6 +4,8 @@ from parody.analysis.WordImporter import import_words
 from parody.generation.Sanitiser import remove_special_characters
 from parody.singleton import repo
 
+excluded_from_rhymes = ['\'']
+
 nlp.tokenizer.rules = {key: value for key, value in nlp.tokenizer.rules.items() if
                        "'" not in key and "’" not in key and "‘" not in key}
 
@@ -33,7 +35,9 @@ def lookup_all_words(lines):
         orm_words = orm_words + new_orm_words
 
     have_rhymes = [n for n in orm_words if n.get_rhymes()]
-    needing_rhymes = set([n for n in orm_words if not n.get_rhymes()])
+    needing_rhymes = set([n for n in orm_words 
+                          if n.word not in excluded_from_rhymes 
+                          and not n.get_rhymes()])
     print("HOW MANY NEED RHYMES? " + len(needing_rhymes).__str__())
 
     if len(needing_rhymes) > 50:
