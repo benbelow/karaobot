@@ -6,23 +6,23 @@ from pyrhyme import rhyming_list
 
 from parody.analysis.RhymeFinder import import_rhymes
 from parody.analysis.WordImporter import import_words
-from parody.config import CHANCE_OF_SPOOKY_WORD_IN_NON_RHYME, CHANCE_OF_ON_THEME_WORD
+from parody.config import CHANCE_OF_CUSTOM_WORD_IN_NON_RHYME, CHANCE_OF_ON_THEME_WORD
 from utils.random_utils import chance
 
 
 repo = WordRepository()
 
-spooky_words_by_stress = {}
+custom_words_by_stress = {}
 themes = {}
 
-with open("data/source_data/spooky_words.txt", 'r') as block_file:
-    spooky_words = []
+with open("data/source_data/custom_words.txt", 'r') as block_file:
+    custom_words = []
     lines = block_file.readlines()
     for line in lines:
-        spooky_words.append(line.strip())
+        custom_words.append(line.strip())
 
-    orm_words = repo.get_words(spooky_words)
-    new_words = list(set(spooky_words) - set([w.word for w in orm_words]))
+    orm_words = repo.get_words(custom_words)
+    new_words = list(set(custom_words) - set([w.word for w in orm_words]))
     import_words(new_words)
     orm_words = orm_words + repo.get_words(new_words)
 
@@ -30,9 +30,9 @@ with open("data/source_data/spooky_words.txt", 'r') as block_file:
         word = orm_word.analysed_word()
         stress = word.stress
 
-        if stress not in spooky_words_by_stress:
-            spooky_words_by_stress[stress] = []
-        spooky_words_by_stress[stress].append(word)
+        if stress not in custom_words_by_stress:
+            custom_words_by_stress[stress] = []
+        custom_words_by_stress[stress].append(word)
 
 
 class WordGenOptions:
@@ -148,10 +148,10 @@ class Corpus:
                 and chance(CHANCE_OF_ON_THEME_WORD):
             return random.choice(theme["words_by_stress"][target_stress])
 
-        if target_stress in spooky_words_by_stress.keys() \
-                and spooky_words_by_stress[target_stress] \
-                and chance(CHANCE_OF_SPOOKY_WORD_IN_NON_RHYME):
-            return random.choice(spooky_words_by_stress[target_stress])
+        if target_stress in custom_words_by_stress.keys() \
+                and custom_words_by_stress[target_stress] \
+                and chance(CHANCE_OF_CUSTOM_WORD_IN_NON_RHYME):
+            return random.choice(custom_words_by_stress[target_stress])
 
         if target_stress not in self.words_by_stress_then_speech_part.keys() \
                 or target_pos not in self.words_by_stress_then_speech_part[target_stress]:
