@@ -32,7 +32,7 @@ There are a few components here:
 
 ### Pre-requisites
 
-* Python 3
+#### Python 3
 
 C tooling is required for some dependencies. 
 
@@ -43,11 +43,17 @@ This can be a real pain!
 Recommend: 
 * use brew to install python
 * stick to python 3.9
+  * This is pretty vital, I've seen it break a lot with later versions and haven't spent time seeing if it's fixable - but some migration work is needed if so. 
 * use a venv
 
 
 * `python -m spacy download en_core_web_sm` to download spacy data
   * will need to first `pip install spacy`
+
+#### Windows specific setup
+
+* VSCode sometimes seems to not update PATH for new terminals spawned, need to reset the whole editor
+
 
 ### Setup
 
@@ -58,7 +64,7 @@ Recommend:
 * Set environment variable `DB_URI` pointing to local postgres instance
 * run `schema.py` to create initial schema
 * Required config:
-  * `DB_URI=postgresql+psycopg2://postgres:<mypassword>@localhost:5438/karaobot`
+  * `DB_URI=postgresql+psycopg2://postgres:password@localhost:5438/karaobot`
 
 You might need to install some dependencies manually at some point in this process: 
 e.g: 
@@ -89,13 +95,17 @@ To generate a parody:
 
 * Run `parody/server.py` using flask
   * Required config:
-    * environment variable of `DB_URI=postgresql+psycopg2://postgres:<mypassword>@localhost:5438/karaobot` 
+    * environment variable of `DB_URI=postgresql+psycopg2://postgres:password@localhost:5438/karaobot`
+  * Command line: 
+    `export FLASK_APP=parody/server.py;export DB_URI=postgresql+psycopg2://postgres:password@localhost:5438/karaobot;flask run`
 
 * Run `similarity/server.py` using flask
   * Run on port 5001 via `-p 5001`
   * Required: 
     * data/source_data/GoogleNews-vectors-negative300.bin (https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/)
     * This is git ignored as it's very very large, please set it up manually for now on servers running the similarity app
+  * Command line:
+    `export FLASK_APP=similarity/server.py;flask run -p 5001`
 
 __________________
 
