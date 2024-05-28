@@ -38,15 +38,19 @@ def lookup_all_words(lines):
     needing_rhymes = set([n for n in orm_words 
                           if n.word not in excluded_from_rhymes 
                           and not n.get_rhymes()])
-    print("HOW MANY NEED RHYMES? " + len(needing_rhymes).__str__())
+    print("About to lookup rhymes: x" + len(needing_rhymes).__str__())
 
     if len(needing_rhymes) > 50:
+        print('This song has too many rhymes to fetch, please skip!')
         # Sometimes genius thinks there's far too many lyrics and we start getting rate limited on rhyming -
         # mostly these are easier to just ignore the initial pre-load for
         raise Exception
 
+    rhyme_import_count = 0
     for lw in needing_rhymes:
         import_rhymes(lw)
+        rhyme_import_count = rhyme_import_count + 1
+        print('RHYME IMPORT: ' + str(rhyme_import_count) + '/' + str(len(needing_rhymes)))
 
     newly_added_rhymes = repo.get_words([w.word for w in needing_rhymes], load_rhymes=True)
     orm_words = have_rhymes + newly_added_rhymes
@@ -54,7 +58,7 @@ def lookup_all_words(lines):
     word_dict = {lw.word: lw for lw in orm_words}
     return word_dict
 
-
+# Horrible duplication here with lookup all words, please fix
 def lookup_last_words(lines):
     """
     Given a set of lines, extracts the last word from each line, and performs a lookup.
@@ -81,15 +85,19 @@ def lookup_last_words(lines):
 
     have_rhymes = [n for n in orm_last_words if n.get_rhymes()]
     needing_rhymes = set([n for n in orm_last_words if not n.get_rhymes()])
-    print("HOW MANY NEED RHYMES? " + len(needing_rhymes).__str__())
+    print("About to lookup rhymes: x" + len(needing_rhymes).__str__())
 
     if len(needing_rhymes) > 50:
+        print('This song has too many rhymes to fetch, please skip!')
         # Sometimes genius thinks there's far too many lyrics and we start getting rate limited on rhyming -
         # mostly these are easier to just ignore the initial pre-load for
         raise Exception
 
+    rhyme_import_count = 0
     for lw in needing_rhymes:
         import_rhymes(lw)
+        rhyme_import_count = rhyme_import_count + 1
+        print('RHYME IMPORT: ' + str(rhyme_import_count) + '/' + str(len(needing_rhymes)))
 
     newly_added_rhymes = repo.get_words([w.word for w in needing_rhymes], load_rhymes=True)
     orm_last_words = have_rhymes + newly_added_rhymes

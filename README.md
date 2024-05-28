@@ -133,6 +133,14 @@ This means:
 * install via pipx, not brew
 * inject all modules required via `pipx inject mitmproxy <dep>`
 
+# Miscellaneous Debugging
+
+## Logs too full of rhyme logs?
+
+pyrhyme package prints every request to rhymebrain. 
+if you can find pyrhyme.py you can remove or comment this out. 
+But you need to do it every time you install dependencies, I would assume.
+
 
 # How to add custom words
 
@@ -172,145 +180,3 @@ UPUUU	235	abominable	accompanying	additionally
 USUPU	225	abbreviation	abbreviations	abomination
 SUUPU	157	academician	academicians	aerodynamic
 PP	154	2d	ac	aimee
-UUPU	130	absolutist	adriano	automation
-SP	115	aha	aj	alright
-SPU	112	alfalfa	angelic	archangel
-U	87	a	a-	a.
-UUP	83	achingly	appointee	appointees
-USUPUU	82	accelerometer	accelerometers	acceptability
-SUUPUU	79	accessibility	aerodynamically	amiability
-UUPUU	69	ambiguities	biologically	chromatography
-PUUSU	65	aleatory	alienated	alienating
-SPUU	65	alluvial	antecedent	asymmetries
-PUUS	63	actualize	aftereffect	aftereffects
-UPS	60	adulthood	aforesaid	aforethought
-PUP	57	amputee	amputees	anchormen
-PPU	53	addresses	archbishop	archetypal
-SUPUUU	44	agriculturalist	agriculturally	architecturally
-SUPUSU	38	beneficiaries	beneficiary	differentiated
-PUPU	25	deputation	duodenal	easygoing
-PUSUU	25	amphitheatre	arbitrarily	arbitrariness
-SUPUS	25	archipelago	braggadocio	differentiate
-SUUP	25	aquamarine	cabriolet	catamaran
-UPUUSU	21	ameliorated	anticipatory	articulatory
-PSUU	19	airworthiness	backfiring	bicycling
-USUUPU	19	acidification	detoxification	disorientation
-SUSUPU	17	bioengineering	discontinuation	endometriosis
-SSUPU	15	acceleration	antidepressants	asymptomatic
-SSPU	13	anticancer	asbestosis	cappuccino
-SUSUPUU	13	autobiographical	biotechnological	comprehensibility
-USUP	13	comedienne	communiques	concessionaire
-UUUPU	12	disinclination	equivocation	exoneration
-UPSU	11	aforementioned	escapism	impregnated
-USPU	11	departmental	electronic	electronics
-PPUU	10	archdiocese	archenemy	asynchronous
-SSPUU	10	bougainvillea	conductivity	domesticity
-USP	10	abductee	abductees	detainees
-UUSUPU	10	chlorofluorocarbon	decontamination	differentiation
-PPP	9	abs	api	byu
-PUUUU	9	amateurism	caricaturist	cumulatively
-SPUS	9	deactivate	iconoclast	interpolate
-SPUSU	9	allegiances	deactivated	exculpatory
-SPUUU	9	autonomously	concomitantly	extravagantly
-UPPU	9	dislocation	dislocations	disputation
-UPUUS	9	corroborative	deteriorate	deteriorates
-SUPS	8	antiaircraft	carbohydrate	elephantine
-SUPUP	8	xxi	xxii	xxiii
-SSUPUU	7	advisability	dendrochronology	humanitarian
-UPP	7	alongside	attendee	attendees
-UPUSUU	7	appreciatively	environmentalists	identifiable
-UUPUUU	7	inappropriately	indistinguishable	internationalist
-UUUPUU	7	experimentally	gubernatorial	irregularities
-PUUP	6	overproduced	overreact	videotape
-SUSPU	6	ferromagnetic	instrumentation	jurisprudential
-SUSPUU	6	bacteriology	biotechnology	extraterrestrials
-SUUUPU	6	atherosclerosis	counterrevolution	macroeconomic
-UUPUS	6	differentiates	incapacitate	insubordinate
-UUPUSU	6	decontaminated	incapacitated	incapacitating
-PSP	5	franchisee	hitherto	microchip
-UPUPU	5	coagulation	miscalculation	miscalculations
-USUUPUU	5	electromechanical	incompatibility	individuality
-PSS	4	elbowroom	nobodies	nobody
-PUUPU	4	minicomputer	minicomputers	overproduction
-SUPUUUU	4	hypersensitivity	multiculturalism	multilateralism
-SUU	4	gasify	greedier	greediest
-SUUUPUU	4	epidemiologist	epidemiologists	heterogeneity
-USPUU	4	electricity	electrolysis	familiarity
-UUUP	4	interviewee	interviewees	reintroduce
-PSSU	3	lobotomy	moviegoers	retrofitted
-PUSSU	3	absolutism	alcoholism	parallelism
-SU	3	rumour	rumours	tonsil
-SUPSU	3	multiprocessor	opportunism	reincarnated
-SUUPUS	3	generalissimo	megalomaniac	verisimilitude
-UUPS	3	biofeedback	disenfranchise	disenfranchised
-PPUSU	2	reactivated	reactivating	
-PSUPU	2	microcomputer	microcomputers	
-PSUS	2	midafternoon	newspaperman	
-PUPUS	2	overemphasize	underestimate	
-PUUPUU	2	interrelationship	overcapacity	
-SPS	2	trusteeship	zydeco	
-SSP	2	denouement	rapprochement	
-SSUPUUU	2	unceremoniously	unconstitutionally	
-SUPUPU	2	xxvii	xxxvii	
-SUPUUSU	2	interdisciplinary	unilateralism	
-SUSP	2	arbitrageurs	indochinese	
-SUSUUPU	2	individualistic	misidentification	
-SUUPS	2	corticosteroid	corticosteroids	
-SUUPUSU	2	cardiopulmonary	individualism	
-SUUSUPU	2	telecommunication	telecommunications	
-SUUUUPUU	2	epidemiological	heterosexuality	
-UPUUUU	2	accountability	imaginatively	
-USUPUSU	2	electromagnetism	intellectualism	
-USUPUUSU	2	authoritarianism	egalitarianism	
-USUPUUU	2	conspiratorially	contemporaneously	
-USUSPU	2	electrodynamic	electrodynamics	
-USUU	2	expressionless	purportedly	
-UUPUUSU	2	internationalism	oversimplification	
-UUSUPUU	2	irresponsibility	unavailability	
-UUUPUS	2	idiosyncrasies	idiosyncrasy	
-UUUUPU	2	idiosyncratic	unenthusiastic	
-PPS	1	blacksmithing		
-PPUS	1	reactivate		
-PPUUP	1	110		
-PSPU	1	indexation		
-PSPUU	1	receptivity		
-PUPUPU	1	chlorofluorocarbons		
-PUPUSU	1	underestimated		
-PUPUU	1	overshadowing		
-PUPUUSU	1	nondiscriminatory		
-PUPUUU	1	operationally		
-PUSUPU	1	overrepresented		
-PUSUS	1	overqualified		
-PUUUPUU	1	radioactivity		
-SPPU	1	oxymoron		
-SPUSUU	1	excruciatingly		
-SPUUSU	1	participatory		
-SSSPU	1	disadvantageous		
-SSUP	1	realpolitik		
-SSUPUUSU	1	totalitarianism		
-SSUUPU	1	uncharacteristic		
-SSUUPUU	1	uncharacteristically		
-SSUUU	1	unanswerable		
-SUS	1	cogitate		
-SUSSPUU	1	superconductivity		
-SUSUP	1	multimillionaire		
-SUSUU	1	endometrial		
-SUUPUUU	1	ritualistically		
-SUUS	1	heterodox		
-SUUSPUU	1	immunodeficiency		
-SUUUPUSU	1	counterrevolutionary		
-UPPS	1	impolitic		
-UPSS	1	electroshock		
-UPSUSU	1	conciliatory		
-UPSUU	1	unenviable		
-UPUSUSU	1	environmentalism		
-USPUUU	1	electronically		
-USSSUPU	1	socioeconomic		
-USU	1	accredit		
-USUPUUS	1	electrocardiogram		
-UUPSU	1	disenfranchisement		
-UUPSUU	1	unimaginative		
-UUS	1	impolite		
-UUU	1	tourniquet		
-UUUPUSU	1	undifferentiated		
-UUUUSU	1	electrophoresis		
