@@ -33,6 +33,13 @@ with open("data/source_data/custom_words.txt", 'r') as block_file:
         if stress not in custom_words_by_stress:
             custom_words_by_stress[stress] = []
         custom_words_by_stress[stress].append(word)
+    
+    log = open("need_manual_db_tweaks.txt", "a")
+    for custom_word_stress in custom_words_by_stress.keys():
+        if '?' in custom_word_stress:
+            for word in custom_words_by_stress[custom_word_stress]:
+                log.write(word.rawWord)
+                log.write('\n')
 
 
 class WordGenOptions:
