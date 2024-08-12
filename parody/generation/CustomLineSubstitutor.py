@@ -13,7 +13,7 @@ nlp.tokenizer.rules = {key: value for key, value in nlp.tokenizer.rules.items() 
 
 repo = WordRepository()
 
-spooky_phrases_by_stress = {}
+custom_phrases_by_stress = {}
 
 def import_words_from_phrases(lines):
     import_words(lines)
@@ -44,7 +44,7 @@ def stress_for_line(line):
     return line_stress
 
 
-with open("data/source_data/spooky_phrases.txt", 'r') as block_file:
+with open("data/source_data/custom_phrases.txt", 'r') as block_file:
     lines = block_file.readlines()
 
     import_words_from_phrases(lines)
@@ -54,21 +54,21 @@ with open("data/source_data/spooky_phrases.txt", 'r') as block_file:
     for line in lines:
         # doing this per line is probably slow. lookup_all_words does rhymes though which is definitely slower. Revisit
         line_stress = stress_for_line(line)
-        if line_stress not in spooky_phrases_by_stress.keys():
-            spooky_phrases_by_stress[line_stress] = []
-        spooky_phrases_by_stress[line_stress].append(line)
+        if line_stress not in custom_phrases_by_stress.keys():
+            custom_phrases_by_stress[line_stress] = []
+        custom_phrases_by_stress[line_stress].append(line)
 
     log = open("need_manual_db_tweaks.txt", "a")
-    for spooky_phrase_stress in spooky_phrases_by_stress.keys():
-        if '?' in spooky_phrase_stress:
-            for phrase in spooky_phrases_by_stress[spooky_phrase_stress]:
+    for custom_phrase_stress in custom_phrases_by_stress.keys():
+        if '?' in custom_phrase_stress:
+            for phrase in custom_phrases_by_stress[custom_phrase_stress]:
                 log.write(phrase)
 
 
 
 def replace_with_custom_line(line):
     line_stress = stress_for_line(line)
-    if line_stress in spooky_phrases_by_stress.keys():
-        return random.choice(spooky_phrases_by_stress[line_stress])
+    if line_stress in custom_phrases_by_stress.keys():
+        return random.choice(custom_phrases_by_stress[line_stress])
 
     return None

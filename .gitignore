@@ -2,3 +2,5 @@ data/source_data/GoogleNews-vectors-negative300.bin
 log.txt
 venv
 .idea
+__pycache__/
+*pyc

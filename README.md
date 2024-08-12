@@ -32,7 +32,7 @@ There are a few components here:
 
 ### Pre-requisites
 
-* Python 3
+#### Python 3
 
 C tooling is required for some dependencies. 
 
@@ -43,11 +43,17 @@ This can be a real pain!
 Recommend: 
 * use brew to install python
 * stick to python 3.9
+  * This is pretty vital, I've seen it break a lot with later versions and haven't spent time seeing if it's fixable - but some migration work is needed if so. 
 * use a venv
 
 
 * `python -m spacy download en_core_web_sm` to download spacy data
   * will need to first `pip install spacy`
+
+#### Windows specific setup
+
+* VSCode sometimes seems to not update PATH for new terminals spawned, need to reset the whole editor
+
 
 ### Setup
 
@@ -58,7 +64,7 @@ Recommend:
 * Set environment variable `DB_URI` pointing to local postgres instance
 * run `schema.py` to create initial schema
 * Required config:
-  * `DB_URI=postgresql+psycopg2://postgres:<mypassword>@localhost:5438/karaobot`
+  * `DB_URI=postgresql+psycopg2://postgres:password@localhost:5438/karaobot`
 
 You might need to install some dependencies manually at some point in this process: 
 e.g: 
@@ -89,13 +95,17 @@ To generate a parody:
 
 * Run `parody/server.py` using flask
   * Required config:
-    * environment variable of `DB_URI=postgresql+psycopg2://postgres:<mypassword>@localhost:5438/karaobot` 
+    * environment variable of `DB_URI=postgresql+psycopg2://postgres:password@localhost:5438/karaobot`
+  * Command line: 
+    `export FLASK_APP=parody/server.py;export DB_URI=postgresql+psycopg2://postgres:password@localhost:5438/karaobot;flask run`
 
 * Run `similarity/server.py` using flask
   * Run on port 5001 via `-p 5001`
   * Required: 
     * data/source_data/GoogleNews-vectors-negative300.bin (https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/)
     * This is git ignored as it's very very large, please set it up manually for now on servers running the similarity app
+  * Command line:
+    `export FLASK_APP=similarity/server.py;flask run -p 5001`
 
 __________________
 
@@ -123,6 +133,50 @@ This means:
 * install via pipx, not brew
 * inject all modules required via `pipx inject mitmproxy <dep>`
 
-___________
+# Miscellaneous Debugging
 
-QQ testing merges
+## Logs too full of rhyme logs?
+
+pyrhyme package prints every request to rhymebrain. 
+if you can find pyrhyme.py you can remove or comment this out. 
+But you need to do it every time you install dependencies, I would assume.
+
+
+# How to add custom words
+
+(a) Add to the custom words and custom phrases files
+* MAKE SURE THEY'RE ALL LOWER CASE AND FREE FROM PUNCTUATION FOR MAXIMAL EFFECTIVENESS
+
+(b) Fix scansion
+
+* Custom words in custom words/phrases files will be automatically added and analysed
+* If any of them are not successfully analysed, they will be logged in `need_manual_db_tweaks`
+* Go to the database (using e.g. DBeaver or Datagrip) and update the `stress` column
+  * P = primary stress. Big stress
+  * S = secondary stress. Not super stressed but a bit I guess.
+  * U = unstressed. 
+  * Look at some examples to make sure you match
+
+Most common examples of stresses: 
+
+(taken direct from a SQL query)
+PU	10826	aaron	abbe	abbey
+P	6978	1	2	aah
+UPU	4183	abandon	abandoned	abandons
+PUU	3765	abacus	abler	absalom
+UP	2751	aback	abash	abashed
+PS	2200	aardvark	abscess	access
+UPUU	1954	abandonment	abdominal	abilities
+PUS	1858	abattoir	abdicate	abdicates
+SUPU	1337	abalone	abdication	aberration
+PUSU	1035	abdicated	abdicating	abrogated
+PSU	675	abstracted	accessing	airlifted
+SUPUU	636	abnormalities	abnormality	abolitionist
+SUP	436	absentee	absentees	acquiesce
+UPUSU	408	abbreviated	abbreviating	accelerated
+PUUU	376	accuracies	accuracy	accurately
+UPUS	322	abbreviate	abbreviates	accelerate
+UPUUU	235	abominable	accompanying	additionally
+USUPU	225	abbreviation	abbreviations	abomination
+SUUPU	157	academician	academicians	aerodynamic
+PP	154	2d	ac	aimee

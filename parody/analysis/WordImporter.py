@@ -36,5 +36,5 @@ def import_words(lines):
                     existing.append(dto_word.word)
 
         repo.bulk_insert_words(dtos)
-        print("Imported " + str(len(dtos)) + " words.")
-        print("Last Seen: " + line_batch[-1])
+        # print("Imported " + str(len(dtos)) + " words.")
+        # print("Last Seen: " + line_batch[-1])

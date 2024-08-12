@@ -69,7 +69,7 @@ def generate_parody_line_with_alternate_wordcount(line, last_word_dict, artist, 
 
 def generate_parody_line(line, last_word_dict, artist, title, parody_title):
     title_lower_words = title.lower().split()
-    parody_title_words = parody_title.lower().split()
+    parody_title_words = parody_title.lower().split() if parody_title else []
     if chance(CHANCE_OF_CUSTOM_LINE):
         custom = replace_with_custom_line(line)
         if custom is not None:
